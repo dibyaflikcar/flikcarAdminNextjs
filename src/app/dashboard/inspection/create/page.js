@@ -196,7 +196,8 @@ function Create() {
   const [externalSpeaker, setExternalSpeaker]=useState(null);
   const [stearingMountedAudio, setStearingMountedAudio]=useState(null);
   const [sunroof, setSunroof]=useState(null);
-  const [additionalComments, setAdditionalComments] = useState([]);
+  const [odometerReading, setOdometerReading]=useState(null);
+  const [commentsOnComfort, setCommentsOnComfort] = useState([]);
 
   // auction
   const [bodyTypelist, setbodyTypelist]=useState([]);
@@ -472,6 +473,19 @@ function Create() {
     {
       setEngineNo(e.target.value);
     }
+    if(e.target.name === "odometerReading")
+    {
+      if(e.target.value!='')
+      {
+        setOdometerReading(Number(e.target.value));
+      }
+      else
+      {
+        setOdometerReading(null);
+      }
+      
+    }
+    
     if(e.target.name === "chassisNo")
     {
       setChassisNo(e.target.value);
@@ -863,11 +877,11 @@ function Create() {
     if (e.target.name === 'sunroof') {
       setSunroof(e.target.value);
     }
-    if (e.target.name === 'additionalComments') {
+    if (e.target.name === 'commentsOnComfort') {
       if (e.target.checked) {
-        setAdditionalComments([...additionalComments, e.target.value]);
+        setCommentsOnComfort([...commentsOnComfort, e.target.value]);
       } else {
-        setAdditionalComments(additionalComments.filter((element) => Number(element) !== Number(e.target.value)));
+        setCommentsOnComfort(commentsOnComfort.filter((element) => Number(element) !== Number(e.target.value)));
       }
     }
     
@@ -1367,21 +1381,21 @@ const handleRemoveVideo2 = async ()=>{
       lhsFoglamp,rhsFoglamp,lhsFender,lhsFrontAlloy,lhsFrontTyre,lhsOrvm,lhsAPillar,lhsFrontDoor,lhsBPillar,lhsRearDoor,lhsCPillar,lhsRunningBoard,
       lhsRearAlloy,lhsRearTyre,lhsQuarterPanel,rearBumper,lhsTailLamp,rhsTailLamp,rearWindshield,bootDoor,spareTyre,bootFloor,rhsQuarterPanel,
       rhsRearAlloy,rhsRearTyre,rhsCPillar,rhsRearDoor,rhsBPillar,rhsFrontDoor,rhsAPillar,rhsRunningBoard,rhsFrontAlloy,rhsFrontTyre,rhsOrvm,
-      rhsFender,noOfAirbags,abs,driverSideAB,codriverSideAB,lhsAPillarAB,lhsBPillarAB,lhsCPillarAB,rhsAPillarAB,rhsBPillarAB,rhsCPillarAB,
+      rhsFender,noOfAirbags,odometerReading,abs,driverSideAB,codriverSideAB,lhsAPillarAB,lhsBPillarAB,lhsCPillarAB,rhsAPillarAB,rhsBPillarAB,rhsCPillarAB,
       reverseParkingCamera,manualAC,climateAC,musicSystem,stereo,inbuiltSpeaker,externalSpeaker,stearingMountedAudio,sunroof,
       bodyType,transmission,ownerType,color,kmsDriven,description,mileage,maxPower,maxTorque,noc,inspectionReport,inspectionScore,comforts,safety,
       interior,exterior,entertainment,engineVideo,silencerVideo,allCarImage,thumbImage,allCarVideo,regYear,rcAvailabilityImages,chassisImages,hypoImages,roadTaxValidityImages,
-      insuranceImages,duplicateKeyImages,rtoNocImages,commentsOnBasic,commentsOnExterior,exteriorImages,dentImages,tyreImages,engineImages,interiorImages,safetyImages,comfortImages};
+      insuranceImages,duplicateKeyImages,rtoNocImages,commentsOnBasic,commentsOnInterior,commentsOnEngine,commentsOnExterior,commentsOnTransmission,commentsOnComfort,commentsOnElectrical,exteriorImages,dentImages,tyreImages,engineImages,interiorImages,safetyImages,comfortImages};
 
-      console.log(formData);
+      // console.log(formData);
 
     
-    // const response = await vehicleApi.addInspectionVehicle(formData);
-    // // console.log(response);
-    // if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
-    //   confirm("Car added successfully");
-    //   // router.push("/dashboard/inspection");
-    // }
+    const response = await vehicleApi.addInspectionVehicle(formData);
+    // console.log(response);
+    if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+      confirm("Car added successfully");
+      // router.push("/dashboard/inspection");
+    }
 
   }
   };
@@ -2793,6 +2807,12 @@ const handleRemoveVideo2 = async ()=>{
                     <Typography variant='h6'>Electrical & Interior Details</Typography>
                 </Box>
                 <Grid container spacing={4}>
+                  <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <TextField id="outlined-basic" label="Odometer Reading" onChange={handleInput} name='odometerReading' type="number" value={odometerReading} variant="outlined" fullWidth/>
+                      </Box>
+                  </Grid>
+                
                   <Grid item md={3}>
                     <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                       <FormControl fullWidth>
@@ -4488,36 +4508,36 @@ const handleRemoveVideo2 = async ()=>{
                       
                         <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
                           <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
-                            <Typography variant='h4'>Additional Comments</Typography>
+                            <Typography variant='h4'>Comments on Comfort</Typography>
                           </Box>
                         <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
                           <Grid container spacing={0}>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Electrical Wiring Damaged" name='additionalComments' onChange={handleInput} />} label="Electrical Wiring Damaged" />
+                                  <FormControlLabel control={<Checkbox value="Electrical Wiring Damaged" name='commentsOnComfort' onChange={handleInput} />} label="Electrical Wiring Damaged" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Starter Motor / Solanoid Malfunction" name='additionalComments' onChange={handleInput} />} label="Starter Motor / Solanoid Malfunction" />
+                                  <FormControlLabel control={<Checkbox value="Starter Motor / Solanoid Malfunction" name='commentsOnComfort' onChange={handleInput} />} label="Starter Motor / Solanoid Malfunction" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Battery Not Available" name='additionalComments' onChange={handleInput} />} label="Battery Not Available" />
+                                  <FormControlLabel control={<Checkbox value="Battery Not Available" name='commentsOnComfort' onChange={handleInput} />} label="Battery Not Available" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Front Drive Axle Noise" name='additionalComments' onChange={handleInput} />} label="Front Drive Axle Noise" />
+                                  <FormControlLabel control={<Checkbox value="Front Drive Axle Noise" name='commentsOnComfort' onChange={handleInput} />} label="Front Drive Axle Noise" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Car Pulling on One Side" name='additionalComments' onChange={handleInput} />} label="Car Pulling on One Side" />
+                                  <FormControlLabel control={<Checkbox value="Car Pulling on One Side" name='commentsOnComfort' onChange={handleInput} />} label="Car Pulling on One Side" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Silencer Assembly Damaged" name='additionalComments' onChange={handleInput} />} label="Silencer Assembly Damaged" />
+                                  <FormControlLabel control={<Checkbox value="Silencer Assembly Damaged" name='commentsOnComfort' onChange={handleInput} />} label="Silencer Assembly Damaged" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Noise from Silencer Assembly" name='additionalComments' onChange={handleInput} />} label="Noise from Silencer Assembly" />
+                                  <FormControlLabel control={<Checkbox value="Noise from Silencer Assembly" name='commentsOnComfort' onChange={handleInput} />} label="Noise from Silencer Assembly" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Hand Brake not Working" name='additionalComments' onChange={handleInput} />} label="Hand Brake not Working" />
+                                  <FormControlLabel control={<Checkbox value="Hand Brake not Working" name='commentsOnComfort' onChange={handleInput} />} label="Hand Brake not Working" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Jack & Toolkit not available" name='additionalComments' onChange={handleInput} />} label="Jack & Toolkit not available" />
+                                  <FormControlLabel control={<Checkbox value="Jack & Toolkit not available" name='commentsOnComfort' onChange={handleInput} />} label="Jack & Toolkit not available" />
                                 </Grid>
                           </Grid>
                         </Box>
