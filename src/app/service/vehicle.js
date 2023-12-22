@@ -249,6 +249,26 @@ const API = axios.create({
     }
   };
 
+  vehicleApi.uploadAuctionImage7 = async (data) => {
+    try {
+      const res = API.post('/vehicle/uploadAuctionImage7',data);
+      return res;
+    } catch (error) {
+      return error.response;
+    }
+  };
+
+  vehicleApi.uploadAuctionImage8 = async (data) => {
+    try {
+      const res = API.post('/vehicle/uploadAuctionImage8',data);
+      return res;
+    } catch (error) {
+      return error.response;
+    }
+  };
+
+  
+
   vehicleApi.uploadAuctionVideo1 = async (data) => {
     try {
       const res = API.post('/vehicle/uploadAuctionVideo1',data);
@@ -513,6 +533,18 @@ vehicleApi.uploadBlogImage = async (data) => {
     return error.response;
   }
 };
+
+
+// inspection car
+vehicleApi.addInspectionVehicle = async (data) => {
+  try {
+    const res = API.post('/vehicle/addInspectionVehicle',data);
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
+
 
 
 

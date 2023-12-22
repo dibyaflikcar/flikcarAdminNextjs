@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState,useEffect } from 'react'
 import Image from 'next/image';
 import dashboardStyles from  '../src/app/dashboard/dashboard.module.css'
 import {Box,Grid,Typography} from '@mui/material';
@@ -9,8 +9,10 @@ import {Dashboard as DashboardIcon, ExpandMore as ExpandMoreIcon, Factory as Fac
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
+import { useRouter } from 'next/navigation';
 
 const Sidebar = () => {
+  const router = useRouter();
   const [expanded, setExpanded] = React.useState(false);
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -18,6 +20,13 @@ const Sidebar = () => {
 
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
+
+  useEffect(() => {
+    const userToken = localStorage.getItem('token');
+    if(!userToken) {
+        router.push("/");
+    }
+  }, [router]);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);

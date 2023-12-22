@@ -703,7 +703,7 @@ function Update({ params }) {
     if (e.target.name === 'engineVideo' && e.target.files.length > 0) {
      
       // console.log(e.target.files);
-      if(e.target.files[0].size<10000000)
+      if(e.target.files[0].size<15000000)
       {
           // console.log(e.target.files[0]);
           setLoader(true);
@@ -711,20 +711,20 @@ function Update({ params }) {
       }
       else
       {
-          alert("video size should be less than 10MB!")
+          alert("video size should be less than 15MB!")
       }
     }
     if (e.target.name === 'silencerVideo' && e.target.files.length > 0) {
      
       // console.log(e.target.files);
-      if(e.target.files[0].size<10000000)
+      if(e.target.files[0].size<15000000)
       {
           setLoader2(true);
           uploadAuctionVideo2(e.target.files[0]);
       }
       else
       {
-          alert("Image size should be less than 10MB!")
+          alert("Image size should be less than 15MB!")
       }
     }
 

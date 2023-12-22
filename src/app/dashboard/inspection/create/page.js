@@ -39,10 +39,8 @@ function Create() {
 
   // Basic Document Part
   const [years, setYears] = useState([]);
-  const [carList,setCarList]=useState([]);
   const [inspectorList,setInspectorList]=useState([]);
 
-  const [vehicle, setVehicle]=useState("");
   const [inspector, setInspector]=useState("");
   const [custContactNo, setCustContactNo]=useState("");
   const [cityList, setCityList]=useState([]);
@@ -52,7 +50,7 @@ function Create() {
   const [rcAvailability, setRcAvailability]=useState("");
   const [rcCondition, setRcCondition]=useState("");
   const [regDate, setRegistrationDate]=useState(null);
-  const [fitnessUpto, setFitnessuptoDate]=useState(null);
+  const [fittnessUpto, setFitnessuptoDate]=useState(null);
   const [tobeScraped, setTobeScraped]=useState(null);
   const [regState, setRegState]=useState(null);
   const [rtoList, setrtoList]=useState([]);
@@ -76,7 +74,7 @@ function Create() {
   const [seatList, setseatList]=useState([]);
   const [seat, setSeat]=useState(null);
   const [missmatchRC, setMissmatchRC]=useState(null);
-  const [roadTaxValidity, setRoadTaxValidity]=useState(null);
+  const [roadTax, setRoadTax]=useState(null);
   const [roadTaxValidUpto, setRoadTaxValidUpto]=useState(null);
   const [insurance, setInsurance]=useState(null);
   const [insuranceValidity, setInsuranceValidity]=useState(null);
@@ -143,9 +141,112 @@ function Create() {
   const [frontBumper, setFrontBumper]=useState(null);
   const [lhsHeadlamp, setLhsHeadlamp]=useState(null);
   const [rhsHeadlamp, setRhsHeadlamp]=useState(null);
-  
-  
+  const [lhsFoglamp, setLhsFoglamp]=useState(null);
+  const [rhsFoglamp, setRhsFoglamp]=useState(null);
+  const [lhsFender, setLhsFender]=useState(null);
+  const [lhsFrontAlloy, setLhsFrontAlloy]=useState(null);
+  const [lhsFrontTyre, setLhsFrontTyre]=useState(null);
+  const [lhsOrvm, setLhsOrvm]=useState(null);
+  const [lhsAPillar, setLhsAPillar]=useState(null);
+  const [lhsFrontDoor, setLhsFrontDoor]=useState(null);
+  const [lhsBPillar, setLhsBPillar]=useState(null);
+  const [lhsRearDoor, setLhsRearDoor]=useState(null);
+  const [lhsCPillar, setLhsCPillar]=useState(null);
+  const [lhsRunningBoard, setLhsRunningBoard]=useState(null);
+  const [lhsRearAlloy, setLhsRearAlloy]=useState(null);
+  const [lhsRearTyre, setLhsRearTyre]=useState(null);
+  const [lhsQuarterPanel, setLhsQuarterPanel]=useState(null);
+  const [rearBumper, setRearBumper]=useState(null);
+  const [lhsTailLamp, setLhsTailLamp]=useState(null);
+  const [rhsTailLamp, setRhsTailLamp]=useState(null);
+  const [rearWindshield, setRearWindshield]=useState(null);
+  const [bootDoor, setBootDoor]=useState(null);
+  const [spareTyre, setSpareTyre]=useState(null);
+  const [bootFloor, setBootFloor]=useState(null);
+  const [rhsQuarterPanel, setRhsQuarterPanel]=useState(null);
+  const [rhsRearAlloy, setRhsRearAlloy]=useState(null);
+  const [rhsRearTyre, setRhsRearTyre]=useState(null);
+  const [rhsCPillar, setRhsCPillar]=useState(null);
+  const [rhsRearDoor, setRhsRearDoor]=useState(null);
+  const [rhsBPillar, setRhsBPillar]=useState(null);
+  const [rhsFrontDoor, setRhsFrontDoor]=useState(null);
+  const [rhsAPillar, setRhsAPillar]=useState(null);
+  const [rhsRunningBoard, setRhsRunningBoard]=useState(null);
+  const [rhsFrontAlloy, setRhsFrontAlloy]=useState(null);
+  const [rhsFrontTyre, setRhsFrontTyre]=useState(null);
+  const [rhsOrvm, setRhsOrvm]=useState(null);
+  const [rhsFender, setRhsFender]=useState(null);
+  const [commentsOnExterior, setCommentsOnExterior] = useState([]);
+  const [noOfAirbags, setNoOfAirbags]=useState(null);
+  const [abs, setAbs]=useState(null);
+  const [driverSideAB, setDriverSideAB]=useState(null);
+  const [codriverSideAB, setCodriverSideAB]=useState(null);
+  const [lhsAPillarAB, setLhsAPillarAB]=useState(null);
+  const [lhsBPillarAB, setLhsBPillarAB]=useState(null);
+  const [lhsCPillarAB, setLhsCPillarAB]=useState(null);
+  const [rhsAPillarAB, setRhsAPillarAB]=useState(null);
+  const [rhsBPillarAB, setRhsBPillarAB]=useState(null);
+  const [rhsCPillarAB, setRhsCPillarAB]=useState(null);
+  const [reverseParkingCamera, setReverseParkingCamera]=useState(null);
+  const [manualAC, setManualAC]=useState(null);
+  const [climateAC, setClimateAC]=useState(null);
+  const [musicSystem, setMusicSystem]=useState(null);
+  const [stereo, setStereo]=useState(null);
+  const [inbuiltSpeaker, setInbuiltSpeaker]=useState(null);
+  const [externalSpeaker, setExternalSpeaker]=useState(null);
+  const [stearingMountedAudio, setStearingMountedAudio]=useState(null);
+  const [sunroof, setSunroof]=useState(null);
+  const [additionalComments, setAdditionalComments] = useState([]);
 
+  // auction
+  const [bodyTypelist, setbodyTypelist]=useState([]);
+  const [bodyType, setbodyType]=useState(null);
+  const [regYear, setRegYear]=useState(null);
+  const [transmission, setTransmission]=useState(null);
+  const [ownerTypelist, setownerTypelist]=useState([]);
+  const [ownerType, setownerType]=useState(null);
+  const [colorList, setcolorList]=useState([]);
+  const [color, setColor]=useState(null);
+  const [kmsDriven, setkmsDriven]=useState(null);
+  const [description, setDescription]=useState(null);
+  const [mileage, setMileage]=useState(null);
+  const [maxPower, setmaxPower]=useState(null);
+  const [maxTorque, setMaxTorque]=useState(null);
+  const [noc, setNoc]=useState(null);
+  const [inspectionReport, setInspectionReport]=useState(null);
+  const [inspectionScore, setInspectionScore]=useState(null);
+  const [comforts, setComforts] = useState([]);
+  const [safety, setSafety] = useState([]);
+  const [interior, setInterior] = useState([]);
+  const [exterior, setExterior] = useState([]);
+  const [entertainment, setEntertainment] = useState([]);
+
+  const [comfortList, setComfortList] = useState([]);
+  const [safetyList, setSafetyList] = useState([]);
+  const [interiorList, setInteriorList] = useState([]);
+  const [exteriorList, setExteriorList] = useState([]);
+  const [entertainmentList, setEntertainmentList] = useState([]);
+
+  const [ThumbnailPhotos, setThumbnailPhotos] = useState([]);
+  const [ExteriorPhotos , setExteriorPhotos] = useState([]);
+  const [InteriorPhotos  , setInteriorPhotos ] = useState([]);
+  const [EnginePhotos  , setEnginePhotos ] = useState([]);
+  const [TyresPhotos  , setTyresPhotos ] = useState([]);
+  const [DentsPhotos  , setDentsPhotos ] = useState([]);
+  const [engineVideo  , setEngineVideo ] = useState(null);
+  const [silencerVideo  , setSilencerVideo ] = useState(null);
+  const [allCarImage, setAllcarImage] = useState([]);
+  const [thumbImage, setThumbImage] = useState([]);
+  const [allCarVideo, setAllcarVideo] = useState([]);
+
+  const [exteriorImages, setExteriorImages] = useState([]);
+  const [dentImages, setDentImages] = useState([]);
+  const [tyreImages, setTyreImages] = useState([]);
+  const [engineImages, setEngineImages] = useState([]);
+  const [interiorImages, setInteriorImages] = useState([]);
+  const [safetyImages, setSafetyImages] = useState([]);
+  const [comfortImages, setComfortImages] = useState([]);
+  
 
   useEffect(() => {
     getMakeModel();
@@ -157,8 +258,9 @@ function Create() {
     getCity();
     getSeat();
     getCarFeatureList([]);
-    getCarList();
     getInspectorList();
+
+    
   
     const currentYear = new Date().getFullYear();
     const startYear = 2000;
@@ -170,18 +272,7 @@ function Create() {
 
   }, []); 
 
-  const getCarList = async () => {
-    try {
-      const response = await vehicleApi.getAuction();
-            // console.log(response.data.data);
-      if (response.data.status === 200) {
-          setCarList(response.data.data.reverse());
-      }
-      
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
+  
 
   const getInspectorList = async () => {
     try {
@@ -319,9 +410,7 @@ function Create() {
   const handleInput= async(e)=>{
     
     // Basic Document Part
-    if (e.target.name === 'vehicle') {
-      setVehicle(e.target.value);
-    }
+   
     if (e.target.name === 'inspector') {
       setInspector(e.target.value);
     }
@@ -333,6 +422,9 @@ function Create() {
     }
     if (e.target.name === 'regType') {
       setRegType(e.target.value);
+    }
+    if (e.target.name === 'noc') {
+      setNoc(e.target.value);
     }
     if (e.target.name === 'regNo') {
       setRegNo(e.target.value);
@@ -411,8 +503,8 @@ function Create() {
     if (e.target.name === 'missmatchRC') {
       setMissmatchRC(e.target.value);
     }
-    if (e.target.name === 'roadTaxValidity') {
-      setRoadTaxValidity(e.target.value);
+    if (e.target.name === 'roadTax') {
+      setRoadTax(e.target.value);
     }
     if (e.target.name === 'insurance') {
       setInsurance(e.target.value);
@@ -602,13 +694,470 @@ function Create() {
     if (e.target.name === 'rhsHeadlamp') {
       setRhsHeadlamp(e.target.value);
     }
+    if (e.target.name === 'lhsFoglamp') {
+      setLhsFoglamp(e.target.value);
+    }
+    if (e.target.name === 'rhsFoglamp') {
+      setRhsFoglamp(e.target.value);
+    }
+    if (e.target.name === 'lhsFender') {
+      setLhsFender(e.target.value);
+    }
+    if (e.target.name === 'lhsFrontAlloy') {
+      setLhsFrontAlloy(e.target.value);
+    }
+    if (e.target.name === 'lhsFrontTyre') {
+      setLhsFrontTyre(e.target.value);
+    }
+    if (e.target.name === 'lhsOrvm') {
+      setLhsOrvm(e.target.value);
+    }
+    if (e.target.name === 'lhsAPillar') {
+      setLhsAPillar(e.target.value);
+    }
+    if (e.target.name === 'lhsFrontDoor') {
+      setLhsFrontDoor(e.target.value);
+    }
+    if (e.target.name === 'lhsBPillar') {
+      setLhsBPillar(e.target.value);
+    }
+    if (e.target.name === 'lhsRearDoor') {
+      setLhsRearDoor(e.target.value);
+    }
+    if (e.target.name === 'lhsCPillar') {
+      setLhsCPillar(e.target.value);
+    }
+    if (e.target.name === 'lhsRunningBoard') {
+      setLhsRunningBoard(e.target.value);
+    }
+    if (e.target.name === 'lhsRearAlloy') {
+      setLhsRearAlloy(e.target.value);
+    }
+    if (e.target.name === 'lhsRearTyre') {
+      setLhsRearTyre(e.target.value);
+    }
+    if (e.target.name === 'lhsQuarterPanel') {
+      setLhsQuarterPanel(e.target.value);
+    }
+    if (e.target.name === 'rearBumper') {
+      setRearBumper(e.target.value);
+    }
+    if (e.target.name === 'lhsTailLamp') {
+      setLhsTailLamp(e.target.value);
+    }
+    if (e.target.name === 'rhsTailLamp') {
+      setRhsTailLamp(e.target.value);
+    }
+    if (e.target.name === 'rearWindshield') {
+      setRearWindshield(e.target.value);
+    }
+    if (e.target.name === 'bootDoor') {
+      setBootDoor(e.target.value);
+    }
+    if (e.target.name === 'spareTyre') {
+      setSpareTyre(e.target.value);
+    }
+    if (e.target.name === 'bootFloor') {
+      setBootFloor(e.target.value);
+    }
+    if (e.target.name === 'rhsQuarterPanel') {
+      setRhsQuarterPanel(e.target.value);
+    }
+    if (e.target.name === 'rhsRearAlloy') {
+      setRhsRearAlloy(e.target.value);
+    }
+    if (e.target.name === 'rhsRearTyre') {
+      setRhsRearTyre(e.target.value);
+    }
+    if (e.target.name === 'rhsCPillar') {
+      setRhsCPillar(e.target.value);
+    }
+    if (e.target.name === 'rhsRearDoor') {
+      setRhsRearDoor(e.target.value);
+    }
+    if (e.target.name === 'rhsBPillar') {
+      setRhsBPillar(e.target.value);
+    }
+    if (e.target.name === 'rhsFrontDoor') {
+      setRhsFrontDoor(e.target.value);
+    }
+    if (e.target.name === 'rhsAPillar') {
+      setRhsAPillar(e.target.value);
+    }
+    if (e.target.name === 'rhsRunningBoard') {
+      setRhsRunningBoard(e.target.value);
+    }
+    if (e.target.name === 'rhsFrontAlloy') {
+      setRhsFrontAlloy(e.target.value);
+    }
+    if (e.target.name === 'rhsFrontTyre') {
+      setRhsFrontTyre(e.target.value);
+    }
+    if (e.target.name === 'rhsOrvm') {
+      setRhsOrvm(e.target.value);
+    }
+    if (e.target.name === 'rhsFender') {
+      setRhsFender(e.target.value);
+    }
+    if (e.target.name === 'commentsOnExterior') {
+      if (e.target.checked) {
+        setCommentsOnExterior([...commentsOnExterior, e.target.value]);
+      } else {
+        setCommentsOnExterior(commentsOnExterior.filter((element) => Number(element) !== Number(e.target.value)));
+      }
+    }
+    if (e.target.name === 'noOfAirbags') {
+      setNoOfAirbags(e.target.value);
+    }
+    if (e.target.name === 'abs') {
+      setAbs(e.target.value);
+    }
+    if (e.target.name === 'driverSideAB') {
+      setDriverSideAB(e.target.value);
+    }
+    if (e.target.name === 'codriverSideAB') {
+      setCodriverSideAB(e.target.value);
+    }
+    if (e.target.name === 'lhsAPillarAB') {
+      setLhsAPillarAB(e.target.value);
+    }
+    if (e.target.name === 'lhsBPillarAB') {
+      setLhsBPillarAB(e.target.value);
+    }
+    if (e.target.name === 'lhsCPillarAB') {
+      setLhsCPillarAB(e.target.value);
+    }
+    if (e.target.name === 'rhsAPillarAB') {
+      setRhsAPillarAB(e.target.value);
+    }
+    if (e.target.name === 'rhsBPillarAB') {
+      setRhsBPillarAB(e.target.value);
+    }
+    if (e.target.name === 'rhsCPillarAB') {
+      setRhsCPillarAB(e.target.value);
+    }
+    if (e.target.name === 'reverseParkingCamera') {
+      setReverseParkingCamera(e.target.value);
+    }
+    if (e.target.name === 'manualAC') {
+      setManualAC(e.target.value);
+    }
+    if (e.target.name === 'climateAC') {
+      setClimateAC(e.target.value);
+    }
+    if (e.target.name === 'musicSystem') {
+      setMusicSystem(e.target.value);
+    }
+    if (e.target.name === 'stereo') {
+      setStereo(e.target.value);
+    }
+    if (e.target.name === 'inbuiltSpeaker') {
+      setInbuiltSpeaker(e.target.value);
+    }
+    if (e.target.name === 'externalSpeaker') {
+      setExternalSpeaker(e.target.value);
+    }
+    if (e.target.name === 'stearingMountedAudio') {
+      setStearingMountedAudio(e.target.value);
+    }
+    if (e.target.name === 'sunroof') {
+      setSunroof(e.target.value);
+    }
+    if (e.target.name === 'additionalComments') {
+      if (e.target.checked) {
+        setAdditionalComments([...additionalComments, e.target.value]);
+      } else {
+        setAdditionalComments(additionalComments.filter((element) => Number(element) !== Number(e.target.value)));
+      }
+    }
+    
+    // auction details
+    if (e.target.name === 'regYear') {
+      setRegYear(e.target.value);
+    }
+    if (e.target.name === 'bodyType') {
+      setbodyType(e.target.value);
+    }
+    if (e.target.name === 'transmission') {
+      setTransmission(e.target.value);
+    }
+    if (e.target.name === 'ownerType') {
+      setownerType(e.target.value);
+    }
+    if (e.target.name === 'color') {
+      setColor(e.target.value);
+    }
+    if (e.target.name === 'kmsDriven') {
+      setkmsDriven(e.target.value);
+    }
+    if (e.target.name === 'description') {
+      setDescription(e.target.value);
+    }
+    if (e.target.name === 'mileage') {
+      if(e.target.value!="")
+      {
+        setMileage(Number(e.target.value));
+      }
+      else
+      {
+        setMileage(null);
+      }
+    }
+    if (e.target.name === 'maxPower') {
+      if(e.target.value!="")
+      {
+        setmaxPower(Number(e.target.value));
+      }
+      else
+      {
+        setmaxPower(null);
+      }
+    }
+    if (e.target.name === 'maxTorque') {
+      if(e.target.value!="")
+      {
+        setMaxTorque(Number(e.target.value));
+      }
+      else
+      {
+        setMaxTorque(null);
+      }
+    }
+    if (e.target.name === 'inspectionReport') {
+      setInspectionReport(e.target.value);
+    }
+    if (e.target.name === 'inspectionScore') {
+      setInspectionScore(e.target.value);
+    }
+    if (e.target.name === 'comforts') {
+      if (e.target.checked) {
+        setComforts([...comforts, e.target.value]);
+      } else {
+        setComforts(comforts.filter((element) => Number(element) !== Number(e.target.value)));
+      }
+    }
+
+    if (e.target.name === 'safety') {
+      if (e.target.checked) {
+        setSafety([...safety, e.target.value]);
+      } else {
+        setSafety(safety.filter((element) => Number(element) !== Number(e.target.value)));
+      }
+    }
+
+    if (e.target.name === 'interior') {
+      if (e.target.checked) {
+        setInterior([...interior, e.target.value]);
+      } else {
+        setInterior(interior.filter((element) => Number(element) !== Number(e.target.value)));
+      }
+    }
+
+    if (e.target.name === 'exterior') {
+      if (e.target.checked) {
+        setExterior([...exterior, e.target.value]);
+      } else {
+        setExterior(exterior.filter((element) => Number(element) !== Number(e.target.value)));
+      }
+    }
+
+    if (e.target.name === 'entertainment') {
+      if (e.target.checked) {
+        setEntertainment([...entertainment, e.target.value]);
+      } else {
+        setEntertainment(entertainment.filter((element) => Number(element) !== Number(e.target.value)));
+      }
+    }
+    if (e.target.name === 'ThumbnailPhotos' && e.target.files.length > 0) {
+          uploadAuctionImage(e.target.files[0]);
+    }
+
+    if (e.target.name === 'ExteriorPhotos' && e.target.files.length > 0) {
+          uploadAuctionImage2(e.target.files[0]);
+    }
+
+    if (e.target.name === 'InteriorPhotos' && e.target.files.length > 0) {
+          uploadAuctionImage3(e.target.files[0]);
+    }
+
+    if (e.target.name === 'EnginePhotos' && e.target.files.length > 0) {
+          uploadAuctionImage4(e.target.files[0]);   
+    }
+
+    if (e.target.name === 'TyresPhotos' && e.target.files.length > 0) {
+          uploadAuctionImage5(e.target.files[0]);
+    }
+
+    if (e.target.name === 'DentsPhotos' && e.target.files.length > 0) {
+          uploadAuctionImage6(e.target.files[0]);
+    }
+
+    if (e.target.name === 'safetyImages' && e.target.files.length > 0) {
+      uploadAuctionImage7(e.target.files[0]);
+    }
+    if (e.target.name === 'comfortImages' && e.target.files.length > 0) {
+      uploadAuctionImage8(e.target.files[0]);
+    }
+
+    if (e.target.name === 'engineVideo' && e.target.files.length > 0) {
+          setLoader(true);
+          uploadAuctionVideo1(e.target.files[0]);
+    }
+    if (e.target.name === 'silencerVideo' && e.target.files.length > 0) {
+          setLoader2(true);
+          uploadAuctionVideo2(e.target.files[0]);
+    }
     
     
     
 
   }
 
-  
+  const handleRemoveImage = async (id) => {
+    setThumbnailPhotos(ThumbnailPhotos.filter((element) => element.name !== id.name));
+    setExteriorPhotos(ExteriorPhotos.filter((element) => element.name !== id.name));
+    setInteriorPhotos(InteriorPhotos.filter((element) => element.name !== id.name));
+    setEnginePhotos(EnginePhotos.filter((element) => element.name !== id.name));
+    setTyresPhotos(TyresPhotos.filter((element) => element.name !== id.name));
+    setDentsPhotos(DentsPhotos.filter((element) => element.name !== id.name));
+  };
+
+   
+const uploadAuctionImage= async (data)=>{
+  // thumbnail image
+  const formData = new FormData();
+    formData.append('file', data);
+  const response = await vehicleApi.uploadAuctionImage(formData);
+  if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+
+    setAllcarImage([...allCarImage, response.data.data]);
+    setThumbImage([...thumbImage, response.data.data]);
+    
+  }
+}
+
+const uploadAuctionImage2= async (data)=>{
+  // exterior images
+  const formData = new FormData();
+    formData.append('file', data);
+  const response = await vehicleApi.uploadAuctionImage2(formData);
+  if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+    // console.log(response);
+    setExteriorImages([...exteriorImages, response.data.data]);
+    setAllcarImage([...allCarImage, response.data.data]);
+    // console.log(response.data.data);
+  }
+}
+
+const uploadAuctionImage3= async (data)=>{
+  // interior images
+  const formData = new FormData();
+    formData.append('file', data);
+  const response = await vehicleApi.uploadAuctionImage3(formData);
+  if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+
+    setInteriorImages([...interiorImages, response.data.data]);
+    setAllcarImage([...allCarImage, response.data.data]);
+
+  }
+}
+
+const uploadAuctionImage4= async (data)=>{
+  // engine images
+  const formData = new FormData();
+    formData.append('file', data);
+  const response = await vehicleApi.uploadAuctionImage4(formData);
+  if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+    setEngineImages([...engineImages, response.data.data]);
+    setAllcarImage([...allCarImage, response.data.data]);
+  }
+}
+
+const uploadAuctionImage5= async (data)=>{
+  // tyre images
+  const formData = new FormData();
+    formData.append('file', data);
+  const response = await vehicleApi.uploadAuctionImage5(formData);
+  if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+    // console.log(response);
+    setTyreImages([...tyreImages, response.data.data]);
+    setAllcarImage([...allCarImage, response.data.data]);
+    // console.log(response.data.data);
+  }
+}
+
+const uploadAuctionImage6= async (data)=>{
+  // dent images
+  const formData = new FormData();
+    formData.append('file', data);
+  const response = await vehicleApi.uploadAuctionImage6(formData);
+  if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+    // console.log(response);
+    setDentImages([...dentImages, response.data.data]);
+    setAllcarImage([...allCarImage, response.data.data]);
+    // console.log(response.data.data);
+  }
+}
+const uploadAuctionImage7= async (data)=>{
+  // safety images
+  const formData = new FormData();
+    formData.append('file', data);
+  const response = await vehicleApi.uploadAuctionImage7(formData);
+  if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+    setSafetyImages([...safetyImages, response.data.data]);
+  }
+}
+
+const uploadAuctionImage8= async (data)=>{
+  // safety images
+  const formData = new FormData();
+    formData.append('file', data);
+  const response = await vehicleApi.uploadAuctionImage8(formData);
+  if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+    setComfortImages([...comfortImages, response.data.data]);
+  }
+}
+
+
+
+
+
+const uploadAuctionVideo1= async (data)=>{
+  const formData = new FormData();
+    formData.append('file', data);
+  const response = await vehicleApi.uploadAuctionVideo1(formData);
+  setLoader(false);
+  if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+    // console.log(response);
+    setEngineVideo(response.data.data.path);
+    setAllcarVideo([...allCarVideo, response.data.data]);
+    
+    // console.log(response.data.data);
+  }
+}
+
+const uploadAuctionVideo2= async (data)=>{
+  const formData = new FormData();
+    formData.append('file', data);
+  const response = await vehicleApi.uploadAuctionVideo2(formData);
+  setLoader2(false);
+  if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+    // console.log(response);
+    setSilencerVideo(response.data.data.path);
+    setAllcarVideo([...allCarVideo, response.data.data]);
+    
+    // console.log(response.data.data);
+  }
+}
+
+const handleRemoveVideo = async ()=>{
+  setEngineVideo(null);
+  setAllcarVideo(prevArray => prevArray.filter(item => item.path !== engineVideo));
+}
+const handleRemoveVideo2 = async ()=>{
+  setSilencerVideo(null);
+  setAllcarVideo(prevArray => prevArray.filter(item => item.path !== silencerVideo));
+}
 
   const handleRegistrationDate = (newDate) => {
     setRegistrationDate(newDate);
@@ -739,10 +1288,6 @@ function Create() {
   }
 
 
-  
-
-  
-
 
   const handleRemovercAvailabilityImages =async (ImageName)=>{
     setRcAvailabilityImages(prevArray => prevArray.filter(item => item !== ImageName));
@@ -765,30 +1310,97 @@ function Create() {
   const handleRemoveRtoNocImages =async (ImageName)=>{
     setRtoNocImages(prevArray => prevArray.filter(item => item !== ImageName));
   }
+  const handleRemoveExteriorImage =async (ImageName)=>{
+    setExteriorImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
+  }
+  const handleRemoveTyreImage =async (ImageName)=>{
+    setTyreImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
+  }
+  const handleRemoveDentImage =async (ImageName)=>{
+    setDentImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
+  }
+  const handleRemoveThumbnailImage =async (ImageName)=>{
+    setThumbImage(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
+  }
+  const handleRemoveEngineImage =async (ImageName)=>{
+    setEngineImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
+  }
+  const handleRemoveInteriorImage =async (ImageName)=>{
+    setInteriorImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
+  }
+  const handleRemoveSafetyImage =async (ImageName)=>{
+    setSafetyImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+  }
+  const handleRemoveComfortImage =async (ImageName)=>{
+    setComfortImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+  }
   
   
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault(); 
 
-
-    // const formData={allCarVideo,auctionStartTime,auctionEndTime,thumbImage,allCarImage,brand,model,variant,regYear,bodyType,fuelType,transmission,ownerType,color,rto,city,kmsDriven,carPrice,oneClickBuyPrice,description,seat,mileage,engine,maxPower,maxTorque,noc,mfgYear,inspectionReport,insuranceValidity,roadTaxValidity,inspectionScore,comforts,safety,interior,exterior,entertainment};
-
-    
-    const response = await vehicleApi.addAuctionVehicle(formData);
-    // console.log(response);
-    if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
-    //   // console.log("ok");
-      // setPopupopen(true);
-      confirm("Car added successfully");
-      router.push("/dashboard/auctionvehicle");
-
+    if(thumbImage.length==0)
+    {
+        alert("Thumbnail Photo is required!")
     }
+    else if(thumbImage.length>1)
+    {
+        alert("Only One Thumbnail Photo will accept!")
+    }
+    else
+    {
+    
+
+    const formData={inspector,custContactNo,city,regType,regNo,rcAvailability,rcCondition,regDate,fittnessUpto,tobeScraped,regState,rto,ownerSerialNo,brand,
+      model,variant,engineNo,chassisNo,regOwnerName,mfgMonth,mfgYear,fuelType,cc,hypoDetails,seat,missmatchRC,roadTax,roadTaxValidUpto,
+      insurance,insuranceValidity,noClaimBonus,missmatchInsurance,duplicateKey,rtoNoc,rtoNocIssueDate,engine,battery,coolant,engineOilDipstick,
+      engineOil,engineMount,engineBlowbyStatus,exhaustSmoke,radiator,clutch,gear,steering,brake,suspension,fuelLevel,electrical,rearWiper,
+      rearDefogger,powerWindow,rhsFrontPW,lhsFrontPW,lhsRearPW,rhsRearPW,leatherSeats,fabricSeats,bonnet,upperCrossMember,lowerCrossMember,
+      radiatorSupport,headlightSupport,lhsApron,rhsApron,frontWindshield,firewall,cowlTop,roof,frontBumper,lhsHeadlamp,rhsHeadlamp,
+      lhsFoglamp,rhsFoglamp,lhsFender,lhsFrontAlloy,lhsFrontTyre,lhsOrvm,lhsAPillar,lhsFrontDoor,lhsBPillar,lhsRearDoor,lhsCPillar,lhsRunningBoard,
+      lhsRearAlloy,lhsRearTyre,lhsQuarterPanel,rearBumper,lhsTailLamp,rhsTailLamp,rearWindshield,bootDoor,spareTyre,bootFloor,rhsQuarterPanel,
+      rhsRearAlloy,rhsRearTyre,rhsCPillar,rhsRearDoor,rhsBPillar,rhsFrontDoor,rhsAPillar,rhsRunningBoard,rhsFrontAlloy,rhsFrontTyre,rhsOrvm,
+      rhsFender,noOfAirbags,abs,driverSideAB,codriverSideAB,lhsAPillarAB,lhsBPillarAB,lhsCPillarAB,rhsAPillarAB,rhsBPillarAB,rhsCPillarAB,
+      reverseParkingCamera,manualAC,climateAC,musicSystem,stereo,inbuiltSpeaker,externalSpeaker,stearingMountedAudio,sunroof,
+      bodyType,transmission,ownerType,color,kmsDriven,description,mileage,maxPower,maxTorque,noc,inspectionReport,inspectionScore,comforts,safety,
+      interior,exterior,entertainment,engineVideo,silencerVideo,allCarImage,thumbImage,allCarVideo,regYear,rcAvailabilityImages,chassisImages,hypoImages,roadTaxValidityImages,
+      insuranceImages,duplicateKeyImages,rtoNocImages,commentsOnBasic,commentsOnExterior,exteriorImages,dentImages,tyreImages,engineImages,interiorImages,safetyImages,comfortImages};
+
+      console.log(formData);
 
     
+    // const response = await vehicleApi.addInspectionVehicle(formData);
+    // // console.log(response);
+    // if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+    //   confirm("Car added successfully");
+    //   // router.push("/dashboard/inspection");
+    // }
+
+  }
   };
     
-
+  const exteriorData = [
+    "Okay",
+    "Repaired",
+    "Replaced",
+    "Dented",
+    "Damaged",
+    "Repainted",
+    "Rusted",
+    "Faded",
+    "Scratched",
+    "Not Opening",
+    "Not Working",
+    "Missing",
+    "Not Applicable",
+  ];
  
   return (
     <>
@@ -808,26 +1420,7 @@ function Create() {
                   </Box>
                 <Grid container spacing={4}>
                 
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Select Vehicle*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          value={vehicle}
-                          label="Select Vehicle*"
-                          onChange={handleInput}
-                          name='vehicle'
-                          required
-                        >
-                          {carList.length > 0 && carList.map((data,key) => (
-                            <MenuItem key={key} value={data.id}>{data.carDetails.brand} {data.carDetails.model} {data.carDetails.variant} {data.carDetails.registrationYear} {data.carDetails.color}</MenuItem>
-                          ))}
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
+                  
                   <Grid item md={3}>
                     <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                       <FormControl fullWidth>
@@ -894,7 +1487,7 @@ function Create() {
                   </Grid>
                   <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <TextField id="outlined-basic" label="Registration No" onChange={handleInput} name='regNo' value={regNo} type="text" variant="outlined" required fullWidth/>
+                      <TextField id="outlined-basic" label="Registration No" onChange={handleInput} name='regNo' value={regNo} type="text" variant="outlined" fullWidth/>
                       </Box>
                   </Grid> 
                   <Grid item md={3}>
@@ -944,7 +1537,7 @@ function Create() {
                         <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_date} ${"tm_dashboard_rightbar_form_date_gb"} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                           <LocalizationProvider dateAdapter={AdapterDayjs} >
                             <DemoContainer components={['DatePicker']}>
-                              <DatePicker label="Registration Date" name='regDate' onChange={handleRegistrationDate} sx={{width:'100%'}} required/>
+                              <DatePicker label="Registration Date*" name='regDate' onChange={handleRegistrationDate} sx={{width:'100%'}} required/>
                             </DemoContainer>
                           </LocalizationProvider>
                         </Box>
@@ -953,7 +1546,7 @@ function Create() {
                         <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_date} ${"tm_dashboard_rightbar_form_date_gb"} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                           <LocalizationProvider dateAdapter={AdapterDayjs} >
                             <DemoContainer components={['DatePicker']}>
-                              <DatePicker label="Fitness Upto" name='fitnessUpto' onChange={handleFitnessuptoDate} sx={{width:'100%'}} required/>
+                              <DatePicker label="Fitness Upto" name='fittnessUpto' onChange={handleFitnessuptoDate} sx={{width:'100%'}}/>
                             </DemoContainer>
                           </LocalizationProvider>
                         </Box>
@@ -961,14 +1554,14 @@ function Create() {
                   <Grid item md={3}>
                     <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                       <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">To be Scraped*</InputLabel>
+                        <InputLabel id="demo-simple-select-label">To be Scraped</InputLabel>
                         <Select
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
-                          label="To be Scraped*"
+                          value={tobeScraped}
+                          label="To be Scraped"
                           onChange={handleInput}
                           name='tobeScraped'
-                          required
                         >
                             <MenuItem key='1' value="Yes">Yes</MenuItem>
                             <MenuItem key='2' value="No">No</MenuItem>
@@ -986,6 +1579,7 @@ function Create() {
                           label="Registration State*"
                           onChange={handleInput}
                           name='regState'
+                          value={regState}
                           required
                         >
                             <MenuItem key='1' value="West Bengal">West Bengal</MenuItem>
@@ -1003,6 +1597,7 @@ function Create() {
                           label="Select RTO*"
                           onChange={handleInput}
                           name='rto'
+                          value={rto}
                           required
                         >
                           {rtoList.length > 0 && rtoList.map((data,key) => (
@@ -1014,7 +1609,7 @@ function Create() {
                   </Grid>
                   <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <TextField id="outlined-basic" label="Owner Serial No" onChange={handleInput} name='ownerSerialNo' type="text" variant="outlined" required fullWidth/>
+                      <TextField id="outlined-basic" label="Owner Serial No" onChange={handleInput} name='ownerSerialNo' value={ownerSerialNo} type="text" variant="outlined" fullWidth/>
                       </Box>
                   </Grid>
                   <Grid item md={3}>
@@ -1081,17 +1676,17 @@ function Create() {
                   </Grid>
                   <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <TextField id="outlined-basic" label="Engine No" onChange={handleInput} name='engineNo' type="text" variant="outlined" required fullWidth/>
+                      <TextField id="outlined-basic" label="Engine No" onChange={handleInput} name='engineNo' value={engineNo} type="text" variant="outlined" fullWidth/>
                       </Box>
                   </Grid>
                   <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <TextField id="outlined-basic" label="Chassis No" onChange={handleInput} name='chassisNo' type="text" variant="outlined" required fullWidth/>
+                      <TextField id="outlined-basic" label="Chassis No" onChange={handleInput} name='chassisNo' value={chassisNo} type="text" variant="outlined" fullWidth/>
                       </Box>
                   </Grid>
                   <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <TextField id="outlined-basic" label="Reg Owner Name" onChange={handleInput} name='regOwnerName' type="text" variant="outlined" required fullWidth/>
+                      <TextField id="outlined-basic" label="Reg Owner Name" onChange={handleInput} name='regOwnerName' value={regOwnerName} type="text" variant="outlined" required fullWidth/>
                       </Box>
                   </Grid>
                   <Grid item md={3}>
@@ -1104,6 +1699,7 @@ function Create() {
                           label="MFG Month *"
                           onChange={handleInput}
                           name='mfgMonth'
+                          value={mfgMonth}
                           required
                         >
                               <MenuItem key='1' value="Jan">January</MenuItem>
@@ -1133,6 +1729,7 @@ function Create() {
                           label="MFG Year *"
                           onChange={handleInput}
                           name='mfgYear'
+                          value={mfgYear}
                           required
                         >
                           {years.map((year) => (
@@ -1152,6 +1749,7 @@ function Create() {
                           label="Select Fuel Type *"
                           onChange={handleInput}
                           name='fuelType'
+                          value={fuelType}
                           required
                         >
                           {fuelTypelist.length > 0 && fuelTypelist.map((data,key) => (
@@ -1164,20 +1762,21 @@ function Create() {
                   </Grid>
                   <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <TextField id="outlined-basic" label="Engine (CC)" onChange={handleInput} name='cc' type="number" variant="outlined" required fullWidth/>
+                      <TextField id="outlined-basic" label="Engine (CC)" onChange={handleInput} name='cc' value={cc} type="number" variant="outlined" required fullWidth/>
                       </Box>
                   </Grid>
                   <Grid item md={3}>
                     <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                       <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Hypothecation Details*</InputLabel>
+                        <InputLabel id="demo-simple-select-label">Hypothecation Details</InputLabel>
                         <Select
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
-                          label="Select Hypothecation *"
+                          label="Select Hypothecation"
                           onChange={handleInput}
                           name='hypoDetails'
-                          required
+                          value={hypoDetails}
+                          
                         >
                             <MenuItem key='1' value="Not Hypothecated">Not Hypothecated</MenuItem>
                             <MenuItem key='2' value="Loan Active">Loan Active</MenuItem>
@@ -1211,14 +1810,15 @@ function Create() {
                   <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                         <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label">Missmatch in RC *</InputLabel>
+                          <InputLabel id="demo-simple-select-label">Missmatch in RC</InputLabel>
                           <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            label="Missmatch in RC*"
+                            label="Missmatch in RC"
                             onChange={handleInput}
                             name='missmatchRC'
-                            required
+                            value={missmatchRC}
+                            
                           >
                             <MenuItem key='1' value="No Missmatch">No Missmatch</MenuItem>
                             <MenuItem key='2' value="Make">Make</MenuItem>
@@ -1238,14 +1838,15 @@ function Create() {
                     <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                         <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label">Road Tax Validity *</InputLabel>
+                          <InputLabel id="demo-simple-select-label">Road Tax</InputLabel>
                           <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            label="Missmatch in RC*"
+                            label="Road Tax"
                             onChange={handleInput}
-                            name='roadTaxValidity'
-                            required
+                            name='roadTax'
+                            value={roadTax}
+                            
                           >
                             <MenuItem key='1' value="OTT">OTT</MenuItem>
                             <MenuItem key='2' value="LTT">LTT</MenuItem>
@@ -1258,7 +1859,7 @@ function Create() {
                         <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_date} ${"tm_dashboard_rightbar_form_date_gb"} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                           <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DemoContainer components={['DatePicker']}>
-                              <DatePicker label="Road Tax Valid Upto" name="roadTaxValidUpto" onChange={handleRoadTaxValid}  sx={{width:'100%'}} required/>
+                              <DatePicker label="Road Tax Valid Upto" name="roadTaxValidUpto" onChange={handleRoadTaxValid}  sx={{width:'100%'}}/>
                             </DemoContainer>
                           </LocalizationProvider>
                         </Box>
@@ -1266,14 +1867,15 @@ function Create() {
                     <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                         <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label">Insurance *</InputLabel>
+                          <InputLabel id="demo-simple-select-label">Insurance</InputLabel>
                           <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            label="Insurance*"
+                            label="Insurance"
                             onChange={handleInput}
                             name='insurance'
-                            required
+                            value={insurance}
+                            
                           >
                             <MenuItem key='1' value="Expired">Expired</MenuItem>
                             <MenuItem key='2' value="Third Party">Third Party</MenuItem>
@@ -1287,7 +1889,7 @@ function Create() {
                         <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_date} ${"tm_dashboard_rightbar_form_date_gb"} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                           <LocalizationProvider dateAdapter={AdapterDayjs} >
                             <DemoContainer components={['DatePicker']}>
-                              <DatePicker label="Insurance Validity"  name="insuranceValidity" onChange={handleInsuranceValidity} sx={{width:'100%'}} required/>
+                              <DatePicker label="Insurance Validity"  name="insuranceValidity" onChange={handleInsuranceValidity} sx={{width:'100%'}}/>
                             </DemoContainer>
                           </LocalizationProvider>
                         </Box>
@@ -1295,14 +1897,15 @@ function Create() {
                     <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                         <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label">No Claim Bonus *</InputLabel>
+                          <InputLabel id="demo-simple-select-label">No Claim Bonus</InputLabel>
                           <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            label="No Claim Bonus*"
+                            label="No Claim Bonus"
                             onChange={handleInput}
                             name='noClaimBonus'
-                            required
+                            value={noClaimBonus}
+                            
                           >
                             <MenuItem key='1' value="Not Applicable / Not Available">Not Applicable / Not Available</MenuItem>
                             <MenuItem key='2' value="10%">10%</MenuItem>
@@ -1323,14 +1926,15 @@ function Create() {
                     <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                         <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label">Mismatch In Insurance *</InputLabel>
+                          <InputLabel id="demo-simple-select-label">Mismatch In Insurance</InputLabel>
                           <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            label="Missmatch In Insurance*"
+                            label="Missmatch In Insurance"
                             onChange={handleInput}
                             name='missmatchInsurance'
-                            required
+                            value={missmatchInsurance}
+                          
                           >
                             <MenuItem key='1' value="No Missmatch">No Missmatch</MenuItem>
                             <MenuItem key='2' value="Make / Model / Variant">Make / Model / Variant</MenuItem>
@@ -1346,14 +1950,15 @@ function Create() {
                     <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                         <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label">Duplicate Key *</InputLabel>
+                          <InputLabel id="demo-simple-select-label">Duplicate Key</InputLabel>
                           <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            label="Duplicate Key*"
+                            label="Duplicate Key"
                             onChange={handleInput}
                             name='duplicateKey'
-                            required
+                            value={duplicateKey}
+                            
                           >
                             <MenuItem key='1' value="Yes">Yes</MenuItem>
                             <MenuItem key='2' value="No">No</MenuItem>
@@ -1366,14 +1971,14 @@ function Create() {
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                       
                       <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label">RTO Noc*</InputLabel>
+                          <InputLabel id="demo-simple-select-label">RTO Noc</InputLabel>
                           <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            label="RTO Noc *"
+                            label="RTO Noc"
                             onChange={handleInput}
                             name='rtoNoc'
-                            required
+                            value={rtoNoc}
                           >
                             
                             <MenuItem value='Not Applicable'>Not Applicable</MenuItem>
@@ -1383,56 +1988,2537 @@ function Create() {
                           </Select>
                         </FormControl>
                       </Box>
-                  </Grid>
-                  <Grid item md={3}>
+                     </Grid>
+                    <Grid item md={3}>
                         <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_date} ${"tm_dashboard_rightbar_form_date_gb"} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                           <LocalizationProvider dateAdapter={AdapterDayjs} >
                             <DemoContainer components={['DatePicker']}>
-                              <DatePicker label="RTO Noc Issue Date" name="rtoNocIssueDate" onChange={handleRtoNocIssueDate}  sx={{width:'100%'}} required/>
+                              <DatePicker label="RTO Noc Issue Date" name="rtoNocIssueDate" onChange={handleRtoNocIssueDate}  sx={{width:'100%'}}/>
                             </DemoContainer>
                           </LocalizationProvider>
                         </Box>
                     </Grid>
+                    <Grid item md={12}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                        
+                          <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                            <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                              <Typography variant='h4'>Comments On Basic</Typography>
+                            </Box>
+                          <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
+                            <Grid container spacing={0}>
+                                  <Grid item md={6}>
+                                    <FormControlLabel control={<Checkbox value="CNG/LPG Plate not Available" name='commentsOnBasic' onChange={handleInput} />} label="CNG/LPG Plate not Available" />
+                                  </Grid>
+                                  <Grid item md={6}>
+                                    <FormControlLabel control={<Checkbox value="CNG/LPG Removed" name='commentsOnBasic' onChange={handleInput} />} label="CNG/LPG Removed" />
+                                  </Grid>
+                                  <Grid item md={6}>
+                                    <FormControlLabel control={<Checkbox value="Vin Plate Missing" name='commentsOnBasic' onChange={handleInput} />} label="Vin Plate Missing" />
+                                  </Grid>
+                                  <Grid item md={6}>
+                                    <FormControlLabel control={<Checkbox value="CNG/LPG Cylinder test certificate not Available" name='commentsOnBasic' onChange={handleInput} />} label="CNG/LPG Cylinder test certificate not Available" />
+                                  </Grid>
+                                  <Grid item md={6}>
+                                    <FormControlLabel control={<Checkbox value="RC Fitness Expired" name='commentsOnBasic' onChange={handleInput} />} label="RC Fitness Expired" />
+                                  </Grid>
+                                  <Grid item md={6}>
+                                    <FormControlLabel control={<Checkbox value="Car Converted from Commercial to private" name='commentsOnBasic' onChange={handleInput} />} label="Car Converted from Commercial to private" />
+                                  </Grid>
+                                  <Grid item md={6}>
+                                    <FormControlLabel control={<Checkbox value="Migrated from Other State" name='commentsOnBasic' onChange={handleInput} />} label="Migrated from Other State" />
+                                  </Grid>
+                                  <Grid item md={6}>
+                                    <FormControlLabel control={<Checkbox value="Remote Key Damaged / Not Available" name='commentsOnBasic' onChange={handleInput} />} label="Remote Key Damaged / Not Available" />
+                                  </Grid>
+                                  <Grid item md={6}>
+                                    <FormControlLabel control={<Checkbox value="Chassis Number Rusted" name='commentsOnBasic' onChange={handleInput} />} label="Chassis Number Rusted" />
+                                  </Grid>
+                                  <Grid item md={6}>
+                                    <FormControlLabel control={<Checkbox value="Chassis Number Not Traceable" name='commentsOnBasic' onChange={handleInput} />} label="Chassis Number Not Traceable" />
+                                  </Grid>
+                                  
+                            </Grid>
+                          </Box>
+                      </Box>
+                    </Grid>
+                </Grid>
+                <Box>
+                    <Typography variant='h6'>Auction Details</Typography>
+                  </Box>
+                <Grid container spacing={4}>
+                  <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                        <FormControl fullWidth>
+                          <InputLabel id="demo-simple-select-label">Registration Year *</InputLabel>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            label="Registration Year *"
+                            onChange={handleInput}
+                            name='regYear'
+                            value={regYear}
+                            required
+                          >
+                            {years.map((year) => (
+                                <MenuItem key={year} value={year}>{year}</MenuItem>
+                            ))}
+                          </Select>
+                        </FormControl>
+                      </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Select Body Type *</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={bodyType}
+                          label="Select Body Type *"
+                          onChange={handleInput}
+                          name='bodyType'
+                          required
+                        >
+                          {bodyTypelist.length > 0 && bodyTypelist.map((data,key) => (
+                            <MenuItem key={key} value={data.name}>{data.name}</MenuItem>
+                          ))}
+                          
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Select Transmission *</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={transmission}
+                          label="Select Body Type *"
+                          onChange={handleInput}
+                          name='transmission'
+                          required
+                        >
+                            <MenuItem value="Manual">Manual</MenuItem>
+                            <MenuItem value="Automatic">Automatic</MenuItem>
+                          
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Select Owner Type*</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={ownerType}
+                          label="Select Owner Type *"
+                          onChange={handleInput}
+                          name='ownerType'
+                          required
+                        >
+                          {ownerTypelist.length > 0 && ownerTypelist.map((data,key) => (
+                            <MenuItem key={key} value={data.type}>{data.type}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Select Color*</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={color}
+                          label="Select Color *"
+                          onChange={handleInput}
+                          name='color'
+                          required
+                        >
+                          {colorList.length > 0 && colorList.map((data,key) => (
+                            <MenuItem key={key} value={data.name}>{data.name}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                    <TextField id="outlined-basic" label="Kilometers Driven" onChange={handleInput} name='kmsDriven' type="number" value={kmsDriven} variant="outlined" required fullWidth/>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <TextField id="outlined-basic" label="Mileage in kmpl" onChange={handleInput} name='mileage' type="number" value={mileage} variant="outlined" fullWidth/>
+                      </Box>
+                  </Grid>    
+                  <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <TextField id="outlined-basic" label="Max Power" onChange={handleInput} name='maxPower' type="number" value={maxPower} variant="outlined" fullWidth/>
+                      </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <TextField id="outlined-basic" label="Max Torque" onChange={handleInput} name='maxTorque' type="number" value={maxTorque} variant="outlined" fullWidth/>
+                      </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      
+                      <FormControl fullWidth>
+                          <InputLabel id="demo-simple-select-label">Noc*</InputLabel>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={noc}
+                            label="Noc *"
+                            onChange={handleInput}
+                            name='noc'
+                            required
+                          >
+                            
+                            <MenuItem value='true'>True</MenuItem>
+                            <MenuItem value='false'>False</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                          <InputLabel id="demo-simple-select-label">Inspection Score</InputLabel>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={inspectionScore}
+                            label="Inspection Score"
+                            onChange={handleInput}
+                            name='inspectionScore'
+                          >
+                            
+                            <MenuItem value='1'>1</MenuItem>
+                            <MenuItem value='2'>2</MenuItem>
+                            <MenuItem value='3'>3</MenuItem>
+                            <MenuItem value='4'>4</MenuItem>
+                            <MenuItem value='5'>5</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </Box>
+                      
+                  </Grid>
+                  <Grid item md={12}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <TextField id="outlined-basic" label="Inspection Report" onChange={handleInput} name='inspectionReport' value={inspectionReport} variant="outlined" fullWidth/>
+                      </Box>
+                  </Grid>
+                  <Grid item md={12}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                    <TextField id="outlined-basic" label="Car Description" onChange={handleInput} name='description' value={description} variant="outlined" fullWidth/>
+                    </Box>
+                  </Grid>
+                  <Grid item md={12}>
+                  <Box sx={{margin:'50px 0 0'}}>
+                    <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                      <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                        <Typography variant='h4'>Comfort</Typography>
+                      </Box>
+                      <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}>
+
+                        <Grid container spacing={0}>
+                          {comfortList.length > 0 &&
+                            comfortList.map((element, index) => {
+                              return (
+                                <Grid item md={6} key={index}>
+                                  <FormControlLabel
+                                    control={
+                                      <Checkbox
+                                        value={element}
+                                        key={index}
+                                        name='comforts'
+                                        onChange={handleInput}
+                                      />
+                                    }
+                                    label={element}
+                                  />
+                                </Grid>
+                              );
+                            })}
+                        </Grid>
+
+                      </Box>                    
+                    </Box>
+                    <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                      <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                        <Typography variant='h4'>Safety</Typography>
+                      </Box>
+                      <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}>
+                            <Grid container spacing={0}>
+                                      {safetyList.length > 0 &&
+                                        safetyList.map((element, index) => {
+                                          return (
+                                            <Grid item md={6} key={index}>
+                                              <FormControlLabel
+                                                control={
+                                                  <Checkbox
+                                                    value={element}
+                                                    name='safety'
+                                                    key={index}
+                                                    onChange={handleInput}
+                                                  />
+                                                }
+                                                label={element}
+                                              />
+                                            </Grid>
+                                          );
+                                        })}
+                            </Grid>                     
+                      </Box>                    
+                    </Box>    
+                    <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                      <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                        <Typography variant='h4'>Interior</Typography>
+                      </Box>
+                      <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}>
+                            <Grid container spacing={0}>
+                                      {interiorList.length > 0 &&
+                                        interiorList.map((element, index) => {
+                                          return (
+                                            <Grid item md={6} key={index}>
+                                              <FormControlLabel
+                                                control={
+                                                  <Checkbox
+                                                    key={index}
+                                                    name='interior'
+                                                    value={element}
+                                                    onChange={handleInput}
+                                                  />
+                                                }
+                                                label={element}
+                                              />
+                                            </Grid>
+                                          );
+                                        })}
+                            </Grid>                    
+                      </Box>                    
+                    </Box>
+                    <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                      <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                        <Typography variant='h4'>Exterior</Typography>
+                      </Box>
+                      <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}>
+                              <Grid container spacing={0}>
+                                      {exteriorList.length > 0 &&
+                                        exteriorList.map((element, index) => {
+                                          return (
+                                            <Grid item md={6} key={index}>
+                                              <FormControlLabel
+                                                control={
+                                                  <Checkbox
+                                                    key={index}
+                                                    value={element}
+                                                    name='exterior'
+                                                    onChange={handleInput}
+                                                  />
+                                                }
+                                                label={element}
+                                              />
+                                            </Grid>
+                                          );
+                                        })}
+                                </Grid>                    
+                      </Box>                    
+                    </Box>
+                    <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                      <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                        <Typography variant='h4'>Entertainment and Communication</Typography>
+                      </Box>
+                      <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}>
+                                <Grid container spacing={0}>
+                                      {entertainmentList.length > 0 &&
+                                        entertainmentList.map((element, index) => {
+                                          return (
+                                            <Grid item md={6} key={index}>
+                                              <FormControlLabel
+                                                control={
+                                                  <Checkbox
+                                                    key={index}
+                                                    value={element}
+                                                    name='entertainment'
+                                                    onChange={handleInput}
+                                                  />
+                                                }
+                                                label={element}
+                                              />
+                                            </Grid>
+                                          );
+                                        })}
+                                    </Grid>                     
+                      </Box>                    
+                    </Box>
+                  </Box>
+                  </Grid>
+                </Grid>
+                
+
+                <Box>
+                    <Typography variant='h6'>Engine & Transmission Details</Typography>
+                </Box>
+                <Grid container spacing={4}>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Engine</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Engine"
+                          onChange={handleInput}
+                          name='engine'
+                          value={engine}
+                        >
+                            <MenuItem key='1' value="Okay">Okay</MenuItem>
+                            <MenuItem key='2' value="Repaired">Repaired</MenuItem>
+                            <MenuItem key='3' value="MIL Light Glowing">MIL Light Glowing</MenuItem>
+                            <MenuItem key='4' value="RPM Fluctuating">RPM Fluctuating</MenuItem>
+                            <MenuItem key='5' value="Over Heating">Over Heating</MenuItem>
+                            <MenuItem key='6' value="Misfiring">Misfiring</MenuItem>
+                            <MenuItem key='7' value="Fuel Leakage from injector">Fuel Leakage from injector</MenuItem>
+                            <MenuItem key='8' value="Knoking">Knoking</MenuItem>
+                            <MenuItem key='9' value="Long Cranking Due to Weak Compression">Long Cranking Due to Weak Compression</MenuItem>
+                            <MenuItem key='10' value="Replaced">Replaced</MenuItem>
+                            <MenuItem key='11' value="Air filter Box Damaged">Air filter Box Damaged</MenuItem>
+                            <MenuItem key='12' value="Seized">Seized</MenuItem>
+                            <MenuItem key='13' value="Sump Damaged">Sump Damaged</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Battery</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Battery"
+                          onChange={handleInput}
+                          name='battery'
+                          value={battery}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Changed">Changed</MenuItem>
+                            <MenuItem value="Weak">Weak</MenuItem>
+                            <MenuItem value="Dead">Dead</MenuItem>
+                            <MenuItem value="Jumpstart">Jumpstart</MenuItem>
+                            <MenuItem value="Acid Leakage">Acid Leakage</MenuItem>
+                            <MenuItem value="Discharge Light Glowing">Discharge Light Glowing</MenuItem>
+                            <MenuItem value="Damaged">Damaged</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Coolant</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Coolant"
+                          onChange={handleInput}
+                          name='coolant'
+                          value={coolant}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Leaking">Leaking</MenuItem>
+                            <MenuItem value="Dirty">Dirty</MenuItem>
+                            <MenuItem value="Level Low">Level Low</MenuItem>
+
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Engine Oil Dipstick</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Engine Oil Dipstick"
+                          onChange={handleInput}
+                          name='engineOilDipstick'
+                          value={engineOilDipstick}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Broken">Broken</MenuItem>
+                            <MenuItem value="Not Available">Not Available</MenuItem>
+
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Engine Oil</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Engine Oil"
+                          onChange={handleInput}
+                          name='engineOil'
+                          value={engineOil}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Leaking">Leaking</MenuItem>
+                            <MenuItem value="Dirty">Dirty</MenuItem>
+                            <MenuItem value="Leakage From Manifold">Leakage From Manifold</MenuItem>
+                            <MenuItem value="Leakage from Sump Chamber">Leakage from Sump Chamber</MenuItem>
+                            <MenuItem value="Low Pressure Warning Light Glowing">Low Pressure Warning Light Glowing</MenuItem>
+                            <MenuItem value="Leakage fom Turbo Charger">Leakage fom Turbo Charger</MenuItem>
+                            <MenuItem value="Leakage From Side Cover">Leakage From Side Cover</MenuItem>
+                            <MenuItem value="Leakage from ingine Head">Leakage from ingine Head</MenuItem>
+                            <MenuItem value="Level Low">Level Low</MenuItem>
+
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Engine Mount</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Engine Mount"
+                          onChange={handleInput}
+                          name='engineMount'
+                          value={engineMount}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Broken">Broken</MenuItem>
+                            <MenuItem value="Loose">Loose</MenuItem>
+                            <MenuItem value="Excess Vibration">Excess Vibration</MenuItem>
+                            <MenuItem value="Rusted">Rusted</MenuItem>
+
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Engine Blow By Status</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Engine Blow By Status"
+                          onChange={handleInput}
+                          name='engineBlowbyStatus'
+                          value={engineBlowbyStatus}
+                        >
+                            <MenuItem value="No Blow By">No Blow By</MenuItem>
+                            <MenuItem value="Permisable Blow By">Permisable Blow By</MenuItem>
+                            <MenuItem value="Oil Spilage on Idle">Oil Spilage on Idle</MenuItem>
+                            <MenuItem value="Permisable Blow By with Oil Spilage">Permisable Blow By with Oil Spilage</MenuItem>
+                            <MenuItem value="Back Compression">Back Compression</MenuItem>
+
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Exhaust Smoke</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Exhaust Smoke"
+                          onChange={handleInput}
+                          name='exhaustSmoke'
+                          value={exhaustSmoke}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Black">Black</MenuItem>
+                            <MenuItem value="Blue">Blue</MenuItem>
+                            <MenuItem value="White">White</MenuItem>
+
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Radiator</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Radiator"
+                          onChange={handleInput}
+                          name='radiator'
+                          value={radiator}
+                        >
+                            <MenuItem value="Fan Motor Noise">Fan Motor Noise</MenuItem>
+                            <MenuItem value="Fan Not Working">Fan Not Working</MenuItem>
+                            <MenuItem value="Radiator Repaired /Welded">Radiator Repaired /Welded</MenuItem>
+                            <MenuItem value="Radiator Damaged">Radiator Damaged</MenuItem>
+                            <MenuItem value="Coolant Mixed with Engine Oil">Coolant Mixed with Engine Oil</MenuItem>
+
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Clutch</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Clutch"
+                          onChange={handleInput}
+                          name='clutch'
+                          value={clutch}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Hard">Hard</MenuItem>
+                            <MenuItem value="Spongy">Spongy</MenuItem>
+                            <MenuItem value="Burning">Burning</MenuItem>
+                            <MenuItem value="Bearing Noise">Bearing Noise</MenuItem>
+                            <MenuItem value="Slip / Low Pick up">Slip / Low Pick up</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Gear</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Gear"
+                          onChange={handleInput}
+                          name='gear'
+                          value={gear}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Manual Transmission">Manual Transmission</MenuItem>
+                            <MenuItem value="Automatic Transmission">Automatic Transmission</MenuItem>
+                            <MenuItem value="Hard">Hard</MenuItem>
+                            <MenuItem value="Not Engaging">Not Engaging</MenuItem>
+                            <MenuItem value="Abnormal Noise">Abnormal Noise</MenuItem>
+                            <MenuItem value="Auto Transmission Not Working">Auto Transmission Not Working</MenuItem>
+                            <MenuItem value="Gear Freeplay">Gear Freeplay</MenuItem>
+                            <MenuItem value="Gear Knob Broken / Damaged">Gear Knob Broken / Damaged</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Steering</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Steering"
+                          onChange={handleInput}
+                          name='steering'
+                          value={steering}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Abnormal Noise">Abnormal Noise</MenuItem>
+                            <MenuItem value="Hard">Hard</MenuItem>
+                            <MenuItem value="Pump Noise">Pump Noise</MenuItem>
+                            <MenuItem value="Oil Leakage from Rack">Oil Leakage from Rack</MenuItem>
+                            <MenuItem value="Telescopic Adjustment not Working">Telescopic Adjustment not Working</MenuItem>
+                            <MenuItem value="Wheel Adjustment Not Working">Wheel Adjustment Not Working</MenuItem>
+                            <MenuItem value="Hydraulic Power Steering Not Working">Hydraulic Power Steering Not Working</MenuItem>
+                            <MenuItem value="Electrical Power Steering Not Working">Electrical Power Steering Not Working</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Brake</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Brake"
+                          onChange={handleInput}
+                          name='brake'
+                          value={brake}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Ineffective">Ineffective</MenuItem>
+                            <MenuItem value="Noise">Noise</MenuItem>
+                            <MenuItem value="Master Cylinder Leakage">Master Cylinder Leakage</MenuItem>
+                            <MenuItem value="Wheel Cylinder Leakage">Wheel Cylinder Leakage</MenuItem>
+                            <MenuItem value="Hand / Parking Brake Light Glowing">Hand / Parking Brake Light Glowing</MenuItem>
+                            <MenuItem value="Car With Electronic Parking Brake">Car With Electronic Parking Brake</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Suspension</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Suspension"
+                          onChange={handleInput}
+                          name='suspension'
+                          value={suspension}
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Weak">Weak</MenuItem>
+                            <MenuItem value="Damaged">Damaged</MenuItem>
+                            <MenuItem value="Leakage in suspension">Leakage in suspension</MenuItem>
+                            <MenuItem value="Abnormal Noise">Abnormal Noise</MenuItem>
+                            <MenuItem value="Air Suspension Faulty">Air Suspension Faulty</MenuItem>
+                            <MenuItem value="Suspension Modified">Suspension Modified</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
                   <Grid item md={12}>
                     <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                       
                         <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
                           <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
-                            <Typography variant='h4'>Comments On Basic</Typography>
+                            <Typography variant='h4'>Comments On Engine</Typography>
                           </Box>
                         <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
                           <Grid container spacing={0}>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="CNG/LPG Plate not Available" name='commentsOnBasic' onChange={handleInput} />} label="CNG/LPG Plate not Available" />
+                                  <FormControlLabel control={<Checkbox value="Not Converting to CNG / LPG" name='commentsOnEngine' onChange={handleInput} />} label="Not Converting to CNG / LPG" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="CNG/LPG Removed" name='commentsOnBasic' onChange={handleInput} />} label="CNG/LPG Removed" />
+                                  <FormControlLabel control={<Checkbox value="RPM Not increasing" name='commentsOnEngine' onChange={handleInput} />} label="RPM Not increasing" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Vin Plate Missing" name='commentsOnBasic' onChange={handleInput} />} label="Vin Plate Missing" />
+                                  <FormControlLabel control={<Checkbox value="Car not working on Petrol" name='commentsOnEngine' onChange={handleInput} />} label="Car not working on Petrol" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="CNG/LPG Cylinder test certificate not Available" name='commentsOnBasic' onChange={handleInput} />} label="CNG/LPG Cylinder test certificate not Available" />
+                                  <FormControlLabel control={<Checkbox value="Turbo Charger Noise" name='commentsOnEngine' onChange={handleInput} />} label="Turbo Charger Noise" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="RC Fitness Expired" name='commentsOnBasic' onChange={handleInput} />} label="RC Fitness Expired" />
+                                  <FormControlLabel control={<Checkbox value="Turbo Charger Not Working" name='commentsOnEngine' onChange={handleInput} />} label="Turbo Charger Not Working" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Car Converted from Commercial to private" name='commentsOnBasic' onChange={handleInput} />} label="Car Converted from Commercial to private" />
+                                  <FormControlLabel control={<Checkbox value="Fan Belt Noise" name='commentsOnEngine' onChange={handleInput} />} label="Fan Belt Noise" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Migrated from Other State" name='commentsOnBasic' onChange={handleInput} />} label="Migrated from Other State" />
+                                  <FormControlLabel control={<Checkbox value="Alternator Bearing Noise" name='commentsOnEngine' onChange={handleInput} />} label="Alternator Bearing Noise" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Remote Key Damaged / Not Available" name='commentsOnBasic' onChange={handleInput} />} label="Remote Key Damaged / Not Available" />
+                                  <FormControlLabel control={<Checkbox value="Minor Noise" name='commentsOnEngine' onChange={handleInput} />} label="Minor Noise" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Chassis Number Rusted" name='commentsOnBasic' onChange={handleInput} />} label="Chassis Number Rusted" />
+                                  <FormControlLabel control={<Checkbox value="Major Noise" name='commentsOnEngine' onChange={handleInput} />} label="Major Noise" />
                                 </Grid>
                                 <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Chassis Number Not Traceable" name='commentsOnBasic' onChange={handleInput} />} label="Chassis Number Not Traceable" />
+                                  <FormControlLabel control={<Checkbox value="Critical Noise" name='commentsOnEngine' onChange={handleInput} />} label="Critical Noise" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Oil Coming from Exhaust Tail Pipe" name='commentsOnEngine' onChange={handleInput} />} label="Oil Coming from Exhaust Tail Pipe" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Leakege From Injector" name='commentsOnEngine' onChange={handleInput} />} label="Leakege From Injector" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Car is in Working Condition but Towing Suggested to Avoid Damage to Engine" name='commentsOnEngine' onChange={handleInput} />} label="Car is in Working Condition but Towing Suggested to Avoid Damage to Engine" />
                                 </Grid>
                                 
+                          </Grid>
+                        </Box>
+                    </Box>
+                  </Grid>
+                  <Grid item md={12}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      
+                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                            <Typography variant='h4'>Comments On Transmission</Typography>
+                          </Box>
+                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
+                          <Grid container spacing={0}>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Car is in Working Condition but Towing Suggested to Avoid Damage to Clutch" name='commentsOnTransmission' onChange={handleInput} />} label="Car is in Working Condition but Towing Suggested to Avoid Damage to Clutch" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Car is in Working Condition but Towing Suggested to Avoid Damage to Gear" name='commentsOnTransmission' onChange={handleInput} />} label="Car is in Working Condition but Towing Suggested to Avoid Damage to Gear" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Towing Required" name='commentsOnTransmission' onChange={handleInput} />} label="Towing Required" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Gear box Oil Leakage" name='commentsOnTransmission' onChange={handleInput} />} label="Gear box Oil Leakage" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Abnormal Noise coming from Gear Box" name='commentsOnTransmission' onChange={handleInput} />} label="Abnormal Noise coming from Gear Box" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="All Weel Drive (AWD)" name='commentsOnTransmission' onChange={handleInput} />} label="All Weel Drive (AWD)" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Four Wheel Drive (4X4)" name='commentsOnTransmission' onChange={handleInput} />} label="Four Wheel Drive (4X4)" />
+                                </Grid>
+                               
+                                
+                          </Grid>
+                        </Box>
+                    </Box>
+                  </Grid>
+                  
+                </Grid>
+               
+
+                <Box>
+                    <Typography variant='h6'>Electrical & Interior Details</Typography>
+                </Box>
+                <Grid container spacing={4}>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Fuel Level</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Fuel Level"
+                          onChange={handleInput}
+                          name='fuelLevel'
+                        >
+                          <MenuItem value="Reserve">Reserve</MenuItem>
+                            <MenuItem value="Less than 25%">Less than 25%</MenuItem>
+                            <MenuItem  value="25% to 50%">25% to 50%</MenuItem>
+                            <MenuItem  value="More than 50%">More than 50%</MenuItem>
+                            
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Electrical</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Electrical"
+                          onChange={handleInput}
+                          name='electrical'
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Odometer Not Working">Odometer Not Working</MenuItem>
+                            <MenuItem value="Techometer Not Working">Techometer Not Working</MenuItem>
+                            <MenuItem value="Speedometer Not Working">Speedometer Not Working</MenuItem>
+                            <MenuItem value="Wiper Motor Not Working">Wiper Motor Not Working</MenuItem>
+                            <MenuItem value="Central Locking Not Working">Central Locking Not Working</MenuItem>
+                            <MenuItem value="Remote Locking Not Working">Remote Locking Not Working</MenuItem>
+                            <MenuItem value="Headlight washer Not Working">Headlight washer Not Working</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rear wiper & Washer</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Rear Wiper"
+                          onChange={handleInput}
+                          name='rearWiper'
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                            <MenuItem value="Broken">Broken</MenuItem>
+                            <MenuItem value="Not Working">Not Working</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rear Defogger</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Rear Defogger"
+                          onChange={handleInput}
+                          name='rearDefogger'
+                        >
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                            <MenuItem value="Not Working">Not Working</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Power Window</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Power Window"
+                          onChange={handleInput}
+                          name='powerWindow'
+                        >
+                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                            <MenuItem value="2">2</MenuItem>
+                            <MenuItem value="4">4</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">RHS Front(Power Window)</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="RHS Front(Power Window)"
+                          onChange={handleInput}
+                          name='rhsFrontPW'
+                        >
+                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                            <MenuItem value="Working">Working</MenuItem>
+                            <MenuItem value="Not Working">Not Working</MenuItem>
+                            <MenuItem value="Missing">Missing</MenuItem>
+                            <MenuItem value="Broken / Damaged">Broken / Damaged</MenuItem>
+                            <MenuItem value="Noisy">Noisy</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">LHS Front(Power Window)</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="LHS Front(Power Window)"
+                          onChange={handleInput}
+                          name='lhsFrontPW'
+                        >
+                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                            <MenuItem value="Working">Working</MenuItem>
+                            <MenuItem value="Not Working">Not Working</MenuItem>
+                            <MenuItem value="Missing">Missing</MenuItem>
+                            <MenuItem value="Broken / Damaged">Broken / Damaged</MenuItem>
+                            <MenuItem value="Noisy">Noisy</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">LHS Rear(Power Window)</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="LHS Rear(Power Window)"
+                          onChange={handleInput}
+                          name='lhsRearPW'
+                        >
+                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                            <MenuItem value="Working">Working</MenuItem>
+                            <MenuItem value="Not Working">Not Working</MenuItem>
+                            <MenuItem value="Missing">Missing</MenuItem>
+                            <MenuItem value="Broken / Damaged">Broken / Damaged</MenuItem>
+                            <MenuItem value="Noisy">Noisy</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">RHS Rear(Power Window)</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="RHS Rear(Power Window)"
+                          onChange={handleInput}
+                          name='rhsRearPW'
+                        >
+                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                            <MenuItem value="Working">Working</MenuItem>
+                            <MenuItem value="Not Working">Not Working</MenuItem>
+                            <MenuItem value="Missing">Missing</MenuItem>
+                            <MenuItem value="Broken / Damaged">Broken / Damaged</MenuItem>
+                            <MenuItem value="Noisy">Noisy</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Leather Seats</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Leather Seats"
+                          onChange={handleInput}
+                          name='leatherSeats'
+                        >
+                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Torn">Torn</MenuItem>
+                            <MenuItem value="Worn Out">Worn Out</MenuItem>
+                            <MenuItem value="Cushion Damaged">Cushion Damaged</MenuItem>
+                            <MenuItem value="Depressed">Depressed</MenuItem>
+                            <MenuItem value="Seat Cover Fitted">Seat Cover Fitted</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Fabric Seats</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Fabric Seats"
+                          onChange={handleInput}
+                          name='fabricSeats'
+                        >
+                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                            <MenuItem value="Okay">Okay</MenuItem>
+                            <MenuItem value="Torn">Torn</MenuItem>
+                            <MenuItem value="Worn Out">Worn Out</MenuItem>
+                            <MenuItem value="Cushion Damaged">Cushion Damaged</MenuItem>
+                            <MenuItem value="Depressed">Depressed</MenuItem>
+                            <MenuItem value="Seat Cover Fitted">Seat Cover Fitted</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={12}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      
+                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                            <Typography variant='h4'>Comments On Interior</Typography>
+                          </Box>
+                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
+                          <Grid container spacing={0}>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Door Trim Torn" name='commentsOnInterior' onChange={handleInput} />} label="Door Trim Torn" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="AC Vent Damaged" name='commentsOnInterior' onChange={handleInput} />} label="AC Vent Damaged" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="AC Knob Damaged / Not Working" name='commentsOnInterior' onChange={handleInput} />} label="AC Knob Damaged / Not Working" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Cabin Floor Rusted" name='commentsOnInterior' onChange={handleInput} />} label="Cabin Floor Rusted" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Roof Lining Loose / Replaced" name='commentsOnInterior' onChange={handleInput} />} label="Roof Lining Loose / Replaced" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Roof lining Damaged" name='commentsOnInterior' onChange={handleInput} />} label="Roof lining Damaged" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Gear Box Cover Damaged" name='commentsOnInterior' onChange={handleInput} />} label="Gear Box Cover Damaged" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Dashboard Broken" name='commentsOnInterior' onChange={handleInput} />} label="Dashboard Broken" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Dashboard Scratched" name='commentsOnInterior' onChange={handleInput} />} label="Dashboard Scratched" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Electrical Seat Adjusment Not Working" name='commentsOnInterior' onChange={handleInput} />} label="Electrical Seat Adjusment Not Working" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Driver Seat Broken or Sliding Not Working" name='commentsOnInterior' onChange={handleInput} />} label="Driver Seat Broken or Sliding Not Working" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Push Button Start Stop Available" name='commentsOnInterior' onChange={handleInput} />} label="Push Button Start Stop Available" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Knee Airbags Available" name='commentsOnInterior' onChange={handleInput} />} label="Knee Airbags Available" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Seat Airbags Available" name='commentsOnInterior' onChange={handleInput} />} label="Seat Airbags Available" />
+                                </Grid>
+                                
+                          </Grid>
+                        </Box>
+                    </Box>
+                  </Grid>
+                  <Grid item md={12}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      
+                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                            <Typography variant='h4'>Comments On Electricals</Typography>
+                          </Box>
+                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
+                          <Grid container spacing={0}>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Odometer Tampered" name='commentsOnElectrical' onChange={handleInput} />} label="Odometer Tampered" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Navigation Chip Not Available" name='commentsOnElectrical' onChange={handleInput} />} label="Navigation Chip Not Available" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Base Tube / Woofer Retained By the Customer" name='commentsOnElectrical' onChange={handleInput} />} label="Base Tube / Woofer Retained By the Customer" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Music system Retained By the Customer" name='commentsOnElectrical' onChange={handleInput} />} label="Music system Retained By the Customer" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Amplifier Retained By the Customer" name='commentsOnElectrical' onChange={handleInput} />} label="Amplifier Retained By the Customer" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Horn Not Working" name='commentsOnElectrical' onChange={handleInput} />} label="Horn Not Working" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Power Window Master Switch Not Working" name='commentsOnElectrical' onChange={handleInput} />} label="Power Window Master Switch Not Working" />
+                                </Grid>
+                                
+                                
+                          </Grid>
+                        </Box>
+                    </Box>
+                  </Grid>
+                  
+                </Grid>
+               
+
+                <Box>
+                    <Typography variant='h6'>Exterior Details</Typography>
+                </Box>
+                <Grid container spacing={4}>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Bonnet</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Bonnet"
+                          onChange={handleInput}
+                          name='bonnet'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                          
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Upper Cross Member</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Upper Cross Member"
+                          onChange={handleInput}
+                          name='upperCrossMember'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lower Cross Member</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Lower Cross Member"
+                          onChange={handleInput}
+                          name='lowerCrossMember'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Radiator Support</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Radiator Support"
+                          onChange={handleInput}
+                          name='radiatorSupport'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Headlight Support</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Headlight Support"
+                          onChange={handleInput}
+                          name='headlightSupport'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Apron</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Lhs Apron"
+                          onChange={handleInput}
+                          name='lhsApron'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs Apron</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Rhs Apron"
+                          onChange={handleInput}
+                          name='rhsApron'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Front Windshield</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Front Windshield"
+                          onChange={handleInput}
+                          name='frontWindshield'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Firewall</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Firewall"
+                          onChange={handleInput}
+                          name='firewall'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Cowl Top</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Cowl Top"
+                          onChange={handleInput}
+                          name='cowlTop'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Roof</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Roof"
+                          onChange={handleInput}
+                          name='roof'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Front Bumper</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Front Bumper"
+                          onChange={handleInput}
+                          name='frontBumper'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Headlamp</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Lhs Headlamp"
+                          onChange={handleInput}
+                          name='lhsHeadlamp'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs Headlamp</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Rhs Headlamp"
+                          onChange={handleInput}
+                          name='rhsHeadlamp'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Foglamp</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Lhs Foglamp"
+                          onChange={handleInput}
+                          name='lhsFoglamp'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs Foglamp</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Rhs Foglamp"
+                          onChange={handleInput}
+                          name='rhsFoglamp'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Fender</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsFender}
+                          label="Lhs Fender"
+                          onChange={handleInput}
+                          name='lhsFender'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs FrontAlloy</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsFrontAlloy}
+                          label="Lhs FrontAlloy"
+                          onChange={handleInput}
+                          name='lhsFrontAlloy'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Front Tyre</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsFrontTyre}
+                          label="Lhs Front Tyre"
+                          onChange={handleInput}
+                          name='lhsFrontTyre'
+                        >
+                           <MenuItem value="Chinese Tyre">Chinese Tyre</MenuItem>
+                           <MenuItem value="Resoaled">Resoaled</MenuItem>
+                           <MenuItem value="Damaged">Damaged</MenuItem>
+                           <MenuItem value="Tyre Life (10%-29%)">Tyre Life (10%-29%)</MenuItem>
+                           <MenuItem value="Tyre Life (30%-49%)">Tyre Life (30%-49%)</MenuItem>
+                           <MenuItem value="Tyre Life (50%-79%)">Tyre Life (50%-79%)</MenuItem>
+                           <MenuItem value="Tyre Life (80%-100%)">Tyre Life (80%-100%)</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Orvm</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsOrvm}
+                          label="Lhs Orvm"
+                          onChange={handleInput}
+                          name='lhsOrvm'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs A Pillar</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsAPillar}
+                          label="Lhs A Pillar"
+                          onChange={handleInput}
+                          name='lhsAPillar'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Front Door</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsFrontDoor}
+                          label="Lhs Front Door"
+                          onChange={handleInput}
+                          name='lhsFrontDoor'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs B Pillar</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsBPillar}
+                          label="Lhs B Pillar"
+                          onChange={handleInput}
+                          name='lhsBPillar'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Rear Door</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsRearDoor}
+                          label="Lhs Rear Door"
+                          onChange={handleInput}
+                          name='lhsRearDoor'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs C Pillar</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsCPillar}
+                          label="Lhs C Pillar"
+                          onChange={handleInput}
+                          name='lhsCPillar'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Running Board</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsRunningBoard}
+                          label="Lhs Running Board"
+                          onChange={handleInput}
+                          name='lhsRunningBoard'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Rear Alloy</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsRearAlloy}
+                          label="Lhs Rear Alloy"
+                          onChange={handleInput}
+                          name='lhsRearAlloy'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Rear Tyre</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsRearTyre}
+                          label="Lhs Rear Tyre"
+                          onChange={handleInput}
+                          name='lhsRearTyre'
+                        >
+                           <MenuItem value="Chinese Tyre">Chinese Tyre</MenuItem>
+                           <MenuItem value="Resoaled">Resoaled</MenuItem>
+                           <MenuItem value="Damaged">Damaged</MenuItem>
+                           <MenuItem value="Tyre Life (10%-29%)">Tyre Life (10%-29%)</MenuItem>
+                           <MenuItem value="Tyre Life (30%-49%)">Tyre Life (30%-49%)</MenuItem>
+                           <MenuItem value="Tyre Life (50%-79%)">Tyre Life (50%-79%)</MenuItem>
+                           <MenuItem value="Tyre Life (80%-100%)">Tyre Life (80%-100%)</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Quarter Panel</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsQuarterPanel}
+                          label="Lhs Quarter Panel"
+                          onChange={handleInput}
+                          name='lhsQuarterPanel'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rear Bumper</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rearBumper}
+                          label="Rear Bumper"
+                          onChange={handleInput}
+                          name='rearBumper'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs Tail Lamp</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsTailLamp}
+                          label="Lhs Tail Lamp"
+                          onChange={handleInput}
+                          name='lhsTailLamp'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs Tail Lamp</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsTailLamp}
+                          label="Rhs Tail Lamp"
+                          onChange={handleInput}
+                          name='rhsTailLamp'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rear Windshield</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rearWindshield}
+                          label="Rear Windshield"
+                          onChange={handleInput}
+                          name='rearWindshield'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Boot Door</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={bootDoor}
+                          label="Boot Door"
+                          onChange={handleInput}
+                          name='bootDoor'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Spare Tyre</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={spareTyre}
+                          label="Spare Tyre"
+                          onChange={handleInput}
+                          name='spareTyre'
+                        >
+                           <MenuItem value="Chinese Tyre">Chinese Tyre</MenuItem>
+                           <MenuItem value="Resoaled">Resoaled</MenuItem>
+                           <MenuItem value="Damaged">Damaged</MenuItem>
+                           <MenuItem value="Tyre Life (10%-29%)">Tyre Life (10%-29%)</MenuItem>
+                           <MenuItem value="Tyre Life (30%-49%)">Tyre Life (30%-49%)</MenuItem>
+                           <MenuItem value="Tyre Life (50%-79%)">Tyre Life (50%-79%)</MenuItem>
+                           <MenuItem value="Tyre Life (80%-100%)">Tyre Life (80%-100%)</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Boot Floor</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={bootFloor}
+                          label="Boot Floor"
+                          onChange={handleInput}
+                          name='bootFloor'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">RHS Quarter Panel</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsQuarterPanel}
+                          label="RHS Quarter Panel"
+                          onChange={handleInput}
+                          name='rhsQuarterPanel'
+                          
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">RHS Rear Alloy</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsRearAlloy}
+                          label="RHS Rear Alloy"
+                          onChange={handleInput}
+                          name='rhsRearAlloy'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">RHS Rear Tyre</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsRearTyre}
+                          label="RHS Rear Tyre"
+                          onChange={handleInput}
+                          name='rhsRearTyre'
+                        >
+                           <MenuItem value="Chinese Tyre">Chinese Tyre</MenuItem>
+                           <MenuItem value="Resoaled">Resoaled</MenuItem>
+                           <MenuItem value="Damaged">Damaged</MenuItem>
+                           <MenuItem value="Tyre Life (10%-29%)">Tyre Life (10%-29%)</MenuItem>
+                           <MenuItem value="Tyre Life (30%-49%)">Tyre Life (30%-49%)</MenuItem>
+                           <MenuItem value="Tyre Life (50%-79%)">Tyre Life (50%-79%)</MenuItem>
+                           <MenuItem value="Tyre Life (80%-100%)">Tyre Life (80%-100%)</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs C Pillar</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsCPillar}
+                          label="Rhs C Pillar"
+                          onChange={handleInput}
+                          name='rhsCPillar'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs Rear Door</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsRearDoor}
+                          label="Rhs Rear Door"
+                          onChange={handleInput}
+                          name='rhsRearDoor'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs B Pillar</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsBPillar}
+                          label="Rhs B Pillar"
+                          onChange={handleInput}
+                          name='rhsBPillar'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs Front Door</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsFrontDoor}
+                          label="Rhs Front Door"
+                          onChange={handleInput}
+                          name='rhsFrontDoor'
+                        >
+                           {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs A Pillar</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsAPillar}
+                          label="Rhs A Pillar"
+                          onChange={handleInput}
+                          name='rhsAPillar'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs Running Board</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsRunningBoard}
+                          label="Rhs Running Board"
+                          onChange={handleInput}
+                          name='rhsRunningBoard'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">RHS Front Alloy</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsFrontAlloy}
+                          label="RHS Front Alloy"
+                          onChange={handleInput}
+                          name='rhsFrontAlloy'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">RHS Front Tyre</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsFrontTyre}
+                          label="RHS Front Tyre"
+                          onChange={handleInput}
+                          name='rhsFrontTyre'
+                        >
+                           <MenuItem value="Chinese Tyre">Chinese Tyre</MenuItem>
+                           <MenuItem value="Resoaled">Resoaled</MenuItem>
+                           <MenuItem value="Damaged">Damaged</MenuItem>
+                           <MenuItem value="Tyre Life (10%-29%)">Tyre Life (10%-29%)</MenuItem>
+                           <MenuItem value="Tyre Life (30%-49%)">Tyre Life (30%-49%)</MenuItem>
+                           <MenuItem value="Tyre Life (50%-79%)">Tyre Life (50%-79%)</MenuItem>
+                           <MenuItem value="Tyre Life (80%-100%)">Tyre Life (80%-100%)</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs Orvm</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsOrvm}
+                          label="Rhs Orvm"
+                          onChange={handleInput}
+                          name='rhsOrvm'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs Fender</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsFender}
+                          label="Rhs Fender"
+                          onChange={handleInput}
+                          name='rhsFender'
+                        >
+                          {exteriorData.map((element,index)=>(
+                            <MenuItem key={index} value={element}>{element}</MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={12}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      
+                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                            <Typography variant='h4'>Comments On Exterior</Typography>
+                          </Box>
+                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
+                          <Grid container spacing={0}>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Customized Vehicle or Body Modified" name='commentsOnExterior' onChange={handleInput} />} label="Customized Vehicle or Body Modified" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Body Shell Replaced" name='commentsOnExterior' onChange={handleInput} />} label="Body Shell Replaced" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Roof Top Canvas" name='commentsOnExterior' onChange={handleInput} />} label="Roof Top Canvas" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Water Logged Vehicle" name='commentsOnExterior' onChange={handleInput} />} label="Water Logged Vehicle" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Chassis Extension Repaired" name='commentsOnExterior' onChange={handleInput} />} label="Chassis Extension Repaired" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Strut Mounting Area Damaged" name='commentsOnExterior' onChange={handleInput} />} label="Strut Mounting Area Damaged" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Roof Colour Changed / Vinyl wrapped" name='commentsOnExterior' onChange={handleInput} />} label="Roof Colour Changed / Vinyl wrapped" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Vehicle Color Changed" name='commentsOnExterior' onChange={handleInput} />} label="Vehicle Color Changed" />
+                                </Grid>
+                                
+                          </Grid>
+                        </Box>
+                    </Box>
+                  </Grid>
+                </Grid>
+             
+
+                <Box>
+                    <Typography variant='h6'>Safety Details</Typography>
+                </Box>
+                <Grid container spacing={4}>
+                  <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <TextField id="outlined-basic" label="Number of Airbags" onChange={handleInput} name='noOfAirbags' value={noOfAirbags} type="number" variant="outlined" fullWidth/>
+                      </Box>
+                  </Grid> 
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">ABS</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={abs}
+                          label="ABS"
+                          onChange={handleInput}
+                          name='abs'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Warning Light Glowing">Warning Light Glowing</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Driver Side Airbags</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={driverSideAB}
+                          label="Driver Side Airbags"
+                          onChange={handleInput}
+                          name='driverSideAB'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Deployed">Deployed</MenuItem>
+                          <MenuItem value="Removed">Removed</MenuItem>
+                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Co-Driver Side Airbags</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={codriverSideAB}
+                          label="Co-Driver Side Airbags"
+                          onChange={handleInput}
+                          name='codriverSideAB'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Deployed">Deployed</MenuItem>
+                          <MenuItem value="Removed">Removed</MenuItem>
+                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs A Pillar Airbags</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsAPillarAB}
+                          label="Lhs A Pillar Airbags"
+                          onChange={handleInput}
+                          name='lhsAPillarAB'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Deployed">Deployed</MenuItem>
+                          <MenuItem value="Removed">Removed</MenuItem>
+                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs B Pillar Airbags</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsBPillarAB}
+                          label="Lhs B Pillar Airbags"
+                          onChange={handleInput}
+                          name='lhsBPillarAB'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Deployed">Deployed</MenuItem>
+                          <MenuItem value="Removed">Removed</MenuItem>
+                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Lhs C Pillar Airbags</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={lhsCPillarAB}
+                          label="Lhs C Pillar Airbags"
+                          onChange={handleInput}
+                          name='lhsCPillarAB'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Deployed">Deployed</MenuItem>
+                          <MenuItem value="Removed">Removed</MenuItem>
+                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs A Pillar Airbags</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsAPillarAB}
+                          label="Rhs A Pillar Airbags"
+                          onChange={handleInput}
+                          name='rhsAPillarAB'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Deployed">Deployed</MenuItem>
+                          <MenuItem value="Removed">Removed</MenuItem>
+                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs B Pillar Airbags</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsBPillarAB}
+                          label="Rhs B Pillar Airbags"
+                          onChange={handleInput}
+                          name='rhsBPillarAB'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Deployed">Deployed</MenuItem>
+                          <MenuItem value="Removed">Removed</MenuItem>
+                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rhs C Pillar Airbags</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={rhsCPillarAB}
+                          label="Rhs C Pillar Airbags"
+                          onChange={handleInput}
+                          name='rhsCPillarAB'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Deployed">Deployed</MenuItem>
+                          <MenuItem value="Removed">Removed</MenuItem>
+                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Reverse Parking Camera</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={reverseParkingCamera}
+                          label="Reverse Parking Camera"
+                          onChange={handleInput}
+                          name='reverseParkingCamera'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Hazy">Hazy</MenuItem>
+                          <MenuItem value="Damaged / Not working">Damaged / Not working</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                </Grid>
+                
+
+                <Box>
+                    <Typography variant='h6'>Comfort & Conveniance</Typography>
+                </Box>
+                <Grid container spacing={4}>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Manual AC</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={manualAC}
+                          label="Manual AC"
+                          onChange={handleInput}
+                          name='manualAC'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Ineffective">Ineffective</MenuItem>
+                          <MenuItem value="Not Working">Not Working</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Climate Control AC</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={climateAC}
+                          label="Climate Control AC"
+                          onChange={handleInput}
+                          name='climateAC'
+                        >
+                          <MenuItem value="Okay">Okay</MenuItem>
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Ineffective">Ineffective</MenuItem>
+                          <MenuItem value="Not Working">Not Working</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Music System</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={musicSystem}
+                          label="Music System"
+                          onChange={handleInput}
+                          name='musicSystem'
+                        >
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Available">Available</MenuItem>
+                          <MenuItem value="Not working">Not working</MenuItem>
+                          <MenuItem value="Speaker Not Working">Speaker Not Working</MenuItem>
+                          <MenuItem value="Front Fascia missing">Front Fascia missing</MenuItem>
+                          <MenuItem value="Touchpad Not Working">Touchpad Not Working</MenuItem>
+                          <MenuItem value="Data Cable Panel Missing">Data Cable Panel Missing</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Stereo</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={stereo}
+                          label="Stereo"
+                          onChange={handleInput}
+                          name='stereo'
+                        >
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Normal Stereo">Normal Stereo</MenuItem>
+                          <MenuItem value="Touch Stereo">Touch Stereo</MenuItem>
+                          <MenuItem value="Display Damaged / Broken">Display Damaged / Broken</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Inbuilt Speaker</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={inbuiltSpeaker}
+                          label="Inbuilt Speaker"
+                          onChange={handleInput}
+                          name='inbuiltSpeaker'
+                        >
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Available">Available</MenuItem>
+                          <MenuItem value="Not Working">Not Working</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">External Speaker</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={externalSpeaker}
+                          label="External Speaker"
+                          onChange={handleInput}
+                          name='externalSpeaker'
+                        >
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Available">Available</MenuItem>
+                          <MenuItem value="Not Working">Not Working</MenuItem>
+                          <MenuItem value="Damaged">Damaged</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Stearing Mounted Audio Control</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={stearingMountedAudio}
+                          label="Stearing Mounted Audio Control"
+                          onChange={handleInput}
+                          name='stearingMountedAudio'
+                        >
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Available">Available</MenuItem>
+                          <MenuItem value="Not Working">Not Working</MenuItem>
+                          <MenuItem value="Damaged">Damaged</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Sunroof</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={sunroof}
+                          label="Sunroof"
+                          onChange={handleInput}
+                          name='sunroof'
+                        >
+                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
+                          <MenuItem value="Available">Available</MenuItem>
+                          <MenuItem value="Not Working">Not Working</MenuItem>
+                          <MenuItem value="Damaged">Damaged</MenuItem>
+                          <MenuItem value="Noisy">Noisy</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                  <Grid item md={12}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      
+                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
+                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
+                            <Typography variant='h4'>Additional Comments</Typography>
+                          </Box>
+                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
+                          <Grid container spacing={0}>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Electrical Wiring Damaged" name='additionalComments' onChange={handleInput} />} label="Electrical Wiring Damaged" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Starter Motor / Solanoid Malfunction" name='additionalComments' onChange={handleInput} />} label="Starter Motor / Solanoid Malfunction" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Battery Not Available" name='additionalComments' onChange={handleInput} />} label="Battery Not Available" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Front Drive Axle Noise" name='additionalComments' onChange={handleInput} />} label="Front Drive Axle Noise" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Car Pulling on One Side" name='additionalComments' onChange={handleInput} />} label="Car Pulling on One Side" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Silencer Assembly Damaged" name='additionalComments' onChange={handleInput} />} label="Silencer Assembly Damaged" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Noise from Silencer Assembly" name='additionalComments' onChange={handleInput} />} label="Noise from Silencer Assembly" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Hand Brake not Working" name='additionalComments' onChange={handleInput} />} label="Hand Brake not Working" />
+                                </Grid>
+                                <Grid item md={6}>
+                                  <FormControlLabel control={<Checkbox value="Jack & Toolkit not available" name='additionalComments' onChange={handleInput} />} label="Jack & Toolkit not available" />
+                                </Grid>
                           </Grid>
                         </Box>
                     </Box>
@@ -1682,433 +4768,6 @@ function Create() {
                         </Grid>
                       </Grid>
                   </Box>
-                </Box>
-
-                <Box>
-                    <Typography variant='h6'>Engine & Transmission Details</Typography>
-                </Box>
-                <Grid container spacing={4}>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Engine*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Engine*"
-                          onChange={handleInput}
-                          name='engine'
-                          required
-                        >
-                            <MenuItem key='1' value="Okay">Okay</MenuItem>
-                            <MenuItem key='2' value="Repaired">Repaired</MenuItem>
-                            <MenuItem key='3' value="MIL Light Glowing">MIL Light Glowing</MenuItem>
-                            <MenuItem key='4' value="RPM Fluctuating">RPM Fluctuating</MenuItem>
-                            <MenuItem key='5' value="Over Heating">Over Heating</MenuItem>
-                            <MenuItem key='6' value="Misfiring">Misfiring</MenuItem>
-                            <MenuItem key='7' value="Fuel Leakage from injector">Fuel Leakage from injector</MenuItem>
-                            <MenuItem key='8' value="Knoking">Knoking</MenuItem>
-                            <MenuItem key='9' value="Long Cranking Due to Weak Compression">Long Cranking Due to Weak Compression</MenuItem>
-                            <MenuItem key='10' value="Replaced">Replaced</MenuItem>
-                            <MenuItem key='11' value="Air filter Box Damaged">Air filter Box Damaged</MenuItem>
-                            <MenuItem key='12' value="Seized">Seized</MenuItem>
-                            <MenuItem key='13' value="Sump Damaged">Sump Damaged</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Battery*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Battery*"
-                          onChange={handleInput}
-                          name='battery'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Changed">Changed</MenuItem>
-                            <MenuItem value="Weak">Weak</MenuItem>
-                            <MenuItem value="Dead">Dead</MenuItem>
-                            <MenuItem value="Jumpstart">Jumpstart</MenuItem>
-                            <MenuItem value="Acid Leakage">Acid Leakage</MenuItem>
-                            <MenuItem value="Discharge Light Glowing">Discharge Light Glowing</MenuItem>
-                            <MenuItem value="Damaged">Damaged</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Coolant*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Coolant*"
-                          onChange={handleInput}
-                          name='coolant'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Leaking">Leaking</MenuItem>
-                            <MenuItem value="Dirty">Dirty</MenuItem>
-                            <MenuItem value="Level Low">Level Low</MenuItem>
-
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Engine Oil Dipstick*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Engine Oil Dipstick*"
-                          onChange={handleInput}
-                          name='engineOilDipstick'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Broken">Broken</MenuItem>
-                            <MenuItem value="Not Available">Not Available</MenuItem>
-
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Engine Oil*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Engine Oil*"
-                          onChange={handleInput}
-                          name='engineOil'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Leaking">Leaking</MenuItem>
-                            <MenuItem value="Dirty">Dirty</MenuItem>
-                            <MenuItem value="Leakage From Manifold">Leakage From Manifold</MenuItem>
-                            <MenuItem value="Leakage from Sump Chamber">Leakage from Sump Chamber</MenuItem>
-                            <MenuItem value="Low Pressure Warning Light Glowing">Low Pressure Warning Light Glowing</MenuItem>
-                            <MenuItem value="Leakage fom Turbo Charger">Leakage fom Turbo Charger</MenuItem>
-                            <MenuItem value="Leakage From Side Cover">Leakage From Side Cover</MenuItem>
-                            <MenuItem value="Leakage from ingine Head">Leakage from ingine Head</MenuItem>
-                            <MenuItem value="Level Low">Level Low</MenuItem>
-
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Engine Mount*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Engine Mount*"
-                          onChange={handleInput}
-                          name='engineMount'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Broken">Broken</MenuItem>
-                            <MenuItem value="Loose">Loose</MenuItem>
-                            <MenuItem value="Excess Vibration">Excess Vibration</MenuItem>
-                            <MenuItem value="Rusted">Rusted</MenuItem>
-
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Engine Blow By Status*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Engine Blow By Status*"
-                          onChange={handleInput}
-                          name='engineBlowbyStatus'
-                          required
-                        >
-                            <MenuItem value="No Blow By">No Blow By</MenuItem>
-                            <MenuItem value="Permisable Blow By">Permisable Blow By</MenuItem>
-                            <MenuItem value="Oil Spilage on Idle">Oil Spilage on Idle</MenuItem>
-                            <MenuItem value="Permisable Blow By with Oil Spilage">Permisable Blow By with Oil Spilage</MenuItem>
-                            <MenuItem value="Back Compression">Back Compression</MenuItem>
-
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Exhaust Smoke*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Exhaust Smoke*"
-                          onChange={handleInput}
-                          name='exhaustSmoke'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Black">Black</MenuItem>
-                            <MenuItem value="Blue">Blue</MenuItem>
-                            <MenuItem value="White">White</MenuItem>
-
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Radiator*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Radiator*"
-                          onChange={handleInput}
-                          name='radiator'
-                          required
-                        >
-                            <MenuItem value="Fan Motor Noise">Fan Motor Noise</MenuItem>
-                            <MenuItem value="Fan Not Working">Fan Not Working</MenuItem>
-                            <MenuItem value="Radiator Repaired /Welded">Radiator Repaired /Welded</MenuItem>
-                            <MenuItem value="Radiator Damaged">Radiator Damaged</MenuItem>
-                            <MenuItem value="Coolant Mixed with Engine Oil">Coolant Mixed with Engine Oil</MenuItem>
-
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Clutch*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Clutch*"
-                          onChange={handleInput}
-                          name='clutch'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Hard">Hard</MenuItem>
-                            <MenuItem value="Spongy">Spongy</MenuItem>
-                            <MenuItem value="Burning">Burning</MenuItem>
-                            <MenuItem value="Bearing Noise">Bearing Noise</MenuItem>
-                            <MenuItem value="Slip / Low Pick up">Slip / Low Pick up</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Gear*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Gear*"
-                          onChange={handleInput}
-                          name='gear'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Manual Transmission">Manual Transmission</MenuItem>
-                            <MenuItem value="Automatic Transmission">Automatic Transmission</MenuItem>
-                            <MenuItem value="Hard">Hard</MenuItem>
-                            <MenuItem value="Not Engaging">Not Engaging</MenuItem>
-                            <MenuItem value="Abnormal Noise">Abnormal Noise</MenuItem>
-                            <MenuItem value="Auto Transmission Not Working">Auto Transmission Not Working</MenuItem>
-                            <MenuItem value="Gear Freeplay">Gear Freeplay</MenuItem>
-                            <MenuItem value="Gear Knob Broken / Damaged">Gear Knob Broken / Damaged</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Steering*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Steering*"
-                          onChange={handleInput}
-                          name='steering'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Abnormal Noise">Abnormal Noise</MenuItem>
-                            <MenuItem value="Hard">Hard</MenuItem>
-                            <MenuItem value="Pump Noise">Pump Noise</MenuItem>
-                            <MenuItem value="Oil Leakage from Rack">Oil Leakage from Rack</MenuItem>
-                            <MenuItem value="Telescopic Adjustment not Working">Telescopic Adjustment not Working</MenuItem>
-                            <MenuItem value="Wheel Adjustment Not Working">Wheel Adjustment Not Working</MenuItem>
-                            <MenuItem value="Hydraulic Power Steering Not Working">Hydraulic Power Steering Not Working</MenuItem>
-                            <MenuItem value="Electrical Power Steering Not Working">Electrical Power Steering Not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Brake*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Brake*"
-                          onChange={handleInput}
-                          name='brake'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Ineffective">Ineffective</MenuItem>
-                            <MenuItem value="Noise">Noise</MenuItem>
-                            <MenuItem value="Master Cylinder Leakage">Master Cylinder Leakage</MenuItem>
-                            <MenuItem value="Wheel Cylinder Leakage">Wheel Cylinder Leakage</MenuItem>
-                            <MenuItem value="Hand / Parking Brake Light Glowing">Hand / Parking Brake Light Glowing</MenuItem>
-                            <MenuItem value="Car With Electronic Parking Brake">Car With Electronic Parking Brake</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Suspension*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Suspension*"
-                          onChange={handleInput}
-                          name='suspension'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Weak">Weak</MenuItem>
-                            <MenuItem value="Damaged">Damaged</MenuItem>
-                            <MenuItem value="Leakage in suspension">Leakage in suspension</MenuItem>
-                            <MenuItem value="Abnormal Noise">Abnormal Noise</MenuItem>
-                            <MenuItem value="Air Suspension Faulty">Air Suspension Faulty</MenuItem>
-                            <MenuItem value="Suspension Modified">Suspension Modified</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={12}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
-                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
-                            <Typography variant='h4'>Comments On Engine</Typography>
-                          </Box>
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
-                          <Grid container spacing={0}>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Not Converting to CNG / LPG" name='commentsOnEngine' onChange={handleInput} />} label="Not Converting to CNG / LPG" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="RPM Not increasing" name='commentsOnEngine' onChange={handleInput} />} label="RPM Not increasing" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Car not working on Petrol" name='commentsOnEngine' onChange={handleInput} />} label="Car not working on Petrol" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Turbo Charger Noise" name='commentsOnEngine' onChange={handleInput} />} label="Turbo Charger Noise" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Turbo Charger Not Working" name='commentsOnEngine' onChange={handleInput} />} label="Turbo Charger Not Working" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Fan Belt Noise" name='commentsOnEngine' onChange={handleInput} />} label="Fan Belt Noise" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Alternator Bearing Noise" name='commentsOnEngine' onChange={handleInput} />} label="Alternator Bearing Noise" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Minor Noise" name='commentsOnEngine' onChange={handleInput} />} label="Minor Noise" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Major Noise" name='commentsOnEngine' onChange={handleInput} />} label="Major Noise" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Critical Noise" name='commentsOnEngine' onChange={handleInput} />} label="Critical Noise" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Oil Coming from Exhaust Tail Pipe" name='commentsOnEngine' onChange={handleInput} />} label="Oil Coming from Exhaust Tail Pipe" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Leakege From Injector" name='commentsOnEngine' onChange={handleInput} />} label="Leakege From Injector" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Car is in Working Condition but Towing Suggested to Avoid Damage to Engine" name='commentsOnEngine' onChange={handleInput} />} label="Car is in Working Condition but Towing Suggested to Avoid Damage to Engine" />
-                                </Grid>
-                                
-                          </Grid>
-                        </Box>
-                    </Box>
-                  </Grid>
-                  <Grid item md={12}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
-                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
-                            <Typography variant='h4'>Comments On Transmission</Typography>
-                          </Box>
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
-                          <Grid container spacing={0}>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Car is in Working Condition but Towing Suggested to Avoid Damage to Clutch" name='commentsOnTransmission' onChange={handleInput} />} label="Car is in Working Condition but Towing Suggested to Avoid Damage to Clutch" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Car is in Working Condition but Towing Suggested to Avoid Damage to Gear" name='commentsOnTransmission' onChange={handleInput} />} label="Car is in Working Condition but Towing Suggested to Avoid Damage to Gear" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Towing Required" name='commentsOnTransmission' onChange={handleInput} />} label="Towing Required" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Gear box Oil Leakage" name='commentsOnTransmission' onChange={handleInput} />} label="Gear box Oil Leakage" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Abnormal Noise coming from Gear Box" name='commentsOnTransmission' onChange={handleInput} />} label="Abnormal Noise coming from Gear Box" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="All Weel Drive (AWD)" name='commentsOnTransmission' onChange={handleInput} />} label="All Weel Drive (AWD)" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Four Wheel Drive (4X4)" name='commentsOnTransmission' onChange={handleInput} />} label="Four Wheel Drive (4X4)" />
-                                </Grid>
-                               
-                                
-                          </Grid>
-                        </Box>
-                    </Box>
-                  </Grid>
-                  
-                </Grid>
-                <Box className={`${dashboardStyles.tm_dashboard_img_upl} ${"tm_dashboard_img_upl_gb"}`}>
-                  {/* <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
-                    <Typography variant='h4'>Upload images</Typography>
-                  </Box> */}
                   <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
                     <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
                       <Typography variant='h6'>Engine & Transmission Images </Typography>
@@ -2118,372 +4777,31 @@ function Create() {
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='engineImages' hidden />
+                            <input type="file" onChange={handleInput} name='EnginePhotos' hidden />
                           </Button>
                           
                         </Box>                        
                       </Grid>
-                       {/* <Grid item md={9}>
-                         {ThumbnailPhotos.length > 0 &&
-                          ThumbnailPhotos.map((element, index) => {
+                      <Grid item md={9}>
+                        {engineImages.length > 0 &&
+                          engineImages.map((element, index) => {
                             return (
                               <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
                                 <Box >
                                   <Image
-                                    src={URL.createObjectURL(element)}
+                                    src={element.path}
                                     alt='Uploaded Image'
                                     height='300'
                                     width='300'
                                   />
-                                  <Button onClick={() => handleRemoveImage(element)}><CloseIcon/> </Button>
+                                  <Button onClick={() => handleRemoveEngineImage(element.path)}><CloseIcon/> </Button>
                                 </Box>
                               </Box>
                             );
                           })}
-                        </Grid> */}
+                        </Grid>
                       </Grid>
                   </Box>
-                  
-                </Box>
-
-                <Box>
-                    <Typography variant='h6'>Electrical & Interior Details</Typography>
-                </Box>
-                <Grid container spacing={4}>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Fuel Level*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Fuel Level*"
-                          onChange={handleInput}
-                          name='fuelLevel'
-                          required
-                        >
-                          <MenuItem value="Reserve">Reserve</MenuItem>
-                            <MenuItem value="Less than 25%">Less than 25%</MenuItem>
-                            <MenuItem  value="25% to 50%">25% to 50%</MenuItem>
-                            <MenuItem  value="More than 50%">More than 50%</MenuItem>
-                            
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Electrical*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Electrical*"
-                          onChange={handleInput}
-                          name='electrical'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Odometer Not Working">Odometer Not Working</MenuItem>
-                            <MenuItem value="Techometer Not Working">Techometer Not Working</MenuItem>
-                            <MenuItem value="Speedometer Not Working">Speedometer Not Working</MenuItem>
-                            <MenuItem value="Wiper Motor Not Working">Wiper Motor Not Working</MenuItem>
-                            <MenuItem value="Central Locking Not Working">Central Locking Not Working</MenuItem>
-                            <MenuItem value="Remote Locking Not Working">Remote Locking Not Working</MenuItem>
-                            <MenuItem value="Headlight washer Not Working">Headlight washer Not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rear wiper & Washer*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Rear Wiper*"
-                          onChange={handleInput}
-                          name='rearWiper'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                            <MenuItem value="Broken">Broken</MenuItem>
-                            <MenuItem value="Not Working">Not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rear Defogger*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Rear Defogger*"
-                          onChange={handleInput}
-                          name='rearDefogger'
-                          required
-                        >
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                            <MenuItem value="Not Working">Not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Power Window*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Power Window*"
-                          onChange={handleInput}
-                          name='powerWindow'
-                          required
-                        >
-                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                            <MenuItem value="2">2</MenuItem>
-                            <MenuItem value="4">4</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">RHS Front(Power Window)*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="RHS Front(Power Window)*"
-                          onChange={handleInput}
-                          name='rhsFrontPW'
-                          required
-                        >
-                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                            <MenuItem value="Working">Working</MenuItem>
-                            <MenuItem value="Not Working">Not Working</MenuItem>
-                            <MenuItem value="Missing">Missing</MenuItem>
-                            <MenuItem value="Broken / Damaged">Broken / Damaged</MenuItem>
-                            <MenuItem value="Noisy">Noisy</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">LHS Front(Power Window)*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="LHS Front(Power Window)*"
-                          onChange={handleInput}
-                          name='lhsFrontPW'
-                          required
-                        >
-                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                            <MenuItem value="Working">Working</MenuItem>
-                            <MenuItem value="Not Working">Not Working</MenuItem>
-                            <MenuItem value="Missing">Missing</MenuItem>
-                            <MenuItem value="Broken / Damaged">Broken / Damaged</MenuItem>
-                            <MenuItem value="Noisy">Noisy</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">LHS Rear(Power Window)*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="LHS Rear(Power Window)*"
-                          onChange={handleInput}
-                          name='lhsRearPW'
-                          required
-                        >
-                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                            <MenuItem value="Working">Working</MenuItem>
-                            <MenuItem value="Not Working">Not Working</MenuItem>
-                            <MenuItem value="Missing">Missing</MenuItem>
-                            <MenuItem value="Broken / Damaged">Broken / Damaged</MenuItem>
-                            <MenuItem value="Noisy">Noisy</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">RHS Rear(Power Window)*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsRearPW}
-                          label="RHS Rear(Power Window)*"
-                          onChange={handleInput}
-                          name='rhsRearPW'
-                          required
-                        >
-                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                            <MenuItem value="Working">Working</MenuItem>
-                            <MenuItem value="Not Working">Not Working</MenuItem>
-                            <MenuItem value="Missing">Missing</MenuItem>
-                            <MenuItem value="Broken / Damaged">Broken / Damaged</MenuItem>
-                            <MenuItem value="Noisy">Noisy</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Leather Seats</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Leather Seats"
-                          onChange={handleInput}
-                          name='leatherSeats'
-                          required
-                        >
-                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Torn">Torn</MenuItem>
-                            <MenuItem value="Worn Out">Worn Out</MenuItem>
-                            <MenuItem value="Cushion Damaged">Cushion Damaged</MenuItem>
-                            <MenuItem value="Depressed">Depressed</MenuItem>
-                            <MenuItem value="Seat Cover Fitted">Seat Cover Fitted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Fabric Seats</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Fabric Seats"
-                          onChange={handleInput}
-                          name='fabricSeats'
-                          required
-                        >
-                            <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                            <MenuItem value="Okay">Okay</MenuItem>
-                            <MenuItem value="Torn">Torn</MenuItem>
-                            <MenuItem value="Worn Out">Worn Out</MenuItem>
-                            <MenuItem value="Cushion Damaged">Cushion Damaged</MenuItem>
-                            <MenuItem value="Depressed">Depressed</MenuItem>
-                            <MenuItem value="Seat Cover Fitted">Seat Cover Fitted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={12}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
-                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
-                            <Typography variant='h4'>Comments On Interior</Typography>
-                          </Box>
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
-                          <Grid container spacing={0}>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Door Trim Torn" name='commentsOnInterior' onChange={handleInput} />} label="Door Trim Torn" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="AC Vent Damaged" name='commentsOnInterior' onChange={handleInput} />} label="AC Vent Damaged" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="AC Knob Damaged / Not Working" name='commentsOnInterior' onChange={handleInput} />} label="AC Knob Damaged / Not Working" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Cabin Floor Rusted" name='commentsOnInterior' onChange={handleInput} />} label="Cabin Floor Rusted" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Roof Lining Loose / Replaced" name='commentsOnInterior' onChange={handleInput} />} label="Roof Lining Loose / Replaced" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Roof lining Damaged" name='commentsOnInterior' onChange={handleInput} />} label="Roof lining Damaged" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Gear Box Cover Damaged" name='commentsOnInterior' onChange={handleInput} />} label="Gear Box Cover Damaged" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Dashboard Broken" name='commentsOnInterior' onChange={handleInput} />} label="Dashboard Broken" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Dashboard Scratched" name='commentsOnInterior' onChange={handleInput} />} label="Dashboard Scratched" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Electrical Seat Adjusment Not Working" name='commentsOnInterior' onChange={handleInput} />} label="Electrical Seat Adjusment Not Working" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Driver Seat Broken or Sliding Not Working" name='commentsOnInterior' onChange={handleInput} />} label="Driver Seat Broken or Sliding Not Working" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Push Button Start Stop Available" name='commentsOnInterior' onChange={handleInput} />} label="Push Button Start Stop Available" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Knee Airbags Available" name='commentsOnInterior' onChange={handleInput} />} label="Knee Airbags Available" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Seat Airbags Available" name='commentsOnInterior' onChange={handleInput} />} label="Seat Airbags Available" />
-                                </Grid>
-                                
-                          </Grid>
-                        </Box>
-                    </Box>
-                  </Grid>
-                  <Grid item md={12}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
-                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
-                            <Typography variant='h4'>Comments On Electricals</Typography>
-                          </Box>
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
-                          <Grid container spacing={0}>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Odometer Tampered" name='commentsOnElectrical' onChange={handleInput} />} label="Odometer Tampered" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Navigation Chip Not Available" name='commentsOnElectrical' onChange={handleInput} />} label="Navigation Chip Not Available" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Base Tube / Woofer Retained By the Customer" name='commentsOnElectrical' onChange={handleInput} />} label="Base Tube / Woofer Retained By the Customer" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Music system Retained By the Customer" name='commentsOnElectrical' onChange={handleInput} />} label="Music system Retained By the Customer" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Amplifier Retained By the Customer" name='commentsOnElectrical' onChange={handleInput} />} label="Amplifier Retained By the Customer" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Horn Not Working" name='commentsOnElectrical' onChange={handleInput} />} label="Horn Not Working" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Power Window Master Switch Not Working" name='commentsOnElectrical' onChange={handleInput} />} label="Power Window Master Switch Not Working" />
-                                </Grid>
-                                
-                                
-                          </Grid>
-                        </Box>
-                    </Box>
-                  </Grid>
-                  
-                </Grid>
-                <Box className={`${dashboardStyles.tm_dashboard_img_upl} ${"tm_dashboard_img_upl_gb"}`}>
-                  
                   <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
                     <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
                       <Typography variant='h6'>Electrical & Interior Images </Typography>
@@ -2493,1299 +4811,31 @@ function Create() {
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='electricalImages' hidden />
+                            <input type="file" onChange={handleInput} name='InteriorPhotos' hidden />
                           </Button>
                           
                         </Box>                        
                       </Grid>
-                       {/* <Grid item md={9}>
-                         {ThumbnailPhotos.length > 0 &&
-                          ThumbnailPhotos.map((element, index) => {
+                      <Grid item md={9}>
+                        {interiorImages.length > 0 &&
+                          interiorImages.map((element, index) => {
                             return (
                               <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
                                 <Box >
                                   <Image
-                                    src={URL.createObjectURL(element)}
+                                    src={element.path}
                                     alt='Uploaded Image'
                                     height='300'
                                     width='300'
                                   />
-                                  <Button onClick={() => handleRemoveImage(element)}><CloseIcon/> </Button>
+                                  <Button onClick={() => handleRemoveInteriorImage(element.path)}><CloseIcon/> </Button>
                                 </Box>
                               </Box>
                             );
                           })}
-                        </Grid> */}
+                        </Grid>
                       </Grid>
                   </Box>
-                  
-                </Box>
-
-                <Box>
-                    <Typography variant='h6'>Exterior Details</Typography>
-                </Box>
-                <Grid container spacing={4}>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Bonnet*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Bonnet*"
-                          onChange={handleInput}
-                          name='bonnet'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Repainted">Repainted</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Dented">Dented</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                          <MenuItem value="Faded">Faded</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Upper Cross Member*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Upper Cross Member*"
-                          onChange={handleInput}
-                          name='upperCrossMember'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Welded">Welded</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lower Cross Member*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Lower Cross Member*"
-                          onChange={handleInput}
-                          name='lowerCrossMember'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Welded">Welded</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Radiator Support*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Radiator Support*"
-                          onChange={handleInput}
-                          name='radiatorSupport'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Welded">Welded</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Headlight Support*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Headlight Support*"
-                          onChange={handleInput}
-                          name='headlightSupport'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Welded">Welded</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Apron*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Lhs Apron*"
-                          onChange={handleInput}
-                          name='lhsApron'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Repainted">Repainted</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Welded">Welded</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs Apron*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Rhs Apron*"
-                          onChange={handleInput}
-                          name='rhsApron'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Repainted">Repainted</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Welded">Welded</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Front Windshield*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Front Windshield*"
-                          onChange={handleInput}
-                          name='frontWindshield'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Spots">Spots</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Firewall*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Firewall*"
-                          onChange={handleInput}
-                          name='firewall'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Repainted">Repainted</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Welded">Welded</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Cowl Top*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Cowl Top*"
-                          onChange={handleInput}
-                          name='cowlTop'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Repainted">Repainted</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Welded">Welded</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Roof*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Roof*"
-                          onChange={handleInput}
-                          name='roof'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Repainted">Repainted</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Dented">Dented</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                          <MenuItem value="Faded">Faded</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Front Bumper*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Front Bumper*"
-                          onChange={handleInput}
-                          name='frontBumper'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Repainted">Repainted</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Dented">Dented</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                          <MenuItem value="Faded">Faded</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                          <MenuItem value="Grill Damaged">Grill Damaged</MenuItem>
-                          <MenuItem value="Welded">Welded</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Headlamp*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Lhs Headlamp*"
-                          onChange={handleInput}
-                          name='lhsHeadlamp'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                          <MenuItem value="Missing">Missing</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs Headlamp*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Rhs Headlamp*"
-                          onChange={handleInput}
-                          name='rhsHeadlamp'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                          <MenuItem value="Missing">Missing</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Foglamp*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsFoglamp}
-                          label="Lhs Foglamp*"
-                          onChange={handleInput}
-                          name='lhsFoglamp'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                          <MenuItem value="Missing">Missing</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs Foglamp*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsFoglamp}
-                          label="Rhs Foglamp*"
-                          onChange={handleInput}
-                          name='rhsFoglamp'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                          <MenuItem value="Missing">Missing</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Fender*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsFender}
-                          label="Lhs Fender*"
-                          onChange={handleInput}
-                          name='lhsFender'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Repainted">Repainted</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Dented">Dented</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                          <MenuItem value="Faded">Faded</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                          <MenuItem value="Inner Wheel Housing Rusted">Inner Wheel Housing Rusted</MenuItem>
-                          <MenuItem value="Inner Lining Missing/Broken">Inner Lining Missing/Broken</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs FrontAlloy*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsFrontAlloy}
-                          label="Lhs FrontAlloy*"
-                          onChange={handleInput}
-                          name='lhsFrontAlloy'
-                          required
-                        >
-                           <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Okay">Okay</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Front Tyre*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsFrontTyre}
-                          label="Lhs Front Tyre*"
-                          onChange={handleInput}
-                          name='lhsFrontTyre'
-                          required
-                        >
-                           <MenuItem value="Chinese Tyre">Chinese Tyre</MenuItem>
-                           <MenuItem value="Resoaled">Resoaled</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Tyre Life (10%-29%)">Tyre Life (10%-29%)</MenuItem>
-                           <MenuItem value="Tyre Life (30%-49%)">Tyre Life (30%-49%)</MenuItem>
-                           <MenuItem value="Tyre Life (50%-79%)">Tyre Life (50%-79%)</MenuItem>
-                           <MenuItem value="Tyre Life (80%-100%)">Tyre Life (80%-100%)</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Orvm*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsOrvm}
-                          label="Lhs Orvm*"
-                          onChange={handleInput}
-                          name='lhsOrvm'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Not Working">Not Working</MenuItem>
-                           <MenuItem value="Missing">Missing</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                           <MenuItem value="Indicator Broken / Not Working">Indicator Broken / Not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs A Pillar*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsAPillar}
-                          label="Lhs A Pillar*"
-                          onChange={handleInput}
-                          name='lhsAPillar'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Rubber Beading Torn or Missing">Rubber Beading Torn or Missing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Front Door*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsFrontDoor}
-                          label="Lhs Front Door*"
-                          onChange={handleInput}
-                          name='lhsFrontDoor'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Not Opening">Not Opening</MenuItem>
-                           <MenuItem value="Hinges Rusted">Hinges Rusted</MenuItem>
-                           <MenuItem value="Handel Broken or not Working">Handel Broken or not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs B Pillar*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsBPillar}
-                          label="Lhs B Pillar*"
-                          onChange={handleInput}
-                          name='lhsBPillar'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Rubber Beading Torn or Missing">Rubber Beading Torn or Missing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Rear Door*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsRearDoor}
-                          label="Lhs Rear Door*"
-                          onChange={handleInput}
-                          name='lhsRearDoor'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Not Opening">Not Opening</MenuItem>
-                           <MenuItem value="Hinges Rusted">Hinges Rusted</MenuItem>
-                           <MenuItem value="Handel Broken or not Working">Handel Broken or not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs C Pillar*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsCPillar}
-                          label="Lhs C Pillar*"
-                          onChange={handleInput}
-                          name='lhsCPillar'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Rubber Beading Torn or Missing">Rubber Beading Torn or Missing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Running Board*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsRunningBoard}
-                          label="Lhs Running Board"
-                          onChange={handleInput}
-                          name='lhsRunningBoard'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Rear Alloy*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsRearAlloy}
-                          label="Lhs Rear Alloy*"
-                          onChange={handleInput}
-                          name='lhsRearAlloy'
-                          required
-                        >
-                           <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Okay">Okay</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Rear Tyre*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsRearTyre}
-                          label="Lhs Rear Tyre*"
-                          onChange={handleInput}
-                          name='lhsRearTyre'
-                          required
-                        >
-                           <MenuItem value="Chinese Tyre">Chinese Tyre</MenuItem>
-                           <MenuItem value="Resoaled">Resoaled</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Tyre Life (10%-29%)">Tyre Life (10%-29%)</MenuItem>
-                           <MenuItem value="Tyre Life (30%-49%)">Tyre Life (30%-49%)</MenuItem>
-                           <MenuItem value="Tyre Life (50%-79%)">Tyre Life (50%-79%)</MenuItem>
-                           <MenuItem value="Tyre Life (80%-100%)">Tyre Life (80%-100%)</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Quarter Panel*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsQuarterPanel}
-                          label="Lhs Quarter Panel"
-                          onChange={handleInput}
-                          name='lhsQuarterPanel'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Inner Wheel Housing Rusted">Inner Wheel Housing Rusted</MenuItem>
-                           <MenuItem value="Inner Lining Missing/Broken">Inner Lining Missing/Broken</MenuItem>
-                           <MenuItem value="Fuel Lid Lock Rusted">Fuel Lid Lock Rusted</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rear Bumper*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rearBumper}
-                          label="Rear Bumper*"
-                          onChange={handleInput}
-                          name='rearBumper'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Repainted">Repainted</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Dented">Dented</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                          <MenuItem value="Faded">Faded</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                          <MenuItem value="Grill Damaged">Grill Damaged</MenuItem>
-                          <MenuItem value="Welded">Welded</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs Tail Lamp*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsTailLamp}
-                          label="Lhs Tail Lamp*"
-                          onChange={handleInput}
-                          name='lhsTailLamp'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                          <MenuItem value="Missing">Missing</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs Tail Lamp*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsTailLamp}
-                          label="Rhs Tail Lamp*"
-                          onChange={handleInput}
-                          name='rhsTailLamp'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                          <MenuItem value="Missing">Missing</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rear Windshield*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rearWindshield}
-                          label="Rear Windshield*"
-                          onChange={handleInput}
-                          name='rearWindshield'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Spots">Spots</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Boot Door*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={bootDoor}
-                          label="Boot Door*"
-                          onChange={handleInput}
-                          name='bootDoor'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Not Opening">Not Opening</MenuItem>
-                           <MenuItem value="Hinges Rusted">Hinges Rusted</MenuItem>
-                           <MenuItem value="Handel Broken or not Working">Handel Broken or not Working</MenuItem>
-                           <MenuItem value="Boot Lock Rusted">Boot Lock Rusted</MenuItem>
-                           <MenuItem value="Sensor Not Working">Sensor Not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Spare Tyre*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={spareTyre}
-                          label="Spare Tyre*"
-                          onChange={handleInput}
-                          name='spareTyre'
-                          required
-                        >
-                           <MenuItem value="Chinese Tyre">Chinese Tyre</MenuItem>
-                           <MenuItem value="Resoaled">Resoaled</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Tyre Life (10%-29%)">Tyre Life (10%-29%)</MenuItem>
-                           <MenuItem value="Tyre Life (30%-49%)">Tyre Life (30%-49%)</MenuItem>
-                           <MenuItem value="Tyre Life (50%-79%)">Tyre Life (50%-79%)</MenuItem>
-                           <MenuItem value="Tyre Life (80%-100%)">Tyre Life (80%-100%)</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Boot Floor*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={bootFloor}
-                          label="Boot Floor*"
-                          onChange={handleInput}
-                          name='bootFloor'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Sealant Broken">Sealant Broken</MenuItem>
-                           <MenuItem value="Cracked">Cracked</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">RHS Quarter Panel*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsQuarterPanel}
-                          label="RHS Quarter Panel*"
-                          onChange={handleInput}
-                          name='rhsQuarterPanel'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Inner Wheel Housing Rusted">Inner Wheel Housing Rusted</MenuItem>
-                           <MenuItem value="Inner Lining Missing/Broken">Inner Lining Missing/Broken</MenuItem>
-                           <MenuItem value="Cracked">Cracked</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">RHS Rear Alloy*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsRearAlloy}
-                          label="RHS Rear Alloy*"
-                          onChange={handleInput}
-                          name='rhsRearAlloy'
-                          required
-                        >
-                           <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Okay">Okay</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">RHS Rear Tyre*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsRearTyre}
-                          label="RHS Rear Tyre*"
-                          onChange={handleInput}
-                          name='rhsRearTyre'
-                          required
-                        >
-                           <MenuItem value="Chinese Tyre">Chinese Tyre</MenuItem>
-                           <MenuItem value="Resoaled">Resoaled</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Tyre Life (10%-29%)">Tyre Life (10%-29%)</MenuItem>
-                           <MenuItem value="Tyre Life (30%-49%)">Tyre Life (30%-49%)</MenuItem>
-                           <MenuItem value="Tyre Life (50%-79%)">Tyre Life (50%-79%)</MenuItem>
-                           <MenuItem value="Tyre Life (80%-100%)">Tyre Life (80%-100%)</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs C Pillar*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsCPillar}
-                          label="Rhs C Pillar*"
-                          onChange={handleInput}
-                          name='rhsCPillar'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Rubber Beading Torn or Missing">Rubber Beading Torn or Missing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs Rear Door*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsRearDoor}
-                          label="Rhs Rear Door*"
-                          onChange={handleInput}
-                          name='rhsRearDoor'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Not Opening">Not Opening</MenuItem>
-                           <MenuItem value="Hinges Rusted">Hinges Rusted</MenuItem>
-                           <MenuItem value="Handel Broken or not Working">Handel Broken or not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs B Pillar*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsBPillar}
-                          label="Rhs B Pillar*"
-                          onChange={handleInput}
-                          name='rhsBPillar'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Rubber Beading Torn or Missing">Rubber Beading Torn or Missing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs Front Door*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsFrontDoor}
-                          label="Rhs Front Door*"
-                          onChange={handleInput}
-                          name='rhsFrontDoor'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Not Opening">Not Opening</MenuItem>
-                           <MenuItem value="Hinges Rusted">Hinges Rusted</MenuItem>
-                           <MenuItem value="Handel Broken or not Working">Handel Broken or not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs A Pillar*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsAPillar}
-                          label="Rhs A Pillar*"
-                          onChange={handleInput}
-                          name='rhsAPillar'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Faded">Faded</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Rubber Beading Torn or Missing">Rubber Beading Torn or Missing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs Running Board*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsRunningBoard}
-                          label="Rhs Running Board"
-                          onChange={handleInput}
-                          name='rhsRunningBoard'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Repainted">Repainted</MenuItem>
-                           <MenuItem value="Replaced">Replaced</MenuItem>
-                           <MenuItem value="Dented">Dented</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Rusted">Rusted</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">RHS Front Alloy*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsFrontAlloy}
-                          label="RHS Front Alloy*"
-                          onChange={handleInput}
-                          name='rhsFrontAlloy'
-                          required
-                        >
-                           <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Okay">Okay</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">RHS Front Tyre*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsFrontTyre}
-                          label="RHS Front Tyre*"
-                          onChange={handleInput}
-                          name='rhsFrontTyre'
-                          required
-                        >
-                           <MenuItem value="Chinese Tyre">Chinese Tyre</MenuItem>
-                           <MenuItem value="Resoaled">Resoaled</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Tyre Life (10%-29%)">Tyre Life (10%-29%)</MenuItem>
-                           <MenuItem value="Tyre Life (30%-49%)">Tyre Life (30%-49%)</MenuItem>
-                           <MenuItem value="Tyre Life (50%-79%)">Tyre Life (50%-79%)</MenuItem>
-                           <MenuItem value="Tyre Life (80%-100%)">Tyre Life (80%-100%)</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs Orvm*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsOrvm}
-                          label="Rhs Orvm*"
-                          onChange={handleInput}
-                          name='rhsOrvm'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                           <MenuItem value="Repaired">Repaired</MenuItem>
-                           <MenuItem value="Not Working">Not Working</MenuItem>
-                           <MenuItem value="Missing">Missing</MenuItem>
-                           <MenuItem value="Damaged">Damaged</MenuItem>
-                           <MenuItem value="Scratched">Scratched</MenuItem>
-                           <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                           <MenuItem value="Indicator Broken / Not Working">Indicator Broken / Not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs Fender*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsFender}
-                          label="Rhs Fender*"
-                          onChange={handleInput}
-                          name='rhsFender'
-                          required
-                        >
-                           <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Repaired">Repaired</MenuItem>
-                          <MenuItem value="Repainted">Repainted</MenuItem>
-                          <MenuItem value="Replaced">Replaced</MenuItem>
-                          <MenuItem value="Dented">Dented</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Rusted">Rusted</MenuItem>
-                          <MenuItem value="Faded">Faded</MenuItem>
-                          <MenuItem value="Scratched">Scratched</MenuItem>
-                          <MenuItem value="Inner Wheel Housing Rusted">Inner Wheel Housing Rusted</MenuItem>
-                          <MenuItem value="Inner Lining Missing/Broken">Inner Lining Missing/Broken</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  
-                  <Grid item md={12}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
-                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
-                            <Typography variant='h4'>Comments On Exterior</Typography>
-                          </Box>
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
-                          <Grid container spacing={0}>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Customized Vehicle or Body Modified" name='commentsOnExterior' onChange={handleInput} />} label="Customized Vehicle or Body Modified" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Body Shell Replaced" name='commentsOnExterior' onChange={handleInput} />} label="Body Shell Replaced" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Roof Top Canvas" name='commentsOnExterior' onChange={handleInput} />} label="Roof Top Canvas" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Water Logged Vehicle" name='commentsOnExterior' onChange={handleInput} />} label="Water Logged Vehicle" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Chassis Extension Repaired" name='commentsOnExterior' onChange={handleInput} />} label="Chassis Extension Repaired" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Strut Mounting Area Damaged" name='commentsOnExterior' onChange={handleInput} />} label="Strut Mounting Area Damaged" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Roof Colour Changed / Vinyl wrapped" name='commentsOnExterior' onChange={handleInput} />} label="Roof Colour Changed / Vinyl wrapped" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Vehicle Color Changed" name='commentsOnExterior' onChange={handleInput} />} label="Vehicle Color Changed" />
-                                </Grid>
-                                
-                          </Grid>
-                        </Box>
-                    </Box>
-                  </Grid>
-
-                </Grid>
-                <Box className={`${dashboardStyles.tm_dashboard_img_upl} ${"tm_dashboard_img_upl_gb"}`}>
-                  
                   <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
                     <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
                       <Typography variant='h6'>Exterior Images </Typography>
@@ -3795,264 +4845,182 @@ function Create() {
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='exteriorImages' hidden />
+                            <input type="file" onChange={handleInput} name='ExteriorPhotos' hidden />
                           </Button>
                           
                         </Box>                        
                       </Grid>
-                       {/* <Grid item md={9}>
-                         {ThumbnailPhotos.length > 0 &&
-                          ThumbnailPhotos.map((element, index) => {
+                      <Grid item md={9}>
+                        {exteriorImages.length > 0 &&
+                          exteriorImages.map((element, index) => {
                             return (
                               <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
-                                <Box >
-                                  <Image
-                                    src={URL.createObjectURL(element)}
-                                    alt='Uploaded Image'
-                                    height='300'
-                                    width='300'
-                                  />
-                                  <Button onClick={() => handleRemoveImage(element)}><CloseIcon/> </Button>
+                                <Box>
+                                  <Image src={element.path} alt='Uploaded Image' height='300' width='300'/>
+                                  <Button onClick={() => handleRemoveExteriorImage(element.path)}><CloseIcon/> </Button>
                                 </Box>
                               </Box>
                             );
                           })}
-                        </Grid> */}
+                        </Grid>
                       </Grid>
                   </Box>
                   
-                </Box>
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Add Thumbnail Photos (Upload only 1 Photo) <Box sx={{color:"red"}}></Box></Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='ThumbnailPhotos' hidden />
+                          </Button>
+                          
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                        {thumbImage.length > 0 &&
+                          thumbImage.map((element, index) => {
+                            return (
+                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box >
+                                  <Image
+                                    src={element.path}
+                                    alt='Uploaded Image'
+                                    height='300'
+                                    width='300'
+                                  />
+                                  <Button onClick={() => handleRemoveThumbnailImage(element.path)}><CloseIcon/> </Button>
+                                </Box>
+                              </Box>
+                            );
+                          })}
+                        </Grid>
+                      </Grid>
+                  </Box>
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Add Tyre Photos (Upload only 5 Photo)</Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='TyresPhotos' hidden />
+                          </Button>
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                        {tyreImages.length > 0 &&
+                          tyreImages.map((element, index) => {
+                            return (
+                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box >
+                                  <Image src={element.path} alt='Uploaded Image' height='300' width='300' />
+                                  <Button onClick={() => handleRemoveTyreImage(element.path)}><CloseIcon/> </Button>
+                                </Box>
+                              </Box>
+                            );
+                          })}
+                        </Grid>
+                      </Grid>
+                  </Box>
 
-                <Box>
-                    <Typography variant='h6'>Safety Details</Typography>
-                </Box>
-                <Grid container spacing={4}>
-                  <Grid item md={3}>
-                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <TextField id="outlined-basic" label="Number of Airbags" onChange={handleInput} name='noOfAirbags' type="number" required variant="outlined" fullWidth/>
-                      </Box>
-                  </Grid> 
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">ABS*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={abs}
-                          label="ABS*"
-                          onChange={handleInput}
-                          name='abs'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Warning Light Glowing">Warning Light Glowing</MenuItem>
-                        </Select>
-                      </FormControl>
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Add Dent Photos (Upload only 5 Photo)</Typography>
                     </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Driver Side Airbags*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={driverSideAB}
-                          label="Driver Side Airbags*"
-                          onChange={handleInput}
-                          name='driverSideAB'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Deployed">Deployed</MenuItem>
-                          <MenuItem value="Removed">Removed</MenuItem>
-                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Co-Driver Side Airbags*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={codriverSideAB}
-                          label="Co-Driver Side Airbags*"
-                          onChange={handleInput}
-                          name='codriverSideAB'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Deployed">Deployed</MenuItem>
-                          <MenuItem value="Removed">Removed</MenuItem>
-                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs A Pillar Airbags*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsAPillarAB}
-                          label="Lhs A Pillar Airbags*"
-                          onChange={handleInput}
-                          name='lhsAPillarAB'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Deployed">Deployed</MenuItem>
-                          <MenuItem value="Removed">Removed</MenuItem>
-                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs B Pillar Airbags*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsBPillarAB}
-                          label="Lhs B Pillar Airbags*"
-                          onChange={handleInput}
-                          name='lhsBPillarAB'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Deployed">Deployed</MenuItem>
-                          <MenuItem value="Removed">Removed</MenuItem>
-                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Lhs C Pillar Airbags*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={lhsCPillarAB}
-                          label="Lhs C Pillar Airbags*"
-                          onChange={handleInput}
-                          name='lhsCPillarAB'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Deployed">Deployed</MenuItem>
-                          <MenuItem value="Removed">Removed</MenuItem>
-                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs A Pillar Airbags*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsAPillarAB}
-                          label="Rhs A Pillar Airbags*"
-                          onChange={handleInput}
-                          name='rhsAPillarAB'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Deployed">Deployed</MenuItem>
-                          <MenuItem value="Removed">Removed</MenuItem>
-                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs B Pillar Airbags*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsBPillarAB}
-                          label="Rhs B Pillar Airbags*"
-                          onChange={handleInput}
-                          name='rhsBPillarAB'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Deployed">Deployed</MenuItem>
-                          <MenuItem value="Removed">Removed</MenuItem>
-                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rhs C Pillar Airbags*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={rhsCPillarAB}
-                          label="Rhs C Pillar Airbags*"
-                          onChange={handleInput}
-                          name='rhsCPillarAB'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Deployed">Deployed</MenuItem>
-                          <MenuItem value="Removed">Removed</MenuItem>
-                          <MenuItem value="Airbag Warning Light Glowing">Airbag Warning Light Glowing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Reverse Parking Camera*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={reverseParkingCamera}
-                          label="Reverse Parking Camera*"
-                          onChange={handleInput}
-                          name='reverseParkingCamera'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Hazy">Hazy</MenuItem>
-                          <MenuItem value="Damaged / Not working">Damaged / Not working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='DentsPhotos' hidden />
+                          </Button>
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                        {dentImages.length > 0 &&
+                          dentImages.map((element, index) => {
+                            return (
+                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box >
+                                  <Image
+                                    src={element.path}
+                                    alt='Uploaded Image'
+                                    height='300'
+                                    width='300'
+                                  />
+                                  <Button onClick={() => handleRemoveDentImage(element.path)}><CloseIcon/> </Button>
+                                </Box>
+                              </Box>
+                            );
+                          })}
+                        </Grid>
+                      </Grid>
+                  </Box>
 
-                </Grid>
-                <Box className={`${dashboardStyles.tm_dashboard_img_upl} ${"tm_dashboard_img_upl_gb"}`}>
-                  
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Engine Sound Video</Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='engineVideo' hidden />
+                          </Button>
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                              
+                              <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box>
+                                    {engineVideo ? (<>
+                                    <video width="200" height="100" controls >
+                                      <source src={engineVideo} type="video/mp4"/>
+                                    </video>
+                                    <Button onClick={() => handleRemoveVideo()}><CloseIcon/> </Button>
+                                    </>):(<> {isLoader?(<CircularProgress />):(<></>)}</>)}
+                                    
+                                </Box>
+                              </Box>
+                        </Grid>
+                      </Grid>
+                  </Box>
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Silencer Video</Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='silencerVideo' hidden />
+                          </Button>
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                              
+                              <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box>
+                                    {silencerVideo ? (<>
+                                    <video width="200" height="100" controls >
+                                      <source src={silencerVideo} type="video/mp4"/>
+                                    </video>
+                                    <Button onClick={() => handleRemoveVideo2()}><CloseIcon/> </Button>
+                                    </>):(<> {isLoader2?(<CircularProgress />):(<></>)}</>)}
+                                </Box>
+                              </Box>
+                        </Grid>
+                      </Grid>
+                  </Box>
+
                   <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
                     <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
                       <Typography variant='h6'>Safety Images </Typography>
@@ -4067,249 +5035,26 @@ function Create() {
                           
                         </Box>                        
                       </Grid>
-                       {/* <Grid item md={9}>
-                         {ThumbnailPhotos.length > 0 &&
-                          ThumbnailPhotos.map((element, index) => {
+                       <Grid item md={9}>
+                         {safetyImages.length > 0 &&
+                          safetyImages.map((element, index) => {
                             return (
                               <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
                                 <Box >
                                   <Image
-                                    src={URL.createObjectURL(element)}
+                                    src={element.path}
                                     alt='Uploaded Image'
                                     height='300'
                                     width='300'
                                   />
-                                  <Button onClick={() => handleRemoveImage(element)}><CloseIcon/> </Button>
+                                  <Button onClick={() => handleRemoveSafetyImage(element.path)}><CloseIcon/> </Button>
                                 </Box>
                               </Box>
                             );
                           })}
-                        </Grid> */}
+                        </Grid>
                       </Grid>
                   </Box>
-                  
-                </Box>
-
-                <Box>
-                    <Typography variant='h6'>Comfort & Conveniance</Typography>
-                </Box>
-                <Grid container spacing={4}>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Manual AC*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={manualAC}
-                          label="Manual AC*"
-                          onChange={handleInput}
-                          name='manualAC'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Ineffective">Ineffective</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Climate Control AC*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={climateAC}
-                          label="Climate Control AC*"
-                          onChange={handleInput}
-                          name='climateAC'
-                          required
-                        >
-                          <MenuItem value="Okay">Okay</MenuItem>
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Ineffective">Ineffective</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Music System*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={musicSystem}
-                          label="Music System*"
-                          onChange={handleInput}
-                          name='musicSystem'
-                          required
-                        >
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Available">Available</MenuItem>
-                          <MenuItem value="Not working">Not working</MenuItem>
-                          <MenuItem value="Speaker Not Working">Speaker Not Working</MenuItem>
-                          <MenuItem value="Front Fascia missing">Front Fascia missing</MenuItem>
-                          <MenuItem value="Touchpad Not Working">Touchpad Not Working</MenuItem>
-                          <MenuItem value="Data Cable Panel Missing">Data Cable Panel Missing</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Stereo*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={stereo}
-                          label="Stereo*"
-                          onChange={handleInput}
-                          name='stereo'
-                          required
-                        >
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Normal Stereo">Normal Stereo</MenuItem>
-                          <MenuItem value="Touch Stereo">Touch Stereo</MenuItem>
-                          <MenuItem value="Display Damaged / Broken">Display Damaged / Broken</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Inbuilt Speaker*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={inbuiltSpeaker}
-                          label="Inbuilt Speaker*"
-                          onChange={handleInput}
-                          name='inbuiltSpeaker'
-                          required
-                        >
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Available">Available</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">External Speaker*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={externalSpeaker}
-                          label="External Speaker*"
-                          onChange={handleInput}
-                          name='externalSpeaker'
-                          required
-                        >
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Available">Available</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Stearing Mounted Audio Control*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={stearingMountedAudio}
-                          label="Stearing Mounted Audio Control*"
-                          onChange={handleInput}
-                          name='stearingMountedAudio'
-                          required
-                        >
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Available">Available</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Sunroof*</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          // value={sunroof}
-                          label="Sunroof*"
-                          onChange={handleInput}
-                          name='sunroof'
-                          required
-                        >
-                          <MenuItem value="Not Applicable">Not Applicable</MenuItem>
-                          <MenuItem value="Available">Available</MenuItem>
-                          <MenuItem value="Not Working">Not Working</MenuItem>
-                          <MenuItem value="Damaged">Damaged</MenuItem>
-                          <MenuItem value="Noisy">Noisy</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Box>
-                  </Grid>
-                  <Grid item md={12}>
-                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox}>
-                          <Box className={dashboardStyles.tm_dashboard_img_upl_title}>
-                            <Typography variant='h4'>Additional Comments</Typography>
-                          </Box>
-                        <Box className={dashboardStyles.tm_dashboard_rightbar_form_checkbox_all}></Box>
-                          <Grid container spacing={0}>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Electrical Wiring Damaged" name='additionalComments' onChange={handleInput} />} label="Electrical Wiring Damaged" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Starter Motor / Solanoid Malfunction" name='additionalComments' onChange={handleInput} />} label="Starter Motor / Solanoid Malfunction" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Battery Not Available" name='additionalComments' onChange={handleInput} />} label="Battery Not Available" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Front Drive Axle Noise" name='additionalComments' onChange={handleInput} />} label="Front Drive Axle Noise" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Car Pulling on One Side" name='additionalComments' onChange={handleInput} />} label="Car Pulling on One Side" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Silencer Assembly Damaged" name='additionalComments' onChange={handleInput} />} label="Silencer Assembly Damaged" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Noise from Silencer Assembly" name='additionalComments' onChange={handleInput} />} label="Noise from Silencer Assembly" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Hand Brake not Working" name='additionalComments' onChange={handleInput} />} label="Hand Brake not Working" />
-                                </Grid>
-                                <Grid item md={6}>
-                                  <FormControlLabel control={<Checkbox value="Jack & Toolkit not available" name='additionalComments' onChange={handleInput} />} label="Jack & Toolkit not available" />
-                                </Grid>
-                          </Grid>
-                        </Box>
-                    </Box>
-                  </Grid>
-
-
-                </Grid>
-                <Box className={`${dashboardStyles.tm_dashboard_img_upl} ${"tm_dashboard_img_upl_gb"}`}>
-                  
                   <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
                     <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
                       <Typography variant='h6'>Comfort & Conveniance Images </Typography>
@@ -4324,30 +5069,28 @@ function Create() {
                           
                         </Box>                        
                       </Grid>
-                       {/* <Grid item md={9}>
-                         {ThumbnailPhotos.length > 0 &&
-                          ThumbnailPhotos.map((element, index) => {
+                       <Grid item md={9}>
+                         {comfortImages.length > 0 &&
+                          comfortImages.map((element, index) => {
                             return (
                               <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
                                 <Box >
                                   <Image
-                                    src={URL.createObjectURL(element)}
+                                    src={element.path}
                                     alt='Uploaded Image'
                                     height='300'
                                     width='300'
                                   />
-                                  <Button onClick={() => handleRemoveImage(element)}><CloseIcon/> </Button>
+                                  <Button onClick={() => handleRemoveComfortImage(element.path)}><CloseIcon/> </Button>
                                 </Box>
                               </Box>
                             );
                           })}
-                        </Grid> */}
+                        </Grid>
                       </Grid>
                   </Box>
-                  
                 </Box>
 
-                
                 
                 <Box sx={{margin:'50px 0 0'}}>
                   <Box className={dashboardStyles.tm_dashboard_rightbar_form_submit_btn}>
