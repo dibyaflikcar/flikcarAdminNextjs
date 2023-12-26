@@ -32,6 +32,12 @@ const API = axios.create({
     }
   };
 
+  
+
+  
+  
+  
+
   vehicleApi.getInspectorList = async () => {
     try {
       const tokenStr = localStorage.getItem('token');
@@ -544,7 +550,43 @@ vehicleApi.addInspectionVehicle = async (data) => {
     return error.response;
   }
 };
+vehicleApi.updateInspectionVehicle = async (data) => {
+  try {
+    const res = API.post('/vehicle/updateInspectionVehicle',data);
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
+vehicleApi.getInspectionList = async () => {
+  try {
+    const tokenStr = localStorage.getItem('token');
+    const headers = {
+      'Authorization': 'Bearer '+tokenStr
+    }
+    const res = API.get('/vehicle/getInspectionList',{headers});
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
+vehicleApi.deleteInspectionVehicle = async (data) => {
+  try {
+    const res = API.post('/vehicle/deleteInspectionVehicle',data);
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
 
+vehicleApi.getInspectionListbyID = async (data) => {
+  try {
+    const res = API.post('/vehicle/getInspectionListbyID',data);
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
 
 
 

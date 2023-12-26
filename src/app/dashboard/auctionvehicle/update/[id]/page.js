@@ -493,7 +493,14 @@ function Update({ params }) {
       setCity(e.target.value);
     }
     if (e.target.name === 'kmsDriven') {
-      setkmsDriven(e.target.value);
+      if(e.target.value!="")
+      {
+        setkmsDriven(Number(e.target.value));
+      }
+      else
+      {
+        setkmsDriven(null);
+      }
     }
     if (e.target.name === 'carPrice') {
       if(e.target.value=="")
@@ -871,6 +878,7 @@ const handleRemoveVideo2 = async ()=>{
 const handleRealImage = async (image,type)=>{
   // alert(type+" "+image);
   setAllcarImage(prevArray => prevArray.filter(item => item.path !== image));
+  setThumbImages(prevArray => prevArray.filter(item => item.path !== image));
   if(type=="EXT")
   {
     setExtImages(prevArray => prevArray.filter(item => item.path !== image));
@@ -1417,7 +1425,8 @@ const handleCloseBtn = () => {
                                     height='300'
                                     width='300'
                                   />
-                                  <Button onClick={() => handleRemoveImage(element)}><CloseIcon/> </Button>
+                                  {/* <Button onClick={() => handleRemoveImage(element)}><CloseIcon/> </Button> */}
+                                  <Button onClick={() => handleRealImage(`${element.path}`,'THUMB')}><CloseIcon/> </Button>
                                 </Box>
                               </Box>
                             );

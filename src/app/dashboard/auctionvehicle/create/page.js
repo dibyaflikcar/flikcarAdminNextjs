@@ -315,7 +315,14 @@ function Create() {
       setCity(e.target.value);
     }
     if (e.target.name === 'kmsDriven') {
-      setkmsDriven(e.target.value);
+      if(e.target.value!="")
+      {
+        setkmsDriven(Number(e.target.value));
+      }
+      else
+      {
+        setkmsDriven(null);
+      }
     }
     if (e.target.name === 'carPrice') {
       setcarPrice(e.target.value);

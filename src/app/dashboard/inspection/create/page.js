@@ -506,7 +506,15 @@ function Create() {
       setfuelType(e.target.value);
     }
     if (e.target.name === 'cc') {
-      setCC(e.target.value);
+      if(e.target.value!="")
+      {
+        setCC(Number(e.target.value));
+      }
+      else
+      {
+        setCC(null);
+      }
+      
     }
     if (e.target.name === 'hypoDetails') {
       setHypoDetails(e.target.value);
@@ -821,7 +829,15 @@ function Create() {
       }
     }
     if (e.target.name === 'noOfAirbags') {
-      setNoOfAirbags(e.target.value);
+      if(e.target.value!="")
+      {
+        setNoOfAirbags(Number(e.target.value));
+      }
+      else
+      {
+        setNoOfAirbags(null);
+      }
+      
     }
     if (e.target.name === 'abs') {
       setAbs(e.target.value);
@@ -902,7 +918,14 @@ function Create() {
       setColor(e.target.value);
     }
     if (e.target.name === 'kmsDriven') {
-      setkmsDriven(e.target.value);
+      if(e.target.value!="")
+      {
+        setkmsDriven(Number(e.target.value));
+      }
+      else
+      {
+        setkmsDriven(null);
+      }
     }
     if (e.target.name === 'description') {
       setDescription(e.target.value);
@@ -1394,7 +1417,7 @@ const handleRemoveVideo2 = async ()=>{
     // console.log(response);
     if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
       confirm("Car added successfully");
-      // router.push("/dashboard/inspection");
+      router.push("/dashboard/inspection");
     }
 
   }
