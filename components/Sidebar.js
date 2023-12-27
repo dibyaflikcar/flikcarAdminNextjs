@@ -83,6 +83,9 @@ const Sidebar = () => {
                 <Link href="/dashboard/users">-<FactoryIcon/> User List</Link>
               </AccordionDetails>
               <AccordionDetails className={dashboardStyles.tm_dashboard_siderbar_menu_details}>
+                <Link href="/dashboard/inspectors">-<FactoryIcon/> Inspector List</Link>
+              </AccordionDetails>
+              <AccordionDetails className={dashboardStyles.tm_dashboard_siderbar_menu_details}>
                 <Link href="/dashboard/color">-<FactoryIcon/> Color List</Link>
               </AccordionDetails>
               <AccordionDetails className={dashboardStyles.tm_dashboard_siderbar_menu_details}>

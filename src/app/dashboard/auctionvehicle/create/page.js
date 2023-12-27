@@ -32,6 +32,10 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import CircularProgress from '@mui/material/CircularProgress';
 
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.snow.css'; // Import Quill styles
+const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
+
 import { useRouter } from 'next/navigation';
 
 
@@ -144,6 +148,46 @@ function Create() {
     setYears(yearsArray);
 
   }, []); 
+
+
+  const quillModules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      ['link', 'image'],
+      [{ align: [] }],
+      [{ color: [] }],
+      ['code-block'],
+      ['clean'],
+    ],
+  };
+
+
+  const quillFormats = [
+    'header',
+    'bold',
+    'italic',
+    'underline',
+    'strike',
+    'blockquote',
+    'list',
+    'bullet',
+    'link',
+    'image',
+    'align',
+    'color',
+    'code-block',
+  ];
+
+  const handleEditorChange = (newContent) => {
+    setDescription(newContent);
+  };
+  const handleEditorChange2 = (newContent) => {
+    setInspectionReport(newContent);
+  };
+
+
 
   const getMakeModel = async () => {
     try {
@@ -330,9 +374,8 @@ function Create() {
     if (e.target.name === 'oneClickBuyPrice') {
       setOneClickBuyPrice(e.target.value);
     }
-    if (e.target.name === 'description') {
-      setDescription(e.target.value);
-    }
+    
+    
     if (e.target.name === 'seat') {
       setSeat(e.target.value);
     }
@@ -665,16 +708,7 @@ const handleRemoveVideo2 = async ()=>{
     const formData={allCarVideo,auctionStartTime,auctionEndTime,thumbImage,allCarImage,brand,model,variant,regYear,bodyType,fuelType,transmission,ownerType,color,rto,city,kmsDriven,carPrice,oneClickBuyPrice,description,seat,mileage,engine,maxPower,maxTorque,noc,mfgYear,inspectionReport,insuranceValidity,roadTaxValidity,inspectionScore,comforts,safety,interior,exterior,entertainment};
     
     // console.log(formData);
-    
-    // console.log(ThumbnailPhotos);
-    // ThumbnailPhotos.map((element, index) => {
-    //   formData.append(`ThumbnailPhotos`, element);
-    // });
-    // ExteriorPhotos.map((element, index) => {
-    //   formData.append(`ExteriorPhotos`, element);
-    // });
-
-    // console.log(ThumbnailPhotos , ExteriorPhotos);
+  
     
     const response = await vehicleApi.addAuctionVehicle(formData);
     // console.log(response);
@@ -985,9 +1019,33 @@ const handleCloseBtn = () => {
                   </Grid>
                   <Grid item md={12}>
                     <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                    <TextField id="outlined-basic" label="Description" onChange={handleInput} name='description' value={description} variant="outlined" required fullWidth/>
+                    {/* <TextField id="outlined-basic" label="Description" onChange={handleInput} name='description' value={description} variant="outlined" required fullWidth/> */}
+                    <InputLabel id="demo-simple-select-label">Description</InputLabel> 
+                      <QuillEditor
+                      name='description'
+                      value={description}
+                      onChange={handleEditorChange}
+                      modules={quillModules}
+                      formats={quillFormats}
+                      className="w-full h-[70%] mt-10 bg-white"
+                    />
                     </Box>
                   </Grid>
+                  <Grid item md={12}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                     <InputLabel id="demo-simple-select-label">Inspection Report</InputLabel> 
+                      <QuillEditor
+                      name='inspectionReport'
+                      value={inspectionReport}
+                      onChange={handleEditorChange2}
+                      modules={quillModules}
+                      formats={quillFormats}
+                      className="w-full h-[70%] mt-10 bg-white"
+                    />
+                    </Box>
+                  </Grid>
+
+                 
                   <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                         <FormControl fullWidth>
@@ -1055,11 +1113,7 @@ const handleCloseBtn = () => {
                       <TextField id="outlined-basic" label="MFG Year" name='mfgYear' onChange={handleInput} value={mfgYear} type="number" variant="outlined" required fullWidth/>
                       </Box>
                   </Grid>
-                  <Grid item md={3}>
-                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <TextField id="outlined-basic" label="Inspection Report" onChange={handleInput} name='inspectionReport' value={inspectionReport} required variant="outlined" fullWidth/>
-                      </Box>
-                  </Grid>
+                  
                   <Grid item md={3}>
                         <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_date} ${"tm_dashboard_rightbar_form_date_gb"} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                           <LocalizationProvider dateAdapter={AdapterDayjs} >

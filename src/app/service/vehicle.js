@@ -200,6 +200,16 @@ const API = axios.create({
       return error.response;
     }
   };
+  
+
+  vehicleApi.uploadInspectionPdf = async (data) => {
+    try {
+      const res = API.post('/vehicle/uploadInspectionPdf',data);
+      return res;
+    } catch (error) {
+      return error.response;
+    }
+  };
 
   vehicleApi.uploadAuctionImage = async (data) => {
     try {
@@ -579,6 +589,16 @@ vehicleApi.deleteInspectionVehicle = async (data) => {
   }
 };
 
+
+vehicleApi.getInspectionReport = async (data) => {
+  try {
+    const res = API.post('/vehicle/getInspectionReport',data);
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
+
 vehicleApi.getInspectionListbyID = async (data) => {
   try {
     const res = API.post('/vehicle/getInspectionListbyID',data);
@@ -587,6 +607,41 @@ vehicleApi.getInspectionListbyID = async (data) => {
     return error.response;
   }
 };
+
+// inspector part
+vehicleApi.addInspector = async (data) => {
+  try {
+    const res = API.post('/vehicle/addInspector',data);
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
+vehicleApi.getInspectorbyId = async (data) => {
+  try {
+    const res = API.post('/vehicle/getInspectorbyId',data);
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
+vehicleApi.updateInspector = async (data) => {
+  try {
+    const res = API.post('/vehicle/updateInspector',data);
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
+vehicleApi.deleteInspector = async (data) => {
+  try {
+    const res = API.post('/vehicle/deleteInspector',data);
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
+
 
 
 

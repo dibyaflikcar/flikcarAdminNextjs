@@ -26,6 +26,13 @@ a {
   height: auto !important;
   position: unset !important;
 }
+.tm_report_images_gb .tm_images_cust{
+    width: 100% !important;
+    height: 210px !important;
+    position: unset !important;
+    object-fit: contain;
+    background-color: #e1e1e1;
+}
 /* admin */
 .tm_amin_main_text_gb_field{
   margin-bottom: 15px;

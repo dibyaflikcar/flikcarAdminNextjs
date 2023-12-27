@@ -34,6 +34,9 @@ import dayjs from 'dayjs';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.snow.css'; // Import Quill styles
+const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
 
 
 
@@ -125,9 +128,6 @@ function Update({ params }) {
   const [tyreImages,settyreImages]=useState([]);
   const [dentImages,setdentImages]=useState([]);
 
-
-  
-
   const [docId,setDocid]=useState(null);
   const [carsoldStatus,setCarsoldStatus]=useState(null);
 
@@ -151,6 +151,43 @@ function Update({ params }) {
     
 
   },[]); 
+
+  const quillModules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      ['link', 'image'],
+      [{ align: [] }],
+      [{ color: [] }],
+      ['code-block'],
+      ['clean'],
+    ],
+  };
+
+
+  const quillFormats = [
+    'header',
+    'bold',
+    'italic',
+    'underline',
+    'strike',
+    'blockquote',
+    'list',
+    'bullet',
+    'link',
+    'image',
+    'align',
+    'color',
+    'code-block',
+  ];
+
+  const handleEditorChange = (newContent) => {
+    setDescription(newContent);
+  };
+  const handleEditorChange2 = (newContent) => {
+    setInspectionReport(newContent);
+  };
 
   const getYear= async ()=>{
     const currentYear = new Date().getFullYear();
@@ -523,9 +560,7 @@ function Update({ params }) {
       }
       
     }
-    if (e.target.name === 'description') {
-      setDescription(e.target.value);
-    }
+   
     if (e.target.name === 'seat') {
       setSeat(e.target.value);
     }
@@ -1250,9 +1285,31 @@ const handleCloseBtn = () => {
                         <Typography variant='span' sx={{color:'red', marginTop:'5px', display:'block'}}>Note : If status is No , then this car will show in OCB</Typography>
                       </Box>
                   </Grid>
+                  
                   <Grid item md={12}>
                     <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                    <TextField id="outlined-basic" label="Description" onChange={handleInput} name='description' value={description} variant="outlined" required fullWidth/>
+                   <InputLabel id="demo-simple-select-label">Description</InputLabel> 
+                      <QuillEditor
+                      name='description'
+                      value={description}
+                      onChange={handleEditorChange}
+                      modules={quillModules}
+                      formats={quillFormats}
+                      className="w-full h-[70%] mt-10 bg-white"
+                    />
+                    </Box>
+                  </Grid>
+                  <Grid item md={12}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                     <InputLabel id="demo-simple-select-label">Inspection Report</InputLabel> 
+                      <QuillEditor
+                      name='inspectionReport'
+                      value={inspectionReport}
+                      onChange={handleEditorChange2}
+                      modules={quillModules}
+                      formats={quillFormats}
+                      className="w-full h-[70%] mt-10 bg-white"
+                    />
                     </Box>
                   </Grid>
                   <Grid item md={3}>
@@ -1320,11 +1377,6 @@ const handleCloseBtn = () => {
                   <Grid item md={3}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                       <TextField id="outlined-basic" label="MFG Year" name='mfgYear' type="number" onChange={handleInput} value={mfgYear} variant="outlined" required fullWidth/>
-                      </Box>
-                  </Grid>
-                  <Grid item md={3}>
-                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                      <TextField id="outlined-basic" label="Inspection Report" onChange={handleInput} name='inspectionReport' value={inspectionReport} required variant="outlined" fullWidth/>
                       </Box>
                   </Grid>
                   <Grid item md={3}>

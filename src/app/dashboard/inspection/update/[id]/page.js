@@ -24,15 +24,11 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
 import dayjs from 'dayjs';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useRouter } from 'next/navigation';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import Link from 'next/link';
 
 
 
@@ -248,6 +244,8 @@ function Update({ params }) {
   const [safetyImages, setSafetyImages] = useState([]);
   const [comfortImages, setComfortImages] = useState([]);
 
+  const [inspectionPdf, setInspectionPdf] = useState(null);
+
 
 
 
@@ -279,237 +277,7 @@ function Update({ params }) {
   }, []); 
 
   
-  // const getInspectionListbyID = async () => {
-  //   try {
-  //     const data={id:params.id};
-  //     setDocId(params.id);
-  //     const response = await vehicleApi.getInspectionListbyID(data);
-  //           console.log(response.data.data);
-  //     if (response.data.status === 200) {
-  //       const result=response.data.data.data;
-
-  //       setInspectionDoc(response.data.data.id);
-
-  //       // basic details
-  //       setInspector(result.inspectorId);
-  //       setCustContactNo(result.basicDocuments.custContactNo);
-  //       setCity(result.basicDocuments.city);
-  //       setRegType(result.basicDocuments.regType);
-  //       setRegNo(result.basicDocuments.regNo);
-  //       setRcAvailability(result.basicDocuments.rcAvailablilty);
-  //       setRcCondition(result.basicDocuments.rcCondition);
-  //       if(result.basicDocuments.regDate!=null)
-  //       {
-  //         const date = new Date(result.basicDocuments.regDate);
-  //         setRegistrationDate(dayjs(date.toLocaleDateString('en-US')));
-  //       }
-  //       if(result.basicDocuments.fittnessUpto!=null)
-  //       {
-  //         const date = new Date(result.basicDocuments.fittnessUpto);
-  //         setFitnessuptoDate(dayjs(date.toLocaleDateString('en-US')));
-  //       }
-  //       setTobeScraped(result.basicDocuments.tobeScraped);
-  //       setRegState(result.basicDocuments.regState);
-  //       setRto(result.basicDocuments.rtoLocation);
-  //       setOwnerSerialNo(result.basicDocuments.ownerSerialNo);
-  //       setBrand(result.basicDocuments.brand);
-  //       setModel(result.basicDocuments.model);
-  //       setVariant(result.basicDocuments.variant);
-  //       setEngineNo(result.basicDocuments.engineNo);
-  //       setChassisNo(result.basicDocuments.chassisNo);
-  //       setRegOwnerName(result.basicDocuments.regOwnerName);
-  //       setMfgMonth(result.basicDocuments.mfgMonth);
-  //       setMfgYear(result.basicDocuments.manufacturingYear);
-  //       setfuelType(result.basicDocuments.fuelType);
-  //       setCC(result.basicDocuments.cc);
-  //       setHypoDetails(result.basicDocuments.hypoDetails);
-  //       setSeat(result.basicDocuments.seat);
-  //       setMissmatchRC(result.basicDocuments.missmatchRC);
-  //       setRoadTax(result.basicDocuments.roadTax);
-  //       if(result.basicDocuments.roadTaxValidity!=null)
-  //       {
-  //         const date = new Date(result.basicDocuments.roadTaxValidity);
-  //         setRoadTaxValidUpto(dayjs(date.toLocaleDateString('en-US')));
-  //       }
-  //       setInsurance(result.basicDocuments.insurance);
-  //       if(result.basicDocuments.insuranceValidity!=null)
-  //       {
-  //         const date = new Date(result.basicDocuments.insuranceValidity);
-  //         setInsuranceValidity(dayjs(date.toLocaleDateString('en-US')));
-  //       }
-  //       setNoClaimBonus(result.basicDocuments.noClaimBonus);
-  //       setMissmatchInsurance(result.basicDocuments.missmatchInsurance);
-  //       setDuplicateKey(result.basicDocuments.duplicateKey);
-  //       setRtoNoc(result.basicDocuments.rtoNoc);
-  //       if(result.basicDocuments.rtoNocIssueDate!=null)
-  //       {
-  //         const date = new Date(result.basicDocuments.rtoNocIssueDate);
-  //         setRtoNocIssueDate(dayjs(date.toLocaleDateString('en-US')));
-  //       }
-  //       setCommentsOnBasic(result.basicDocuments.commentsOnBasic);
-  //       setRcAvailabilityImages(result.basicDocuments.rcAvailabilityImages);
-  //       setChassisImages(result.basicDocuments.chassisImages);
-  //       setHypoImages(result.basicDocuments.hypoImages);
-  //       setRoadTaxValidityImages(result.basicDocuments.roadTaxValidityImages);
-  //       setInsuranceImages(result.basicDocuments.insuranceImages);
-  //       setDuplicateKeyImages(result.basicDocuments.duplicateKeyImages);
-  //       setRtoNocImages(result.basicDocuments.rtoNocImages);
-
-  //       // Engine & Transmission Details
-  //       setEngine(result.engineAndTransmissionDetails.engine);
-  //       setBattery(result.engineAndTransmissionDetails.battery);
-  //       setCoolant(result.engineAndTransmissionDetails.coolant);
-  //       setEngineOilDipstick(result.engineAndTransmissionDetails.engineOilDipstick);
-  //       setEngineOil(result.engineAndTransmissionDetails.engineOil);
-  //       setEngineMount(result.engineAndTransmissionDetails.engineMount);
-  //       setEngineBlowbyStatus(result.engineAndTransmissionDetails.engineBlow);
-  //       setExhaustSmoke(result.engineAndTransmissionDetails.exhaustSmoke);
-  //       setRadiator(result.engineAndTransmissionDetails.radiator);
-  //       setClutch(result.engineAndTransmissionDetails.clutch);
-  //       setGear(result.engineAndTransmissionDetails.gear);
-  //       setSteering(result.engineAndTransmissionDetails.steering);
-  //       setBrake(result.engineAndTransmissionDetails.brake);
-  //       setSuspension(result.engineAndTransmissionDetails.suspension);
-  //       setCommentsOnEngine(result.engineAndTransmissionDetails.commentsOnEngine);
-  //       setCommentsOnTransmission(result.engineAndTransmissionDetails.commentsOnTransmission);
-
-  //       // Electrical & Interior Details
-  //       setOdometerReading(result.electicalInteriorDetails.odometerReading);
-  //       setFuelLevel(result.electicalInteriorDetails.fuelLevel);
-  //       setElectrical(result.electicalInteriorDetails.electricals);
-  //       setRearWiper(result.electicalInteriorDetails.rearWiper);
-  //       setRearDefogger(result.electicalInteriorDetails.rearDefogger);
-  //       setPowerWindow(result.electicalInteriorDetails.powerWindow);
-  //       setRhsFrontPW(result.electicalInteriorDetails.rhsFrontPowerWindow);
-  //       setLhsFrontPW(result.electicalInteriorDetails.lhsFrontPowerWindow);
-  //       setLhsRearPW(result.electicalInteriorDetails.lhsRearPowerWindow);
-  //       setRhsRearPW(result.electicalInteriorDetails.rhsRearPowerWindow);
-  //       setLeatherSeats(result.electicalInteriorDetails.leatherSeats);
-  //       setFabricSeats(result.electicalInteriorDetails.fabricSeats);
-  //       setCommentsOnInterior(result.electicalInteriorDetails.commentsOnInterior);
-  //       setCommentsOnElectrical(result.electicalInteriorDetails.commentsOnElectrical);
-
-  //       // Exterior Details
-  //       setBonnet(result.exteriorDetails.bonnet);
-  //       setUpperCrossMember(result.exteriorDetails.upperCrossMember);
-  //       setLowerCrossMember(result.exteriorDetails.lowerCrossMember);
-  //       setRadiatorSupport(result.exteriorDetails.radiatorSupport);
-  //       setHeadlightSupport(result.exteriorDetails.headlightSupport);
-  //       setLhsApron(result.exteriorDetails.lhsApron);
-  //       setRhsApron(result.exteriorDetails.rhsApron);
-  //       setFrontWindshield(result.exteriorDetails.frontWindshield);
-  //       setFirewall(result.exteriorDetails.firewall);
-  //       setCowlTop(result.exteriorDetails.cowlTop);
-  //       setRoof(result.exteriorDetails.roof);
-  //       setFrontBumper(result.exteriorDetails.frontBumper);
-  //       setLhsHeadlamp(result.exteriorDetails.lhsHeadLamp);
-  //       setRhsHeadlamp(result.exteriorDetails.rhsHeadLamp);
-  //       setLhsFoglamp(result.exteriorDetails.lhsFogLamp);
-  //       setRhsFoglamp(result.exteriorDetails.rhsFogLamp);
-  //       setLhsFender(result.exteriorDetails.lhsFender);
-  //       setLhsFrontAlloy(result.exteriorDetails.lhsFrontAlloy);
-  //       setLhsFrontTyre(result.exteriorDetails.lhsFrontTyre);
-  //       setLhsOrvm(result.exteriorDetails.lhsOrvm);
-  //       setLhsAPillar(result.exteriorDetails.lhsAPillar);
-  //       setLhsFrontDoor(result.exteriorDetails.lhsFrontDoor);
-  //       setLhsBPillar(result.exteriorDetails.lhsBPillar);
-  //       setLhsRearDoor(result.exteriorDetails.lhsRearDoor);
-  //       setLhsCPillar(result.exteriorDetails.lhsCPillar);
-  //       setLhsRunningBoard(result.exteriorDetails.lhsRunningBoard);
-  //       setLhsRearAlloy(result.exteriorDetails.lhsRearAlloy);
-  //       setLhsRearTyre(result.exteriorDetails.lhsRearTyre);
-  //       setLhsQuarterPanel(result.exteriorDetails.lhsQuarterPanel);
-  //       setRearBumper(result.exteriorDetails.rearBumper);
-  //       setLhsTailLamp(result.exteriorDetails.lhsTailLamp);
-  //       setRhsTailLamp(result.exteriorDetails.rhsTailLamp);
-  //       setRearWindshield(result.exteriorDetails.rearWindshield);
-  //       setBootDoor(result.exteriorDetails.bootDoor);
-  //       setSpareTyre(result.exteriorDetails.spareTyre);
-  //       setBootFloor(result.exteriorDetails.bootFloor);
-  //       setRhsQuarterPanel(result.exteriorDetails.rhsQuarterPanel);
-  //       setRhsRearAlloy(result.exteriorDetails.rhsRearAlloy);
-  //       setRhsRearTyre(result.exteriorDetails.rhsRearTyre);
-  //       setRhsCPillar(result.exteriorDetails.rhsCPillar);
-  //       setRhsRearDoor(result.exteriorDetails.rhsRearDoor);
-  //       setRhsBPillar(result.exteriorDetails.rhsBPillar);
-  //       setRhsFrontDoor(result.exteriorDetails.rhsFrontDoor);
-  //       setRhsAPillar(result.exteriorDetails.rhsAPillar);
-  //       setRhsRunningBoard(result.exteriorDetails.rhsRunningBoard);
-  //       setRhsFrontAlloy(result.exteriorDetails.rhsFrontAlloy);
-  //       setRhsFrontTyre(result.exteriorDetails.rhsFrontTyre);
-  //       setRhsOrvm(result.exteriorDetails.rhsOrvm);
-  //       setRhsFender(result.exteriorDetails.rhsFender);
-  //       setCommentsOnExterior(result.exteriorDetails.commentsOnExterior);
-
-  //       // Safety Details
-  //       setNoOfAirbags(result.safetyDetails.noOfAirbags);
-  //       setAbs(result.safetyDetails.abs);
-  //       setDriverSideAB(result.safetyDetails.driverSide);
-  //       setCodriverSideAB(result.safetyDetails.coDriverSide);
-  //       setLhsAPillarAB(result.safetyDetails.lhsApillar);
-  //       setLhsBPillarAB(result.safetyDetails.lhsBpillar);
-  //       setLhsCPillarAB(result.safetyDetails.lhsCpillar);
-  //       setRhsAPillarAB(result.safetyDetails.rhsApillar);
-  //       setRhsBPillarAB(result.safetyDetails.rhsBPillarAB);
-  //       setRhsCPillarAB(result.safetyDetails.rhsCpillar);
-  //       setReverseParkingCamera(result.safetyDetails.reverseParkingCamera);
-
-  //       // Comfort & Conveniance
-  //       setManualAC(result.comfortDetails.manualAC);
-  //       setClimateAC(result.comfortDetails.climateControl);
-  //       setMusicSystem(result.comfortDetails.musicSystem);
-  //       setStereo(result.comfortDetails.stereo);
-  //       setInbuiltSpeaker(result.comfortDetails.inbuiltSpeaker);
-  //       setExternalSpeaker(result.comfortDetails.externalSpeaker);
-  //       setStearingMountedAudio(result.comfortDetails.steeringMountedAudioControl);
-  //       setSunroof(result.comfortDetails.sunroof);
-  //       setCommentsOnComfort(result.comfortDetails.commentsOnComfort);
-
-  //       // Auction Details
-  //       setbodyType(result.basicDocuments.bodyType);
-  //       setRegYear(result.basicDocuments.registrationYear);
-  //       setTransmission(result.basicDocuments.transmission);
-  //       setownerType(result.basicDocuments.ownerType);
-  //       setColor(result.basicDocuments.color);
-  //       setkmsDriven(result.basicDocuments.kmsDriven);
-  //       setDescription(result.basicDocuments.carDescription);
-  //       setMileage(result.basicDocuments.mileage);
-  //       setmaxPower(result.basicDocuments.maxPower);
-  //       setMaxTorque(result.basicDocuments.maxTorque);
-  //       setNoc(result.basicDocuments.noc);
-  //       setInspectionReport(result.basicDocuments.inspectionReport);
-  //       setInspectionScore(result.basicDocuments.inspectionScore);
-  //       setComforts(result.basicDocuments.comfort);
-  //       setSafety(result.basicDocuments.safety);
-  //       setInterior(result.basicDocuments.interior);
-  //       setExterior(result.basicDocuments.exterior);
-  //       setEntertainment(result.basicDocuments.entertainment);
-
-  //       // Images
-  //       setExteriorImages(result.exteriorDetails.exteriorImages);
-  //       setDentImages(result.exteriorDetails.dentImages);
-  //       setTyreImages(result.exteriorDetails.tyreImages);
-  //       setEngineImages(result.engineAndTransmissionDetails.engineImages);
-  //       setInteriorImages(result.electicalInteriorDetails.interiorImages);
-  //       setSafetyImages(result.safetyDetails.safetyImages);
-  //       setComfortImages(result.comfortDetails.comfortImages);
-  //       setEngineVideo(result.engineAndTransmissionDetails.engineVideo);
-  //       setSilencerVideo(result.engineAndTransmissionDetails.exhaustSmokeVideo);
-  //       const imagePath=[{
-  //         'path':result.basicDocuments.imagePath,
-  //         'type':'THUMB'
-  //       }];
-  //       setThumbImage(imagePath);
-
-
- 
-        
-  //     }
-      
-  //   } catch (error) {
-  //     console.error('Error fetching data:', error);
-  //   }
-  // };
+  
 
   const getInspectorList = async () => {
     try {
@@ -534,7 +302,7 @@ function Update({ params }) {
         const data={id:params.id};
         setDocId(params.id);
         const response = await vehicleApi.getInspectionListbyID(data);
-            console.log(response.data.data);
+            // console.log(response.data.data);
           if (response.data.status === 200) {
             const result=response.data.data.data;
 
@@ -758,6 +526,10 @@ function Update({ params }) {
               'type':'THUMB'
             }];
             setThumbImage(imagePath);
+
+            // inspection PDF
+            
+            setInspectionPdf(result.pdfUrl);
 
 
     
@@ -1512,6 +1284,10 @@ function Update({ params }) {
           setLoader2(true);
           uploadAuctionVideo2(e.target.files[0]);
     }
+    if (e.target.name === 'inspectionPdf' && e.target.files.length > 0) {
+      console.log("ok proceed");
+      uploadInspectionPdf(e.target.files[0]);
+    }
     
     
     
@@ -1519,7 +1295,17 @@ function Update({ params }) {
   }
 
 
-
+  
+  const uploadInspectionPdf= async (data)=>{
+    //inspection pdf
+    const formData = new FormData();
+      formData.append('file', data);
+    const response = await vehicleApi.uploadInspectionPdf(formData);
+    if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
+      // console.log(response.data.data);
+      setInspectionPdf(response.data.data); 
+    }
+  }
    
 const uploadAuctionImage= async (data)=>{
   // thumbnail image
@@ -1837,6 +1623,11 @@ const handleRemoveVideo2 = async ()=>{
   const handleRemoveComfortImage =async (ImageName)=>{
     setComfortImages(prevArray => prevArray.filter(item => item.path !== ImageName));
   }
+
+  const handleRemoveInspectionPdf =async (e)=>{
+    setInspectionPdf(null);
+  }
+  
   
   
 
@@ -1867,7 +1658,7 @@ const handleRemoveVideo2 = async ()=>{
       rhsFender,noOfAirbags,odometerReading,abs,driverSideAB,codriverSideAB,lhsAPillarAB,lhsBPillarAB,lhsCPillarAB,rhsAPillarAB,rhsBPillarAB,rhsCPillarAB,
       reverseParkingCamera,manualAC,climateAC,musicSystem,stereo,inbuiltSpeaker,externalSpeaker,stearingMountedAudio,sunroof,
       bodyType,transmission,ownerType,color,kmsDriven,description,mileage,maxPower,maxTorque,noc,inspectionReport,inspectionScore,comforts,safety,
-      interior,exterior,entertainment,engineVideo,silencerVideo,thumbImage,regYear,rcAvailabilityImages,chassisImages,hypoImages,roadTaxValidityImages,
+      interior,exterior,entertainment,engineVideo,silencerVideo,thumbImage,inspectionPdf,regYear,rcAvailabilityImages,chassisImages,hypoImages,roadTaxValidityImages,
       insuranceImages,duplicateKeyImages,rtoNocImages,commentsOnBasic,commentsOnInterior,commentsOnEngine,commentsOnExterior,commentsOnTransmission,commentsOnComfort,commentsOnElectrical,exteriorImages,dentImages,tyreImages,engineImages,interiorImages,safetyImages,comfortImages};
 
       // console.log(formData);
@@ -1999,8 +1790,13 @@ const handleRemoveVideo2 = async ()=>{
             <Box className={dashboardStyles.tm_dashboard_rightbar_main}>
               <Header/>
               <Box className={dashboardStyles.tm_dashboard_rightbar_form_main}>
-                <Box className={dashboardStyles.tm_dashboard_rightbar_form_title}>
-                  <Typography variant='h3'>Update your car!  </Typography>
+                 <Box className={dashboardStyles.tm_auctionvehicle_table_main_top}>
+                  <Box className={dashboardStyles.tm_auctionvehicle_table_main_top_title}>
+                    <Typography variant='h4'>Update Your Car</Typography>
+                  </Box>
+                  <Box className={dashboardStyles.tm_auctionvehicle_table_main_top_btn}>
+                  <Link as={`/dashboard/inspection/report/${docId}`} href={`/dashboard/inspection/report?id=${docId}`} target="_blank"><Button variant="contained">Generate PDF</Button></Link>
+                  </Box>
                 </Box>
                 <form onSubmit={handleSubmit}>
                   <Box>
@@ -5316,6 +5112,35 @@ const handleRemoveVideo2 = async ()=>{
                               </Box>
                             );
                           })}
+                        </Grid>
+                      </Grid>
+                  </Box>
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Inspection Report PDF </Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='inspectionPdf' hidden />
+                          </Button>
+                          
+                        </Box>                        
+                      </Grid>
+                       <Grid item md={9}>
+                        {inspectionPdf ? (<>
+                            <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box>
+                                  <Link href={inspectionPdf} target="_blank"><PictureAsPdfIcon sx={{fontSize:"80px"}}/></Link>
+                                  <Button onClick={() => handleRemoveInspectionPdf()}><CloseIcon/> </Button>
+                                </Box>
+                                
+                            </Box>
+                        </>):(<></>)}
+                              
+                           
                         </Grid>
                       </Grid>
                   </Box>
