@@ -211,6 +211,8 @@ function Update({ params }) {
   const [colorList, setcolorList]=useState([]);
   const [color, setColor]=useState(null);
   const [kmsDriven, setkmsDriven]=useState(null);
+  const [carPrice, setcarPrice]=useState(null);
+  const [oneClickBuyPrice, setOneClickBuyPrice]=useState(null);
   const [description, setDescription]=useState(null);
   const [mileage, setMileage]=useState(null);
   const [maxPower, setmaxPower]=useState(null);
@@ -223,6 +225,9 @@ function Update({ params }) {
   const [interior, setInterior] = useState([]);
   const [exterior, setExterior] = useState([]);
   const [entertainment, setEntertainment] = useState([]);
+  const [carsoldStatus,setCarsoldStatus]=useState(null);
+  const [auctionStartTime, setAuctionStartTime]=useState(null);
+  const [auctionEndTime, setAuctionEndTime]=useState(null);
 
   const [comfortList, setComfortList] = useState([]);
   const [safetyList, setSafetyList] = useState([]);
@@ -230,10 +235,18 @@ function Update({ params }) {
   const [exteriorList, setExteriorList] = useState([]);
   const [entertainmentList, setEntertainmentList] = useState([]);
 
+
+  const [ThumbnailPhotos, setThumbnailPhotos] = useState([]);
+  const [ExteriorPhotos , setExteriorPhotos] = useState([]);
+  const [InteriorPhotos  , setInteriorPhotos ] = useState([]);
+  const [EnginePhotos  , setEnginePhotos ] = useState([]);
+  const [TyresPhotos  , setTyresPhotos ] = useState([]);
+  const [DentsPhotos  , setDentsPhotos ] = useState([]);
   const [engineVideo  , setEngineVideo ] = useState(null);
   const [silencerVideo  , setSilencerVideo ] = useState(null);
-
+  const [allCarImage, setAllcarImage] = useState([]);
   const [thumbImage, setThumbImage] = useState([]);
+  const [allCarVideo, setAllcarVideo] = useState([]);
 
 
   const [exteriorImages, setExteriorImages] = useState([]);
@@ -531,7 +544,107 @@ function Update({ params }) {
             
             setInspectionPdf(result.pdfUrl);
 
+            const getAuctionDetails = await vehicleApi.getAuctionDetails(data);
+            if (getAuctionDetails.data.status === 200)
+            {
+                // setAuctionDetails(getAuctionDetails.data.data);
+                setCarsoldStatus(getAuctionDetails.data.data.isSoldOut);
+                if(getAuctionDetails.data.data.oneClickBuyPrice)
+                {
+                  setOneClickBuyPrice(getAuctionDetails.data.data.oneClickBuyPrice);
+                }
+                
 
+                //startAuction
+                if(getAuctionDetails.data.data.startTime!=0)
+                {
+                  const date = new Date(getAuctionDetails.data.data.startTime);
+                  const year = date.getFullYear();
+                  const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+                  const day = date.getDate().toString().padStart(2, '0');
+                  const hours = date.getHours().toString().padStart(2, '0');
+                  const minutes = date.getMinutes().toString().padStart(2, '0');
+                  const AuctionStartTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+                  setAuctionStartTime(dayjs(AuctionStartTime));
+                }
+                
+
+                //endAuction
+                if(getAuctionDetails.data.data.endTime!=0)
+                {
+                  const date2 = new Date(getAuctionDetails.data.data.endTime);
+                  const year2 = date2.getFullYear();
+                  const month2 = (date2.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+                  const day2 = date2.getDate().toString().padStart(2, '0');
+                  const hours2 = date2.getHours().toString().padStart(2, '0');
+                  const minutes2 = date2.getMinutes().toString().padStart(2, '0');
+                  const AuctionEndTime = `${year2}-${month2}-${day2}T${hours2}:${minutes2}`;
+                  setAuctionEndTime(dayjs(AuctionEndTime));
+                }
+                
+
+                // setThumbImage(getAuctionDetails.data.data.carDetails.imagePath);
+                
+            }
+
+            const carDetails = await vehicleApi.getAuctionCarDetails(data);
+          if (carDetails.data.status === 200) {
+            const result=carDetails.data.data;
+         
+            setcarPrice(result.carPrice);
+            
+            setAllcarImage(result.images);
+
+            // if(result.properties.insuranceValidity!=null)
+            // {
+            //   const date = new Date(result.properties.insuranceValidity);
+            //   setInsuranceValidity(dayjs(date.toLocaleDateString('en-US')));
+            // }
+            
+            // if(result.properties.roadTaxValidity!=null)
+            // {
+            //   const date2 = new Date(result.properties.roadTaxValidity);
+            //   setRoadTaxValidity(dayjs(date2.toLocaleDateString('en-US')));
+            // }
+           
+            
+            // const thumbImages = result.images.filter((item) => item.type == "THUMB");
+            // setThumbImages(thumbImages);
+
+            // const extImages = result.images.filter((item) => item.type == "EXT");
+            // setExtImages(extImages);
+
+            // const intImages = result.images.filter((item) => item.type == "INT");
+            // setIntImages(intImages);
+
+            // const engineImages = result.images.filter((item) => item.type == "ENGINE");
+            // setEngineImages(engineImages);
+
+            // const tyreImages = result.images.filter((item) => item.type == "TYRE");
+            // settyreImages(tyreImages);
+
+            // const dentImages = result.images.filter((item) => item.type == "DENT");
+            // setdentImages(dentImages);
+
+            if(result.videos)
+            {
+                setAllcarVideo(result.videos);
+              
+                const engineVideo = result.videos.filter((item) => item.type == "ENGINE");
+                if(engineVideo.length>0)
+                {
+                  setEngineVideo(engineVideo[0].path);
+                }
+                
+                const silencerVideo = result.videos.filter((item) => item.type == "SILENCER");
+                if(silencerVideo.length>0)
+                {
+                  setSilencerVideo(silencerVideo[0].path);
+                }
+            }
+            
+            
+          }
     
             
           }
@@ -1167,6 +1280,27 @@ function Update({ params }) {
         setkmsDriven(null);
       }
     }
+    if (e.target.name === 'carPrice') {
+      if(e.target.value=="")
+      {
+        setcarPrice(null);
+      }
+      else
+      {
+        setcarPrice(Number(e.target.value));
+      }
+    }
+    if (e.target.name === 'oneClickBuyPrice') {
+      if(e.target.value=="")
+      {
+        setOneClickBuyPrice(null);
+      }
+      else
+      {
+        setOneClickBuyPrice(Number(e.target.value));
+      }
+      
+    }
     if (e.target.name === 'description') {
       setDescription(e.target.value);
     }
@@ -1313,7 +1447,7 @@ const uploadAuctionImage= async (data)=>{
     formData.append('file', data);
   const response = await vehicleApi.uploadAuctionImage(formData);
   if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
-
+    setAllcarImage([...allCarImage, response.data.data]);
     setThumbImage([...thumbImage, response.data.data]);
     
   }
@@ -1327,6 +1461,7 @@ const uploadAuctionImage2= async (data)=>{
   if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
     // console.log(response);
     setExteriorImages([...exteriorImages, response.data.data]);
+    setAllcarImage([...allCarImage, response.data.data]);
   
     // console.log(response.data.data);
   }
@@ -1340,7 +1475,7 @@ const uploadAuctionImage3= async (data)=>{
   if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
 
     setInteriorImages([...interiorImages, response.data.data]);
-    
+    setAllcarImage([...allCarImage, response.data.data]);
 
   }
 }
@@ -1352,7 +1487,7 @@ const uploadAuctionImage4= async (data)=>{
   const response = await vehicleApi.uploadAuctionImage4(formData);
   if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
     setEngineImages([...engineImages, response.data.data]);
-    
+    setAllcarImage([...allCarImage, response.data.data]);
   }
 }
 
@@ -1364,7 +1499,7 @@ const uploadAuctionImage5= async (data)=>{
   if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
     // console.log(response);
     setTyreImages([...tyreImages, response.data.data]);
-  
+    setAllcarImage([...allCarImage, response.data.data]);
     // console.log(response.data.data);
   }
 }
@@ -1377,7 +1512,7 @@ const uploadAuctionImage6= async (data)=>{
   if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
     // console.log(response);
     setDentImages([...dentImages, response.data.data]);
-    
+    setAllcarImage([...allCarImage, response.data.data]);
     // console.log(response.data.data);
   }
 }
@@ -1404,7 +1539,6 @@ const uploadAuctionImage8= async (data)=>{
 
 
 
-
 const uploadAuctionVideo1= async (data)=>{
   const formData = new FormData();
     formData.append('file', data);
@@ -1413,7 +1547,8 @@ const uploadAuctionVideo1= async (data)=>{
   if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
     // console.log(response);
     setEngineVideo(response.data.data.path);
-
+    setAllcarVideo([...allCarVideo,response.data.data]);
+    setAllcarVideo(prevArray => prevArray.filter(item => item.path !== engineVideo));
     
     // console.log(response.data.data);
   }
@@ -1427,7 +1562,8 @@ const uploadAuctionVideo2= async (data)=>{
   if (response.status === 200 && response.data.status === 200 && response.data.success === true) {
     // console.log(response);
     setSilencerVideo(response.data.data.path);
-    
+    setAllcarVideo([...allCarVideo, response.data.data]);
+    setAllcarVideo(prevArray => prevArray.filter(item => item.path !== silencerVideo));
     
     // console.log(response.data.data);
   }
@@ -1595,26 +1731,32 @@ const handleRemoveVideo2 = async ()=>{
   }
   const handleRemoveExteriorImage =async (ImageName)=>{
     setExteriorImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
     
   }
   const handleRemoveTyreImage =async (ImageName)=>{
     setTyreImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
     
   }
   const handleRemoveDentImage =async (ImageName)=>{
     setDentImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
     
   }
   const handleRemoveThumbnailImage =async (ImageName)=>{
     setThumbImage(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
     
   }
   const handleRemoveEngineImage =async (ImageName)=>{
     setEngineImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
    
   }
   const handleRemoveInteriorImage =async (ImageName)=>{
     setInteriorImages(prevArray => prevArray.filter(item => item.path !== ImageName));
+    setAllcarImage(prevArray => prevArray.filter(item => item.path !== ImageName));
    
   }
   const handleRemoveSafetyImage =async (ImageName)=>{
@@ -1629,7 +1771,13 @@ const handleRemoveVideo2 = async ()=>{
   }
   
   
-  
+  const handleAuctionStartTime = (newDate) => {
+    setAuctionStartTime(newDate);
+    // console.log(newDate);
+  };
+  const handleAuctionEndTime = (newDate) => {
+    setAuctionEndTime(newDate);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault(); 
@@ -1657,8 +1805,8 @@ const handleRemoveVideo2 = async ()=>{
       rhsRearAlloy,rhsRearTyre,rhsCPillar,rhsRearDoor,rhsBPillar,rhsFrontDoor,rhsAPillar,rhsRunningBoard,rhsFrontAlloy,rhsFrontTyre,rhsOrvm,
       rhsFender,noOfAirbags,odometerReading,abs,driverSideAB,codriverSideAB,lhsAPillarAB,lhsBPillarAB,lhsCPillarAB,rhsAPillarAB,rhsBPillarAB,rhsCPillarAB,
       reverseParkingCamera,manualAC,climateAC,musicSystem,stereo,inbuiltSpeaker,externalSpeaker,stearingMountedAudio,sunroof,
-      bodyType,transmission,ownerType,color,kmsDriven,description,mileage,maxPower,maxTorque,noc,inspectionReport,inspectionScore,comforts,safety,
-      interior,exterior,entertainment,engineVideo,silencerVideo,thumbImage,inspectionPdf,regYear,rcAvailabilityImages,chassisImages,hypoImages,roadTaxValidityImages,
+      bodyType,transmission,ownerType,color,kmsDriven,carPrice,carsoldStatus,oneClickBuyPrice,auctionStartTime,auctionEndTime,description,mileage,maxPower,maxTorque,noc,inspectionReport,inspectionScore,comforts,safety,
+      interior,exterior,entertainment,engineVideo,silencerVideo,allCarImage,allCarVideo,thumbImage,inspectionPdf,regYear,rcAvailabilityImages,chassisImages,hypoImages,roadTaxValidityImages,
       insuranceImages,duplicateKeyImages,rtoNocImages,commentsOnBasic,commentsOnInterior,commentsOnEngine,commentsOnExterior,commentsOnTransmission,commentsOnComfort,commentsOnElectrical,exteriorImages,dentImages,tyreImages,engineImages,interiorImages,safetyImages,comfortImages};
 
       // console.log(formData);
@@ -1795,7 +1943,7 @@ const handleRemoveVideo2 = async ()=>{
                     <Typography variant='h4'>Update Your Car</Typography>
                   </Box>
                   <Box className={dashboardStyles.tm_auctionvehicle_table_main_top_btn}>
-                  <Link as={`/dashboard/inspection/report/${docId}`} href={`/dashboard/inspection/report?id=${docId}`} target="_blank"><Button variant="contained">Generate PDF</Button></Link>
+                  <Link as={`/dashboard/inspection/report/${docId}`} href={`/dashboard/inspection/report?id=${docId}`} ><Button variant="contained">Generate PDF</Button></Link>
                   </Box>
                 </Box>
                 <form onSubmit={handleSubmit}>
@@ -2464,7 +2612,7 @@ const handleRemoveVideo2 = async ()=>{
                   </Grid>
                   <Grid item md={3}>
                     <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
-                    <Typography sx={{mb:'5px', fontWeight:700, textTransform:'capitalize',}}>Kilometers Driven</Typography>
+                    <Typography sx={{mb:'5px', fontWeight:700, textTransform:'capitalize',}}>Kilometers Driven*</Typography>
                     <TextField id="outlined-basic" onChange={handleInput} name='kmsDriven' type="number" value={kmsDriven} variant="outlined" required fullWidth/>
                     </Box>
                   </Grid>
@@ -2524,6 +2672,61 @@ const handleRemoveVideo2 = async ()=>{
                       </Box>
                       
                   </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                    <Typography sx={{mb:'5px', fontWeight:700, textTransform:'capitalize',}}>Your Selling Price</Typography>
+                    <TextField id="outlined-basic" onChange={handleInput} name='carPrice' value={carPrice}  type="number" InputLabelProps={{shrink: true,}} variant="outlined" required fullWidth/>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                    <Typography sx={{mb:'5px', fontWeight:700, textTransform:'capitalize',}}>One Click Buy Price (Optional)</Typography>
+                    <TextField id="outlined-basic" onChange={handleInput} name='oneClickBuyPrice' type="number" value={oneClickBuyPrice} variant="outlined" InputLabelProps={{shrink: true,}} fullWidth/>
+                    <Typography variant='span' sx={{color:'red', marginTop:'5px', display:'block'}}>Note : If you put any value then this car will not show in auction</Typography>
+                    </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <Typography sx={{mb:'5px', fontWeight:700, textTransform:'capitalize',}}>Car Sold Status (Optional)</Typography>
+                        <TextField
+                          id="outlined-select-currency-native"
+                          select
+                          defaultValue={carsoldStatus}
+                          onChange={handleInput}
+                          name='carsoldStatus'
+                          SelectProps={{
+                            native: true,
+                          }}
+                          fullWidth
+                          // helperText="Please select your currency"
+                        >
+                          
+                            <option key="1" value="true">Yes </option>
+                            <option key="2" value="false">No </option>
+                        </TextField>
+                        <Typography variant='span' sx={{color:'red', marginTop:'5px', display:'block'}}>Note : If status is No , then this car will show in OCB</Typography>
+                      </Box>
+                  </Grid>
+                  <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_date_time} ${"tm_dashboard_rightbar_form_date_time_gb"} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <Typography sx={{mb:'5px', fontWeight:700, textTransform:'capitalize',}}>Auction Start Time</Typography>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                          <DemoContainer components={['DateTimePicker']}>
+                            <DateTimePicker onChange={handleAuctionStartTime} format="DD-MM-YYYY HH:mm" value={auctionStartTime} sx={{width:'100%'}} required />
+                          </DemoContainer>
+                        </LocalizationProvider>
+                      </Box>
+                    </Grid>
+                    <Grid item md={3}>
+                      <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_date_time} ${"tm_dashboard_rightbar_form_date_time_gb"} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
+                      <Typography sx={{mb:'5px', fontWeight:700, textTransform:'capitalize',}}>Auction End Time</Typography>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                          <DemoContainer components={['DateTimePicker']}>
+                            <DateTimePicker onChange={handleAuctionEndTime} format="DD-MM-YYYY HH:mm" value={auctionEndTime} sx={{width:'100%'}} required />
+                          </DemoContainer>
+                        </LocalizationProvider>
+                      </Box>
+                    </Grid>
                   <Grid item md={12}>
                       <Box className={`${dashboardStyles.tm_dashboard_rightbar_form_panel} ${"tm_dashboard_rightbar_form_panel_gb"}`}>
                       <Typography sx={{mb:'5px', fontWeight:700, textTransform:'capitalize',}}>Inspection Report</Typography>
@@ -4563,7 +4766,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='rcAvailabilityImages' hidden />
+                            <input type="file" onChange={handleInput} name='rcAvailabilityImages' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -4598,7 +4801,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='chassisImages' hidden />
+                            <input type="file" onChange={handleInput} name='chassisImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4632,7 +4835,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='hypoImages' hidden />
+                            <input type="file" onChange={handleInput} name='hypoImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4666,7 +4869,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='roadTaxValidityImages' hidden />
+                            <input type="file" onChange={handleInput} name='roadTaxValidityImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4700,7 +4903,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='insuranceImages' hidden />
+                            <input type="file" onChange={handleInput} name='insuranceImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4734,7 +4937,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='duplicateKeyImages' hidden />
+                            <input type="file" onChange={handleInput} name='duplicateKeyImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4769,7 +4972,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='rtoNocImages' hidden />
+                            <input type="file" onChange={handleInput} name='rtoNocImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4803,7 +5006,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='EnginePhotos' hidden />
+                            <input type="file" onChange={handleInput} name='EnginePhotos' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -4837,7 +5040,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='InteriorPhotos' hidden />
+                            <input type="file" onChange={handleInput} name='InteriorPhotos' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -4871,7 +5074,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='ExteriorPhotos' hidden />
+                            <input type="file" onChange={handleInput} name='ExteriorPhotos' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -4901,7 +5104,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='ThumbnailPhotos' hidden />
+                            <input type="file" onChange={handleInput} name='ThumbnailPhotos' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -4935,7 +5138,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='TyresPhotos' hidden />
+                            <input type="file" onChange={handleInput} name='TyresPhotos' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4964,7 +5167,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='DentsPhotos' hidden />
+                            <input type="file" onChange={handleInput} name='DentsPhotos' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4998,7 +5201,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='engineVideo' hidden />
+                            <input type="file" onChange={handleInput} name='engineVideo' accept="video/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -5027,7 +5230,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='silencerVideo' hidden />
+                            <input type="file" onChange={handleInput} name='silencerVideo' accept="video/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -5056,7 +5259,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='safetyImages' hidden />
+                            <input type="file" onChange={handleInput} name='safetyImages' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -5090,7 +5293,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='comfortImages' hidden />
+                            <input type="file" onChange={handleInput} name='comfortImages' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -5124,7 +5327,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='inspectionPdf' hidden />
+                            <input type="file" onChange={handleInput} name='inspectionPdf' accept=".pdf" hidden />
                           </Button>
                           
                         </Box>                        

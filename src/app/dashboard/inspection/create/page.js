@@ -4580,7 +4580,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='rcAvailabilityImages' hidden />
+                            <input type="file" onChange={handleInput} name='rcAvailabilityImages' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -4615,7 +4615,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='chassisImages' hidden />
+                            <input type="file" onChange={handleInput} name='chassisImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4649,7 +4649,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='hypoImages' hidden />
+                            <input type="file" onChange={handleInput} name='hypoImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4683,7 +4683,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='roadTaxValidityImages' hidden />
+                            <input type="file" onChange={handleInput} name='roadTaxValidityImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4717,7 +4717,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='insuranceImages' hidden />
+                            <input type="file" onChange={handleInput} name='insuranceImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4751,7 +4751,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='duplicateKeyImages' hidden />
+                            <input type="file" onChange={handleInput} name='duplicateKeyImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4786,7 +4786,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='rtoNocImages' hidden />
+                            <input type="file" onChange={handleInput} name='rtoNocImages' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4820,7 +4820,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='EnginePhotos' hidden />
+                            <input type="file" onChange={handleInput} name='EnginePhotos' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -4854,7 +4854,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='InteriorPhotos' hidden />
+                            <input type="file" onChange={handleInput} name='InteriorPhotos' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -4888,7 +4888,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='ExteriorPhotos' hidden />
+                            <input type="file" onChange={handleInput} name='ExteriorPhotos' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -4918,7 +4918,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='ThumbnailPhotos' hidden />
+                            <input type="file" onChange={handleInput} name='ThumbnailPhotos' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -4952,7 +4952,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='TyresPhotos' hidden />
+                            <input type="file" onChange={handleInput} name='TyresPhotos' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -4981,7 +4981,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='DentsPhotos' hidden />
+                            <input type="file" onChange={handleInput} name='DentsPhotos' accept="image/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -5015,7 +5015,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='engineVideo' hidden />
+                            <input type="file" onChange={handleInput} name='engineVideo' accept="video/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -5044,7 +5044,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='silencerVideo' hidden />
+                            <input type="file" onChange={handleInput} name='silencerVideo' accept="video/*" hidden />
                           </Button>
                         </Box>                        
                       </Grid>
@@ -5073,7 +5073,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='safetyImages' hidden />
+                            <input type="file" onChange={handleInput} name='safetyImages' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        
@@ -5107,7 +5107,7 @@ const handleRemoveVideo2 = async ()=>{
                         <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
                           <Button variant="contained" component="label">
                             Upload File
-                            <input type="file" onChange={handleInput} name='comfortImages' hidden />
+                            <input type="file" onChange={handleInput} name='comfortImages' accept="image/*" hidden />
                           </Button>
                           
                         </Box>                        

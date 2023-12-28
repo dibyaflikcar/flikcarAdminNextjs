@@ -21,8 +21,10 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Link from 'next/link';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import { useRouter } from 'next/navigation';
 
 function Auctionvehicle() {  
+  const router = useRouter();
   const [inspectionData,setInspectionData]=useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -37,6 +39,10 @@ function Auctionvehicle() {
   };
 
   useEffect(() => {
+    const userToken = localStorage.getItem('token');
+    if(!userToken) {
+        router.push("/");
+    }
     fetchData();
   }, []); 
 
@@ -102,6 +108,7 @@ function Auctionvehicle() {
                             <TableCell  align="center" style={{ top: 57, minWidth: 170 }}>Brand Model Variant	</TableCell>
                             <TableCell  align="center" style={{ top: 57, minWidth: 170 }}>Kms Driven</TableCell>
                             <TableCell  align="center" style={{ top: 57, minWidth: 170 }}>Reg Year</TableCell>
+                            <TableCell  align="center" style={{ top: 57, minWidth: 170 }}>View All Bids</TableCell>
                             <TableCell  align="center" style={{ top: 57, minWidth: 170 }}>Action</TableCell>
                         </TableRow>
                       </TableHead>
@@ -114,6 +121,7 @@ function Auctionvehicle() {
                                       <TableCell align="center">{data.carDetails.brand} {data.carDetails.model} {data.carDetails.variant}</TableCell>
                                       <TableCell align="center">{data.carDetails.kmsDriven}</TableCell>
                                       <TableCell align="center">{data.carDetails.registrationYear}</TableCell>
+                                      <TableCell align="center"><Link as={`bid/${data.id}`} href={`bid?id=${data.id}`}><RemoveRedEyeIcon /></Link> </TableCell>
                                       <TableCell align="center"><Link as={`update/${data.id}`} href={`update?id=${data.id}`}><EditIcon /></Link> <DeleteIcon onClick={(e) => handleDelete(`${data.id}`)} /></TableCell>
                                     </TableRow>
                                   ))}

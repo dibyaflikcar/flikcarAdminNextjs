@@ -83,9 +83,9 @@ function Auctionvehicle() {
                   <Box className={dashboardStyles.tm_auctionvehicle_table_main_top_title}>
                     <Typography variant='h4'>Auction Vehicle List</Typography>
                   </Box>
-                  <Box className={dashboardStyles.tm_auctionvehicle_table_main_top_btn}>
+                  {/* <Box className={dashboardStyles.tm_auctionvehicle_table_main_top_btn}>
                     <Link href="/dashboard/auctionvehicle/create"><Button variant="contained">Add</Button></Link>
-                  </Box>
+                  </Box> */}
                 </Box>
                  
                 <Paper sx={{ width: '100%', overflow: 'hidden' }}>            

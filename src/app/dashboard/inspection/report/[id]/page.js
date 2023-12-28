@@ -85,7 +85,7 @@ const getInspectionReport = async () => {
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
                                 <Box className={ReportStyle.tm_report_general_info_text_panel}>
                                     <Typography variant='span'>Registration No.</Typography>
-                                    <Typography variant='span'>{inspectionData?.basicDocuments?.regNo}</Typography>
+                                    <Typography variant='span'>{inspectionData?.basicDocuments?.regNo.slice(0, 4)}*****</Typography>
                                 </Box>
                             </Box>
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
@@ -208,7 +208,7 @@ const getInspectionReport = async () => {
                     </Grid>
                 </Grid> 
                 <Grid container spacing={4}>                    
-                    <Grid item md={6}>
+                    <Grid item md={6} sm={6}>
                         <Box className={ReportStyle.tm_report_general_info_text}>
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
                                 <Box className={ReportStyle.tm_report_general_info_text_panel}>
@@ -219,7 +219,7 @@ const getInspectionReport = async () => {
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
                                 <Box className={ReportStyle.tm_report_general_info_text_panel}>
                                     <Typography variant='span'>Chassis No</Typography>
-                                    <Typography variant='span'>{inspectionData?.basicDocuments?.chassisNo}</Typography>
+                                    <Typography variant='span'>{inspectionData?.basicDocuments?.chassisNo.slice(0, 4)}******</Typography>
                                 </Box>
                             </Box>
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
@@ -260,7 +260,7 @@ const getInspectionReport = async () => {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid item md={6} sm={6}>
                         <Box className={ReportStyle.tm_report_general_info_text}>
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
                                 <Box className={ReportStyle.tm_report_general_info_text_panel}>
