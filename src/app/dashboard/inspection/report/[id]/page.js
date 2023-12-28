@@ -100,7 +100,14 @@ const getDisclaimers = async () => {
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
                                 <Box className={ReportStyle.tm_report_general_info_text_panel}>
                                     <Typography variant='span'>Registration No.</Typography>
-                                    <Typography variant='span'>{inspectionData?.basicDocuments?.regNo.slice(0, 4)}*****</Typography>
+                                    {inspectionData?.basicDocuments.regNo ? (<>
+                                        <Typography variant='span'>{inspectionData?.basicDocuments?.regNo.slice(0, 4)}*****</Typography>
+                                    </>):(
+                                        <>
+                                        <Typography variant='span'></Typography>
+                                        </>
+                                    )}
+                                    
                                 </Box>
                             </Box>
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
@@ -234,7 +241,14 @@ const getDisclaimers = async () => {
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
                                 <Box className={ReportStyle.tm_report_general_info_text_panel}>
                                     <Typography variant='span'>Chassis No</Typography>
-                                    <Typography variant='span'>{inspectionData?.basicDocuments?.chassisNo.slice(0, 4)}******</Typography>
+                                    {inspectionData?.basicDocuments.chassisNo ? (<>
+                                        <Typography variant='span'>{inspectionData?.basicDocuments?.chassisNo.slice(0, 4)}******</Typography>
+                                    </>):(
+                                        <>
+                                        <Typography variant='span'></Typography>
+                                        </>
+                                    )}
+                                    
                                 </Box>
                             </Box>
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
@@ -292,7 +306,13 @@ const getDisclaimers = async () => {
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
                                 <Box className={ReportStyle.tm_report_general_info_text_panel}>
                                     <Typography variant='span'>Reg Owner Name</Typography>
-                                    <Typography variant='span'>{inspectionData?.basicDocuments?.regOwnerName}</Typography>
+                                    {inspectionData?.basicDocuments.regOwnerName ? (<>
+                                        <Typography variant='span'>{inspectionData?.basicDocuments?.regOwnerName.slice(0, 4)}*****</Typography>
+                                    </>):(
+                                        <>
+                                        <Typography variant='span'></Typography>
+                                        </>
+                                    )}
                                 </Box>
                             </Box>
                             <Box className={ReportStyle.tm_report_general_info_text_panel_main}>

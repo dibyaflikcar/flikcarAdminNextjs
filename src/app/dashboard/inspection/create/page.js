@@ -4573,6 +4573,262 @@ const handleRemoveVideo2 = async ()=>{
                   </Box>
                   <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
                     <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Add Thumbnail Photos (Upload only 1 Photo) <Box sx={{color:"red"}}></Box></Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='ThumbnailPhotos' accept="image/*" hidden />
+                          </Button>
+                          
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                        {thumbImage.length > 0 &&
+                          thumbImage.map((element, index) => {
+                            return (
+                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box >
+                                  <Image
+                                    src={element.path}
+                                    alt='Uploaded Image'
+                                    height='300'
+                                    width='300'
+                                  />
+                                  <Button onClick={() => handleRemoveThumbnailImage(element.path)}><CloseIcon/> </Button>
+                                </Box>
+                              </Box>
+                            );
+                          })}
+                        </Grid>
+                      </Grid>
+                  </Box>
+                  
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Exterior Images </Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='ExteriorPhotos' accept="image/*" hidden />
+                          </Button>
+                          
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                        {exteriorImages.length > 0 &&
+                          exteriorImages.map((element, index) => {
+                            return (
+                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box>
+                                  <Image src={element.path} alt='Uploaded Image' height='300' width='300'/>
+                                  <Button onClick={() => handleRemoveExteriorImage(element.path)}><CloseIcon/> </Button>
+                                </Box>
+                              </Box>
+                            );
+                          })}
+                        </Grid>
+                      </Grid>
+                  </Box>
+
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Electrical & Interior Images </Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='InteriorPhotos' accept="image/*" hidden />
+                          </Button>
+                          
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                        {interiorImages.length > 0 &&
+                          interiorImages.map((element, index) => {
+                            return (
+                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box >
+                                  <Image
+                                    src={element.path}
+                                    alt='Uploaded Image'
+                                    height='300'
+                                    width='300'
+                                  />
+                                  <Button onClick={() => handleRemoveInteriorImage(element.path)}><CloseIcon/> </Button>
+                                </Box>
+                              </Box>
+                            );
+                          })}
+                        </Grid>
+                      </Grid>
+                  </Box>
+
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Engine & Transmission Images </Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='EnginePhotos' accept="image/*" hidden />
+                          </Button>
+                          
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                        {engineImages.length > 0 &&
+                          engineImages.map((element, index) => {
+                            return (
+                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box >
+                                  <Image
+                                    src={element.path}
+                                    alt='Uploaded Image'
+                                    height='300'
+                                    width='300'
+                                  />
+                                  <Button onClick={() => handleRemoveEngineImage(element.path)}><CloseIcon/> </Button>
+                                </Box>
+                              </Box>
+                            );
+                          })}
+                        </Grid>
+                      </Grid>
+                  </Box>
+
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Add Tyre Photos (Upload only 5 Photo)</Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='TyresPhotos' accept="image/*" hidden />
+                          </Button>
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                        {tyreImages.length > 0 &&
+                          tyreImages.map((element, index) => {
+                            return (
+                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box >
+                                  <Image src={element.path} alt='Uploaded Image' height='300' width='300' />
+                                  <Button onClick={() => handleRemoveTyreImage(element.path)}><CloseIcon/> </Button>
+                                </Box>
+                              </Box>
+                            );
+                          })}
+                        </Grid>
+                      </Grid>
+                  </Box>
+
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Add Dent Photos (Upload only 5 Photo)</Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='DentsPhotos' accept="image/*" hidden />
+                          </Button>
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                        {dentImages.length > 0 &&
+                          dentImages.map((element, index) => {
+                            return (
+                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box >
+                                  <Image
+                                    src={element.path}
+                                    alt='Uploaded Image'
+                                    height='300'
+                                    width='300'
+                                  />
+                                  <Button onClick={() => handleRemoveDentImage(element.path)}><CloseIcon/> </Button>
+                                </Box>
+                              </Box>
+                            );
+                          })}
+                        </Grid>
+                      </Grid>
+                  </Box>
+
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Engine Sound Video</Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='engineVideo' accept="video/*" hidden />
+                          </Button>
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                              
+                              <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box>
+                                    {engineVideo ? (<>
+                                    <video width="200" height="100" controls >
+                                      <source src={engineVideo} type="video/mp4"/>
+                                    </video>
+                                    <Button onClick={() => handleRemoveVideo()}><CloseIcon/> </Button>
+                                    </>):(<> {isLoader?(<CircularProgress />):(<></>)}</>)}
+                                    
+                                </Box>
+                              </Box>
+                        </Grid>
+                      </Grid>
+                  </Box>
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
+                      <Typography variant='h6'>Silencer Video</Typography>
+                    </Box>
+                    <Grid container spacing={4}>
+                      <Grid item md={3}> 
+                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
+                          <Button variant="contained" component="label">
+                            Upload File
+                            <input type="file" onChange={handleInput} name='silencerVideo' accept="video/*" hidden />
+                          </Button>
+                        </Box>                        
+                      </Grid>
+                      <Grid item md={9}>
+                              
+                              <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
+                                <Box>
+                                    {silencerVideo ? (<>
+                                    <video width="200" height="100" controls >
+                                      <source src={silencerVideo} type="video/mp4"/>
+                                    </video>
+                                    <Button onClick={() => handleRemoveVideo2()}><CloseIcon/> </Button>
+                                    </>):(<> {isLoader2?(<CircularProgress />):(<></>)}</>)}
+                                </Box>
+                              </Box>
+                        </Grid>
+                      </Grid>
+                  </Box>
+
+                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
+                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
                       <Typography variant='h6'>RC Availablity Images </Typography>
                     </Box>
                     <Grid container spacing={4}>
@@ -4811,258 +5067,9 @@ const handleRemoveVideo2 = async ()=>{
                         </Grid>
                       </Grid>
                   </Box>
-                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
-                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
-                      <Typography variant='h6'>Engine & Transmission Images </Typography>
-                    </Box>
-                    <Grid container spacing={4}>
-                      <Grid item md={3}> 
-                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
-                          <Button variant="contained" component="label">
-                            Upload File
-                            <input type="file" onChange={handleInput} name='EnginePhotos' accept="image/*" hidden />
-                          </Button>
-                          
-                        </Box>                        
-                      </Grid>
-                      <Grid item md={9}>
-                        {engineImages.length > 0 &&
-                          engineImages.map((element, index) => {
-                            return (
-                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
-                                <Box >
-                                  <Image
-                                    src={element.path}
-                                    alt='Uploaded Image'
-                                    height='300'
-                                    width='300'
-                                  />
-                                  <Button onClick={() => handleRemoveEngineImage(element.path)}><CloseIcon/> </Button>
-                                </Box>
-                              </Box>
-                            );
-                          })}
-                        </Grid>
-                      </Grid>
-                  </Box>
-                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
-                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
-                      <Typography variant='h6'>Electrical & Interior Images </Typography>
-                    </Box>
-                    <Grid container spacing={4}>
-                      <Grid item md={3}> 
-                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
-                          <Button variant="contained" component="label">
-                            Upload File
-                            <input type="file" onChange={handleInput} name='InteriorPhotos' accept="image/*" hidden />
-                          </Button>
-                          
-                        </Box>                        
-                      </Grid>
-                      <Grid item md={9}>
-                        {interiorImages.length > 0 &&
-                          interiorImages.map((element, index) => {
-                            return (
-                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
-                                <Box >
-                                  <Image
-                                    src={element.path}
-                                    alt='Uploaded Image'
-                                    height='300'
-                                    width='300'
-                                  />
-                                  <Button onClick={() => handleRemoveInteriorImage(element.path)}><CloseIcon/> </Button>
-                                </Box>
-                              </Box>
-                            );
-                          })}
-                        </Grid>
-                      </Grid>
-                  </Box>
-                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
-                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
-                      <Typography variant='h6'>Exterior Images </Typography>
-                    </Box>
-                    <Grid container spacing={4}>
-                      <Grid item md={3}> 
-                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
-                          <Button variant="contained" component="label">
-                            Upload File
-                            <input type="file" onChange={handleInput} name='ExteriorPhotos' accept="image/*" hidden />
-                          </Button>
-                          
-                        </Box>                        
-                      </Grid>
-                      <Grid item md={9}>
-                        {exteriorImages.length > 0 &&
-                          exteriorImages.map((element, index) => {
-                            return (
-                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
-                                <Box>
-                                  <Image src={element.path} alt='Uploaded Image' height='300' width='300'/>
-                                  <Button onClick={() => handleRemoveExteriorImage(element.path)}><CloseIcon/> </Button>
-                                </Box>
-                              </Box>
-                            );
-                          })}
-                        </Grid>
-                      </Grid>
-                  </Box>
                   
-                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
-                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
-                      <Typography variant='h6'>Add Thumbnail Photos (Upload only 1 Photo) <Box sx={{color:"red"}}></Box></Typography>
-                    </Box>
-                    <Grid container spacing={4}>
-                      <Grid item md={3}> 
-                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
-                          <Button variant="contained" component="label">
-                            Upload File
-                            <input type="file" onChange={handleInput} name='ThumbnailPhotos' accept="image/*" hidden />
-                          </Button>
-                          
-                        </Box>                        
-                      </Grid>
-                      <Grid item md={9}>
-                        {thumbImage.length > 0 &&
-                          thumbImage.map((element, index) => {
-                            return (
-                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
-                                <Box >
-                                  <Image
-                                    src={element.path}
-                                    alt='Uploaded Image'
-                                    height='300'
-                                    width='300'
-                                  />
-                                  <Button onClick={() => handleRemoveThumbnailImage(element.path)}><CloseIcon/> </Button>
-                                </Box>
-                              </Box>
-                            );
-                          })}
-                        </Grid>
-                      </Grid>
-                  </Box>
-                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
-                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
-                      <Typography variant='h6'>Add Tyre Photos (Upload only 5 Photo)</Typography>
-                    </Box>
-                    <Grid container spacing={4}>
-                      <Grid item md={3}> 
-                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
-                          <Button variant="contained" component="label">
-                            Upload File
-                            <input type="file" onChange={handleInput} name='TyresPhotos' accept="image/*" hidden />
-                          </Button>
-                        </Box>                        
-                      </Grid>
-                      <Grid item md={9}>
-                        {tyreImages.length > 0 &&
-                          tyreImages.map((element, index) => {
-                            return (
-                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
-                                <Box >
-                                  <Image src={element.path} alt='Uploaded Image' height='300' width='300' />
-                                  <Button onClick={() => handleRemoveTyreImage(element.path)}><CloseIcon/> </Button>
-                                </Box>
-                              </Box>
-                            );
-                          })}
-                        </Grid>
-                      </Grid>
-                  </Box>
-
-                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
-                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
-                      <Typography variant='h6'>Add Dent Photos (Upload only 5 Photo)</Typography>
-                    </Box>
-                    <Grid container spacing={4}>
-                      <Grid item md={3}> 
-                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
-                          <Button variant="contained" component="label">
-                            Upload File
-                            <input type="file" onChange={handleInput} name='DentsPhotos' accept="image/*" hidden />
-                          </Button>
-                        </Box>                        
-                      </Grid>
-                      <Grid item md={9}>
-                        {dentImages.length > 0 &&
-                          dentImages.map((element, index) => {
-                            return (
-                              <Box key={index} className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
-                                <Box >
-                                  <Image
-                                    src={element.path}
-                                    alt='Uploaded Image'
-                                    height='300'
-                                    width='300'
-                                  />
-                                  <Button onClick={() => handleRemoveDentImage(element.path)}><CloseIcon/> </Button>
-                                </Box>
-                              </Box>
-                            );
-                          })}
-                        </Grid>
-                      </Grid>
-                  </Box>
-
-                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
-                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
-                      <Typography variant='h6'>Engine Sound Video</Typography>
-                    </Box>
-                    <Grid container spacing={4}>
-                      <Grid item md={3}> 
-                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
-                          <Button variant="contained" component="label">
-                            Upload File
-                            <input type="file" onChange={handleInput} name='engineVideo' accept="video/*" hidden />
-                          </Button>
-                        </Box>                        
-                      </Grid>
-                      <Grid item md={9}>
-                              
-                              <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
-                                <Box>
-                                    {engineVideo ? (<>
-                                    <video width="200" height="100" controls >
-                                      <source src={engineVideo} type="video/mp4"/>
-                                    </video>
-                                    <Button onClick={() => handleRemoveVideo()}><CloseIcon/> </Button>
-                                    </>):(<> {isLoader?(<CircularProgress />):(<></>)}</>)}
-                                    
-                                </Box>
-                              </Box>
-                        </Grid>
-                      </Grid>
-                  </Box>
-                  <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
-                    <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
-                      <Typography variant='h6'>Silencer Video</Typography>
-                    </Box>
-                    <Grid container spacing={4}>
-                      <Grid item md={3}> 
-                        <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_title} ${"tm_dashboard_img_upl_panel_title_gb"}`}>
-                          <Button variant="contained" component="label">
-                            Upload File
-                            <input type="file" onChange={handleInput} name='silencerVideo' accept="video/*" hidden />
-                          </Button>
-                        </Box>                        
-                      </Grid>
-                      <Grid item md={9}>
-                              
-                              <Box className={`${dashboardStyles.tm_dashboard_img_upl_panel_img} ${"tm_dashboard_img_upl_panel_img_gb"}`}>
-                                <Box>
-                                    {silencerVideo ? (<>
-                                    <video width="200" height="100" controls >
-                                      <source src={silencerVideo} type="video/mp4"/>
-                                    </video>
-                                    <Button onClick={() => handleRemoveVideo2()}><CloseIcon/> </Button>
-                                    </>):(<> {isLoader2?(<CircularProgress />):(<></>)}</>)}
-                                </Box>
-                              </Box>
-                        </Grid>
-                      </Grid>
-                  </Box>
+                  
+                 
 
                   <Box className={dashboardStyles.tm_dashboard_img_upl_panel}>
                     <Box className={dashboardStyles.tm_dashboard_img_upl_panel_title}>
