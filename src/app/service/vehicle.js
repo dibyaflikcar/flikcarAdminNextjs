@@ -642,6 +642,15 @@ vehicleApi.deleteInspector = async (data) => {
   }
 };
 
+vehicleApi.getDisclaimers = async () => {
+  try {
+    const res = API.get('/vehicle/getDisclaimers');
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
+
 
 
 

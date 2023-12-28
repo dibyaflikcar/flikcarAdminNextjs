@@ -1419,7 +1419,7 @@ function Update({ params }) {
           uploadAuctionVideo2(e.target.files[0]);
     }
     if (e.target.name === 'inspectionPdf' && e.target.files.length > 0) {
-      console.log("ok proceed");
+      // console.log("ok proceed");
       uploadInspectionPdf(e.target.files[0]);
     }
     

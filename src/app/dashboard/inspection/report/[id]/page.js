@@ -14,6 +14,7 @@ const Page = ({ params }) => {
 const router = useRouter();
 const [inspectionData, setInspectionData]=useState(null);
 const [inspectionDate, setInspectionDate]=useState(null);
+const [disclaimer, setDisclaimer]=useState([]);
 
 useEffect(() => {
     const userToken = localStorage.getItem('token');
@@ -21,6 +22,7 @@ useEffect(() => {
         router.push("/");
     }
     getInspectionReport();
+    getDisclaimers();
 }, []); 
 
 const getInspectionReport = async () => {
@@ -42,7 +44,20 @@ const getInspectionReport = async () => {
     } catch (error) {
         console.error('Error fetching data:', error);
     }
-    };
+};
+
+const getDisclaimers = async () => {
+    try {
+        const response = await vehicleApi.getDisclaimers();
+            // console.log(response.data.data);
+         if (response.data.status === 200) {
+            setDisclaimer(response.data.data.title);
+        }
+        
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+};
 
   return (
     <>
@@ -1112,66 +1127,19 @@ const getInspectionReport = async () => {
                             <Box className={ReportStyle.tm_report_general_info_text_title}>
                                 <Typography variant='h5'>E. DISCLAIMER</Typography>
                             </Box>
-                            <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
+                            {disclaimer.map((item, index) => (
+                            <>
+                            <Box key={index} className={ReportStyle.tm_report_general_info_text_panel_main}>
                                 <Box className={ReportStyle.tm_report_general_info_text_panel}>
-                                    <Typography variant='span'>1</Typography>
-                                    <Typography variant='span'>Interior Cleaning & General service for engines is essential refurbishment advised in every used Car.</Typography>
+                                    <Typography variant='span'>{index+1}</Typography>
+                                    <Typography variant='span'>{item}</Typography>
                                 </Box>
                             </Box>
-                            <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
-                                <Box className={ReportStyle.tm_report_general_info_text_panel}>
-                                    <Typography variant='span'>2</Typography>
-                                    <Typography variant='span'>Odometer readings cannot be verified & are recorded based on the current reading on the car. We do not guarantee verification of odometer reading and the possibility of the odometer being tempered in the past cannot be ruled out.</Typography>
-                                </Box>
-                            </Box>
-                            <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
-                                <Box className={ReportStyle.tm_report_general_info_text_panel}>
-                                    <Typography variant='span'>3</Typography>
-                                    <Typography variant='span'>OtoBix will not entertain any inspection miss ticket after delivery except for Engine and GearBox related issues.</Typography>
-                                </Box>
-                            </Box>
-                            <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
-                                <Box className={ReportStyle.tm_report_general_info_text_panel}>
-                                    <Typography variant='span'>4</Typography>
-                                    <Typography variant='span'>Accidental repairs if already done are verified practically on the Car during Inspection. Replacement of parts like Bumper / Fender / Headlights / Tail Lights /ORVM / Lower cross member, Upper cross member, Bonnet Patti / Show Panel, etc cannot be verified and do not depreciate the value of the used Car,hence no claim shall be entertained basis details available in-service history post-purchase.</Typography>
-                                </Box>
-                            </Box>
-                            <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
-                                <Box className={ReportStyle.tm_report_general_info_text_panel}>
-                                    <Typography variant='span'>5</Typography>
-                                    <Typography variant='span'>The date of manufacturing of the Car is recorded as per the details available in RC and not as per the window or windshield glass code.</Typography>
-                                </Box>
-                            </Box>
-                            <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
-                                <Box className={ReportStyle.tm_report_general_info_text_panel}>
-                                    <Typography variant='span'>6</Typography>
-                                    <Typography variant='span'>Operation of Cruise control cannot be checked under current conditions where inspection is being done hence not guaranteed.</Typography>
-                                </Box>
-                            </Box>                            
-                            <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
-                                <Box className={ReportStyle.tm_report_general_info_text_panel}>
-                                    <Typography variant='span'>7</Typography>
-                                    <Typography variant='span'>Poor Pick up, Clutch weak, Clutch Needs Overhaul, Clutch needs repair, etc comments mentioned in the report indicate that the Car may need to be shifted by Towing & may not be in drivable mode due to partially worn out clutch.</Typography>
-                                </Box>
-                            </Box>
-                            <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
-                                <Box className={ReportStyle.tm_report_general_info_text_panel}>
-                                    <Typography variant='span'>8</Typography>
-                                    <Typography variant='span'>OtoBix is not the custodian of the service history of any vehicle hence is not liable for any such data or any part thereof in any manner. Accordingly, OtoBix does not provide any guarantee of any nature whatsoever on the service history of the vehicle.</Typography>
-                                </Box>
-                            </Box>
-                            <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
-                                <Box className={ReportStyle.tm_report_general_info_text_panel}>
-                                    <Typography variant='span'>9</Typography>
-                                    <Typography variant='span'>If a Car becomes non-drivable or scrap after the date of inspection, as a result of Govt regulations around age, or any other guidelines, and such information around age was available in the Inspection Report, we will not entertain any inspection misses or return of the vehicle if less than 3 months of validity of life of the Car is left.</Typography>
-                                </Box>
-                            </Box> 
-                            <Box className={ReportStyle.tm_report_general_info_text_panel_main}>
-                                <Box className={ReportStyle.tm_report_general_info_text_panel}>
-                                    <Typography variant='span'>10</Typography>
-                                    <Typography variant='span'>Transportation Charges, as applicable, shall apply. Please contact your Relationship Manager for further details.</Typography>
-                                </Box>
-                            </Box>                           
+                            </>
+                            
+                            ))}
+                            
+                            
                         </Box>
                     </Grid>                    
                 </Grid>
